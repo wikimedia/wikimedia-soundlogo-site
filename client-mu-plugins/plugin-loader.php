@@ -10,6 +10,7 @@
  */
 
 wpcom_vip_load_plugin( 'asset-loader' );
+wpcom_vip_load_plugin( 'hm-gutenberg-tools' );
 
 /**
  * The above example requires the plugin to use a specific naming structure: /plugin-name/plugin-name.php

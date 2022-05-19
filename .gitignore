@@ -47,3 +47,4 @@ phpcs.xml
 
 # Dependencies managed with Composer
 /plugins/asset-loader/
+/plugins/hm-gutenberg-tools/
