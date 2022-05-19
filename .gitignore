@@ -44,3 +44,6 @@ phpcs.xml
 
 # Composer (repo root only)
 /vendor/
+
+# Dependencies managed with Composer
+/plugins/asset-loader/
