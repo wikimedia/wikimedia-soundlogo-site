@@ -8,11 +8,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Display PHP information
-          command: |
-            php -v
-            composer --version
-      - run:
           name: Install project dependencies
           command: composer install
       - run:
