@@ -1,0 +1,25 @@
+{
+  "name": "wikimediasoundlogo",
+  "version": "1.0.0",
+  "description": "Microsite for Wikimedia Sound Logo contest",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "lint:css": "stylelint content/**/*.scss",
+    "lint:php": "vendor/squizlabs/php_codesniffer/bin/phpcs -s --standard=phpcs.ruleset.xml .",
+    "lint:js": "eslint .",
+    "lint": "npm run lint:js && npm run lint:php && npm run lint:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wpcomvip/wikimediasoundlogo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wpcomvip/wikimediasoundlogo/issues"
+  },
+  "homepage": "https://github.com/wpcomvip/wikimediasoundlogo#readme"
+}
