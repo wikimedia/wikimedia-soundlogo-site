@@ -38,6 +38,8 @@
 	<exclude-pattern>uploads/*</exclude-pattern>
 	<exclude-pattern>vendor/*</exclude-pattern>
 
+	<exclude-pattern>plugins/asset-loader/*</exclude-pattern>
+	<exclude-pattern>plugins/hm-gutenberg-tools/*</exclude-pattern>
 
 	<!-- Ignore some files managed by VIP -->
 	<exclude-pattern>plugins/hello.php</exclude-pattern>
