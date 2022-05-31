@@ -1,22 +1,23 @@
 version: 2.1
 
 # Define all jobs
-lint:
-  docker:
-    - image: cimg/php:7.4.29-node
-  steps:
-    - checkout
-    - run:
-        name: Display PHP information
-        command: |
-          php -v
-          composer --version
-    - run:
-        name: Install project dependencies
-        command: composer install
-    - run:
-        name: Run phpcs linting
-        command: vendor/squizlabs/php_codesniffer/bin/phpcs -s --standard=phpcs.ruleset.xml .
+jobs:
+  lint:
+    docker:
+      - image: cimg/php:7.4.29-node
+    steps:
+      - checkout
+      - run:
+          name: Display PHP information
+          command: |
+            php -v
+            composer --version
+      - run:
+          name: Install project dependencies
+          command: composer install
+      - run:
+          name: Run phpcs linting
+          command: vendor/squizlabs/php_codesniffer/bin/phpcs -s --standard=phpcs.ruleset.xml .
 
 # Define workflows
 workflows:
