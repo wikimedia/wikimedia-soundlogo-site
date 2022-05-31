@@ -15,10 +15,10 @@ jobs:
           command: vendor/squizlabs/php_codesniffer/bin/phpcs -s --standard=phpcs.ruleset.xml .
       - run:
           name: Run eslint
-          command: npm run lint:js
+          command: # npm run lint:js // TODO:Re-add after there are scripts to lint.
       - run:
           name: Run stylelint
-          command: npm run lint:css
+          command: # npm run lint:css // TODO: Re-add after there are style files to lint.
 
 
 # Define workflows
