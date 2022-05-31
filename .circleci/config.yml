@@ -1,0 +1,28 @@
+version: 2.1
+
+# Define all jobs
+jobs:
+  lint:
+    docker:
+      - image: cimg/php:7.4.29-node
+    steps:
+      - checkout
+      - run:
+          name: Install project dependencies
+          command: composer install && npm ci
+      - run:
+          name: Run phpcs linting
+          command: vendor/squizlabs/php_codesniffer/bin/phpcs -s --standard=phpcs.ruleset.xml .
+      - run:
+          name: Run eslint
+          command: echo "Not running" # npm run lint:js // TODO:Re-add after there are scripts to lint.
+      - run:
+          name: Run stylelint
+          command: echo "Not running" # npm run lint:css // TODO: Re-add after there are style files to lint.
+
+
+# Define workflows
+workflows:
+  precommit_testing:
+    jobs:
+      - lint
