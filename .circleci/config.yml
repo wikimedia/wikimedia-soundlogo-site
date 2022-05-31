@@ -9,10 +9,17 @@ jobs:
       - checkout
       - run:
           name: Install project dependencies
-          command: composer install
+          command: composer install && npm ci
       - run:
           name: Run phpcs linting
           command: vendor/squizlabs/php_codesniffer/bin/phpcs -s --standard=phpcs.ruleset.xml .
+      - run:
+          name: Run eslint
+          command: npm run lint:js
+      - run:
+          name: Run stylelint
+          command: npm run lint:css
+
 
 # Define workflows
 workflows:
