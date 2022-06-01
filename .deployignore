@@ -36,3 +36,4 @@ phpcs.xml
 
 # Dev dependencies
 /node_modules/
+/themes/shiro/node_modules/
