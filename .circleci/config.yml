@@ -23,12 +23,6 @@ jobs:
   build:
     docker:
       - image: cimg/node:12.22
-    branches:
-      only:
-        - develop
-        - preprod
-        - production
-        - 424-create-build-process
     steps:
       - checkout
 
@@ -75,3 +69,11 @@ workflows:
   precommit_testing:
     jobs:
       - lint
+      - build:
+          filters:
+            branches:
+              only:
+                - develop
+                - preprod
+                - production
+                - 424-create-build-process
