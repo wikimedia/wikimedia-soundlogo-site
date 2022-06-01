@@ -20,6 +20,55 @@ jobs:
           name: Run stylelint
           command: echo "Not running" # npm run lint:css // TODO: Re-add after there are style files to lint.
 
+  build:
+    docker:
+      - image: cimg/node:12.22
+    branches:
+      only:
+        - develop
+        - preprod
+        - production
+        - 424-create-build-process
+    steps:
+      - checkout
+
+      - run:
+        name: Build shiro theme
+        command: |
+          cd themes/shiro && npm ci && npm run build
+
+      - run: echo "Building..."
+      - run:
+          name: Create build directory
+          command: mkdir -p build
+      # This is copypasta from VIP's boilerplate; it will probably be removed soon.
+      - run:
+          name: Create build readme
+          command: echo "This was built in CI on $(date)" > build/README.md
+      - run:
+          name: Add some helpful info to the README
+          command: |
+            echo -e "\n\n## Continuous Integration & Continuous Deployment on VIP Go" >> build/README.md
+            echo -e "\nSee our docs in the [VIP Lobby](https://vip.wordpress.com/documentation/automated-build-and-deploy-on-vip-go/)" >> build/README.md
+            echo -e "\n\nThis branch e.g. master-built is created automatically when " >> build/README.md
+            echo "a commit or merge is made to the base branch e.g. master, using [your CircleCI configuration](../.circleci/config.yml), which you can **customize**" >> build/README.md
+      - run:
+          name: Test the build
+          command: |
+            if [ -f build/README.md ]; then
+              echo "Build succeeded";
+            else
+              echo "Build failed, file missing"; exit 1
+            fi
+      # Enable deploy ssh key in order to push built branch back to GitHub.
+      - add_ssh_keys:
+          fingerprints:
+            - "1a:63:f3:99:34:9f:44:28:1e:d6:df:2a:68:ca:7e:ef"
+      # Run the deploy: This will push the result to the {currentbranch}-built branch
+      - deploy:
+          name: Deploy -built branch to github
+          command: bash <(curl -s "https://raw.githubusercontent.com/Automattic/vip-go-build/master/deploy.sh")
+
 
 # Define workflows
 workflows:
