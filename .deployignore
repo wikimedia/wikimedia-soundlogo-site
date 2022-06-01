@@ -36,6 +36,3 @@ phpcs.xml
 
 # Dev dependencies
 /node_modules/
-
-# Git submodules, we need to build these on the server
-.gitmodules
