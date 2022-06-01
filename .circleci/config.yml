@@ -35,6 +35,9 @@ jobs:
             git submodule init
             git submodule update
       - run:
+          name: Install composer dependencies
+          command: composer install
+      - run:
           name: Build shiro theme
           command: |
             cd themes/shiro
