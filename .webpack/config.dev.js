@@ -9,7 +9,7 @@ module.exports = choosePort( 8080 ).then( port => [
 		},
 		externals,
 		entry: {
-			editor: filePath( 'plugins/wikimedia-contest/src/editor/index.js' ),
+			editor: filePath( 'plugins/wikimedia-contest/src/editor.js' ),
 		},
 		output: {
 			path: filePath( 'plugins/wikimedia-contest/build/' ),

@@ -5,7 +5,7 @@ module.exports = presets.production( {
 	externals,
 	name: 'Wikimedia Contest Plugin',
 	entry: {
-		editor: filePath( 'plugins/wikimedia-contest/src/editor/index.js' ),
+		editor: filePath( 'plugins/wikimedia-contest/src/editor.js' ),
 	},
 	output: {
 		path: filePath( 'plugins/wikimedia-contest/build/' ),
