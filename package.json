@@ -1,0 +1,42 @@
+{
+  "name": "wikimediasoundlogo",
+  "version": "1.0.0",
+  "description": "Microsite for Wikimedia Sound Logo contest",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "lint:css": "stylelint **/*.scss",
+    "lint:php": "vendor/squizlabs/php_codesniffer/bin/phpcs -s --standard=phpcs.ruleset.xml .",
+    "lint:js": "eslint .",
+    "lint": "npm run lint:js && npm run lint:php && npm run lint:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wpcomvip/wikimediasoundlogo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wpcomvip/wikimediasoundlogo/issues"
+  },
+  "homepage": "https://github.com/wpcomvip/wikimediasoundlogo#readme",
+  "devDependencies": {
+    "@automattic/eslint-plugin-wpvip": "0.1.0-0",
+    "@humanmade/eslint-config": "^1.1.3",
+    "@humanmade/stylelint-config": "^1.1.1",
+    "@wordpress/eslint-plugin": "^12.3.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-react-app": "^3.0.8",
+    "eslint-plugin-flowtype": "^3.13.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsdoc": "^29.2.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "eslint-plugin-sort-destructure-keys": "^1.4.0",
+    "stylelint": "^14.8.5"
+  }
+}
