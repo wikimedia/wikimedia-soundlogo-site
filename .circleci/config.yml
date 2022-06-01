@@ -25,12 +25,12 @@ jobs:
       - image: cimg/node:12.22
     steps:
       - checkout
-
       - run:
-        name: Build shiro theme
-        command: |
-          cd themes/shiro && npm ci && npm run build
-
+          name: Build shiro theme
+          command: |
+            cd themes/shiro
+            npm ci
+            npm run build
       - run: echo "Building..."
       - run:
           name: Create build directory
