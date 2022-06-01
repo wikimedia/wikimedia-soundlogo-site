@@ -24,12 +24,17 @@ jobs:
     docker:
       - image: cimg/node:12.22
     steps:
+      - checkout
       # Enable deploy ssh keys in order to get private submodules and push built branch back to GitHub.
       - add_ssh_keys:
           fingerprints:
             - "1a:63:f3:99:34:9f:44:28:1e:d6:df:2a:68:ca:7e:ef"
             - "d1:4d:a4:d7:89:f6:55:35:70:6a:70:5e:ce:dd:b3:cd"
-      - checkout
+      - run:
+          name: Update submodules
+          command: |
+            git submodule init
+            git submodule update
       - run:
           name: Build shiro theme
           command: |
