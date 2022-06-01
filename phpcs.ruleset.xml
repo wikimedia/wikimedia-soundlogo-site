@@ -13,7 +13,10 @@
 	</rule>
 
 	<!-- Add PHPDoc rules -->
-	<rule ref="WordPress-VIP-Go"/>
+	<rule ref="WordPress-VIP-Go">
+		<exclude name="WordPress.WP.TimezoneChange"/>
+	</rule>
+
 	<rule ref="WordPress-Docs"/>
 
 	<!-- Selectively apply the PSR-1 side effects sniff -->
