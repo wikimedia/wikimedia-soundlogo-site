@@ -5,6 +5,7 @@ module.exports = choosePort( 8080 ).then( port => [
 	presets.development( {
 		name: 'Wikimedia Contest Plugin',
 		devServer: {
+			allowedHosts: 'all',
 			port,
 		},
 		externals,
