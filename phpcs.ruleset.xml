@@ -10,6 +10,9 @@
 	<rule ref="vendor/humanmade/coding-standards">
 		<!-- Don't restrict namespaced functions to `namespace.php` -->
 		<exclude name="HM.Files.FunctionFileName"/>
+
+		<!-- Remove mandatory match between directory and namespace -->
+		<exclude name="HM.Files.NamespaceDirectoryName.NameMismatch"/>
 	</rule>
 
 	<!-- Add PHPDoc rules -->
