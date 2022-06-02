@@ -22,7 +22,7 @@ jobs:
 
   build:
     docker:
-      - image: cimg/node:12.22
+      - image: cimg/php:7.4.29-node
     steps:
       - checkout
       # Enable deploy ssh keys in order to get private submodules and push built branch back to GitHub.
