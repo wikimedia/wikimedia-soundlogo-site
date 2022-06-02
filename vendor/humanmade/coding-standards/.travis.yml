@@ -1,0 +1,60 @@
+# Setup caching
+cache:
+  directories:
+    - $HOME/.cache/composer/files
+    - $HOME/.npm
+    - node_modules
+
+branches:
+  only:
+    - master
+
+# Test in modern and recent versions of PHP & Node.
+# Run each code style tool in containers specific to that tool's language.
+jobs:
+  include:
+    - language: php
+      php: 7.2
+      install:
+        - composer install
+      script:
+        - vendor/bin/phpunit
+    - language: php
+      php: 7.3
+      install:
+        - composer install
+      script:
+        - vendor/bin/phpunit
+    - language: php
+      php: 7.4
+      install:
+        - composer install
+      script:
+        - vendor/bin/phpunit
+    - language: node_js
+      node_js: 10
+      install:
+        - npm install
+        - cd packages/eslint-config-humanmade
+        - npm install
+        - cd ../..
+      script:
+        - npm test
+    - language: node_js
+      node_js: 12
+      install:
+        - npm install
+        - cd packages/eslint-config-humanmade
+        - npm install
+        - cd ../..
+      script:
+        - npm test
+    - language: node_js
+      node_js: 14
+      install:
+        - npm install
+        - cd packages/eslint-config-humanmade
+        - npm install
+        - cd ../..
+      script:
+        - npm test
