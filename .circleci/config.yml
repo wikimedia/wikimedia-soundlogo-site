@@ -38,6 +38,11 @@ jobs:
           name: Install composer dependencies
           command: composer install
       - run:
+          name: Lock node and npm to required versions
+          command: |
+            curl -sSL "https://nodejs.org/download/release/v12.22.12/node-v12.22.12-linux-x64.tar.xz" | sudo tar --strip-components=2 -xJ -C /usr/local/bin/ node-v11.10.0-linux-x64 /bin/node
+            curl https://www.npmjs.com/install.sh | sudo bash
+      - run:
           name: Build shiro theme
           command: |
             cd themes/shiro
