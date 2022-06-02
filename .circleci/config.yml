@@ -22,7 +22,7 @@ jobs:
 
   build:
     docker:
-      - image: cimg/node:12.22
+      - image: cimg/php:7.4.29-node
     steps:
       - checkout
       # Enable deploy ssh keys in order to get private submodules and push built branch back to GitHub.
@@ -37,6 +37,11 @@ jobs:
       - run:
           name: Install composer dependencies
           command: composer install
+      - run:
+          name: Lock node and npm to required versions
+          command: |
+            curl -sSL "https://nodejs.org/download/release/v12.22.12/node-v12.22.12-linux-x64.tar.xz" | sudo tar --strip-components=2 -xJ -C /usr/local/bin/ node-v12.22.12-linux-x64/bin/node
+            curl https://www.npmjs.com/install.sh | sudo bash
       - run:
           name: Build shiro theme
           command: |
