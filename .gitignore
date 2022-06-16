@@ -48,3 +48,6 @@ phpcs.xml
 
 # Dev dependencies
 /node_modules/
+
+# Built assets
+/plugins/wikimedia-contest/build/
