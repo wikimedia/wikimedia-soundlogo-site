@@ -11,6 +11,8 @@
 
 wpcom_vip_load_plugin( 'asset-loader' );
 wpcom_vip_load_plugin( 'hm-gutenberg-tools' );
+wpcom_vip_load_plugin( 'wikimedia-contest' );
+wpcom_vip_load_plugin( 'workflows' );
 
 /**
  * The above example requires the plugin to use a specific naming structure: /plugin-name/plugin-name.php
