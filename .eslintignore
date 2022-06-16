@@ -5,5 +5,9 @@ mu-plugins/
 vendor/
 plugins/asset-loader/
 plugins/hm-gutenberg-tools/
+plugins/multilingualpress/
+plugins/workflows/
 themes/
 
+# Built files
+plugins/wikimedia-contest/build/
