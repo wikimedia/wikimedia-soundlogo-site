@@ -43,6 +43,7 @@
 
 	<exclude-pattern>plugins/asset-loader/*</exclude-pattern>
 	<exclude-pattern>plugins/hm-gutenberg-tools/*</exclude-pattern>
+	<exclude-pattern>plugins/workflows/*</exclude-pattern>
 
 	<!-- Ignore some files managed by VIP -->
 	<exclude-pattern>plugins/hello.php</exclude-pattern>
