@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ff8f416c96f102642605c4329c758f69",
+    "content-hash": "6d4e57444e5ecd3da56d067530976290",
     "packages": [
         {
             "name": "composer/installers",
@@ -219,6 +219,44 @@
                 "source": "https://github.com/humanmade/hm-gutenberg-tools/tree/v1.6.2"
             },
             "time": "2021-12-07T07:31:47+00:00"
+        },
+        {
+            "name": "humanmade/workflows",
+            "version": "0.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humanmade/Workflows.git",
+                "reference": "2c0eb34b93baf41a2d958b4c2e9b0fc5ec8a8ee1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/humanmade/Workflows/zipball/2c0eb34b93baf41a2d958b4c2e9b0fc5ec8a8ee1",
+                "reference": "2c0eb34b93baf41a2d958b4c2e9b0fc5ec8a8ee1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "humanmade/coding-standards": "^0.5.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Robert O'Rourke",
+                    "email": "rob@humanmade.com"
+                }
+            ],
+            "description": "Workflow management for WordPress, an extensible event and notification system.",
+            "support": {
+                "issues": "https://github.com/humanmade/Workflows/issues",
+                "source": "https://github.com/humanmade/Workflows/tree/0.4.3"
+            },
+            "time": "2022-05-16T09:52:40+00:00"
         }
     ],
     "packages-dev": [
@@ -724,5 +762,5 @@
         "php": ">= 7.4"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.3.0"
 }

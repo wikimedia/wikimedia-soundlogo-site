@@ -450,6 +450,47 @@
             "install-path": "../../plugins/hm-gutenberg-tools"
         },
         {
+            "name": "humanmade/workflows",
+            "version": "0.4.3",
+            "version_normalized": "0.4.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humanmade/Workflows.git",
+                "reference": "2c0eb34b93baf41a2d958b4c2e9b0fc5ec8a8ee1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/humanmade/Workflows/zipball/2c0eb34b93baf41a2d958b4c2e9b0fc5ec8a8ee1",
+                "reference": "2c0eb34b93baf41a2d958b4c2e9b0fc5ec8a8ee1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "humanmade/coding-standards": "^0.5.0"
+            },
+            "time": "2022-05-16T09:52:40+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Robert O'Rourke",
+                    "email": "rob@humanmade.com"
+                }
+            ],
+            "description": "Workflow management for WordPress, an extensible event and notification system.",
+            "support": {
+                "issues": "https://github.com/humanmade/Workflows/issues",
+                "source": "https://github.com/humanmade/Workflows/tree/0.4.3"
+            },
+            "install-path": "../../plugins/workflows"
+        },
+        {
             "name": "phpcompatibility/php-compatibility",
             "version": "9.3.5",
             "version_normalized": "9.3.5.0",
