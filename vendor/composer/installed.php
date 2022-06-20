@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '9efcc83f37e8ada8310e37827b2c4de11103baf6',
+        'reference' => 'd37f701a20681a4a156df01db933a79945a39ee7',
         'name' => 'automattic/vip-go-skeleton',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '9efcc83f37e8ada8310e37827b2c4de11103baf6',
+            'reference' => 'd37f701a20681a4a156df01db933a79945a39ee7',
             'dev_requirement' => false,
         ),
         'automattic/vipwpcs' => array(
@@ -80,6 +80,15 @@
             'install_path' => __DIR__ . '/../../plugins/hm-gutenberg-tools',
             'aliases' => array(),
             'reference' => '89052d4e9827793931bf0cd6d4a40c985da60898',
+            'dev_requirement' => false,
+        ),
+        'humanmade/workflows' => array(
+            'pretty_version' => '0.4.3',
+            'version' => '0.4.3.0',
+            'type' => 'wordpress-plugin',
+            'install_path' => __DIR__ . '/../../plugins/workflows',
+            'aliases' => array(),
+            'reference' => '2c0eb34b93baf41a2d958b4c2e9b0fc5ec8a8ee1',
             'dev_requirement' => false,
         ),
         'phpcompatibility/php-compatibility' => array(
