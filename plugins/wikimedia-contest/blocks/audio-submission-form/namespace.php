@@ -39,6 +39,8 @@ function render_block_audio_submission_form() : string {
 	<table class="form-table">
 		<tbody>
 
+			' . wp_nonce_field( 'save_post_submission', '_submissionnonce', true, false ) . '
+
 			<tr>
 				<th><label for="wiki_username">' . __( 'Participant Wikimedia Username', 'wikimedia-contest' ) . '</label></th>
 				<td><input type="text" id="wiki_username" name="wiki_username"></td>
@@ -103,11 +105,11 @@ function render_block_audio_submission_form() : string {
  * @param bool|string[] $allowed_blocks Array of allowed blocks.
  * @param \WP_Post      $post The post being edited.
  *
- * @return string[]
+ * @return string[]|bool
  */
-function filter_blocks_wikimedia_contest( $allowed_blocks, \WP_Post $post ) : array {
+function filter_blocks_wikimedia_contest( $allowed_blocks, \WP_Post $post ) {
 
-	if ( $post->post_type === 'page' ) {
+	if ( $post->post_type === 'page' && is_array( $allowed_blocks ) ) {
 		$allowed_blocks[] = 'wikimedia-contest/audio-submission-form';
 	}
 
