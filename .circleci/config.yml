@@ -44,6 +44,11 @@ jobs:
             curl -sSL "https://nodejs.org/download/release/v12.22.12/node-v12.22.12-linux-x64.tar.xz" | sudo tar --strip-components=2 -xJ -C /usr/local/bin/ node-v12.22.12-linux-x64/bin/node
             curl https://www.npmjs.com/install.sh | sudo bash
       - run:
+          name: Build project assets
+          command: |
+            npm ci
+            npm run build
+      - run:
           name: Build shiro theme
           command: |
             cd themes/shiro
