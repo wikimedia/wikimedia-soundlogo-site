@@ -6,7 +6,7 @@ module.exports = choosePort( 8080 ).then( port => [
 		name: 'Wikimedia Contest Plugin',
 		devServer: {
 			client: {
-				webSocketURL: 'ws://localhost:8080/ws',
+				webSocketURL: `ws://localhost:${ port }/ws`,
 			},
 			allowedHosts: 'all',
 			port,
