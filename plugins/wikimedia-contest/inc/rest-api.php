@@ -79,6 +79,17 @@ function process_submission_form( \WP_REST_Request $request ) {
 		return rest_ensure_response( __( 'Error processing the submission, please try again. File upload nonce error.', 'wikimedia-contest' ) );
 	}
 
+	$field_missing_error_messages = [];
+	$submission_fields_schema = submission_schema();
+	foreach ( $submission_fields_schema['properties'] as $field => $schema_parameters ) {
+		var_dump($field, $request->get_param( $field ), rest_validate_value_from_schema( $request->get_param( $field ), $submission_fields_schema[ $field ] ));
+		if ( ! rest_validate_value_from_schema( $request->get_param( $field ), $submission_fields_schema[ $field ] ) ) {
+			$field_missing_error_messages[] = sprintf( __( 'Missing the field <b>%s</b>.', 'wikimedia-contest' ), $field );
+		}
+	}
+
+	/*
+
 	// Regular fields validation.
 	$submission_fields = [
 		'wiki_username',
@@ -90,12 +101,14 @@ function process_submission_form( \WP_REST_Request $request ) {
 		'explanation_creation',
 		'explanation_inspiration',
 	];
+
 	$field_missing_error_messages = [];
 	foreach ( $submission_fields as $field ) {
 		if ( ! $request->get_param( $field ) ) {
 			$field_missing_error_messages[] = sprintf( __( 'Missing the field <b>%s</b>.', 'wikimedia-contest' ), $field );
 		}
 	}
+	*/
 
 	// Audio files field validation.
 	$uploaded_files = $request->get_file_params();
@@ -162,11 +175,76 @@ function register_submission_api_routes() {
 		SUBMISSION_API_NAMESPACE,
 		SUBMISSION_API_ROUTE,
 		[
-			'methods'             => \WP_REST_Server::EDITABLE,
-			'callback'            => __NAMESPACE__ . '\\process_submission_form',
-			'permission_callback' => '__return_true',
+			[
+				'methods'             => \WP_REST_Server::EDITABLE,
+				'callback'            => __NAMESPACE__ . '\\process_submission_form',
+				'permission_callback' => '__return_true',
+			],
+			'schema' => __NAMESPACE__ . '\\submission_schema',
 		]
 	);
+}
+
+/**
+ * Sample schema for submissions based on submission fields and including descriptions
+ *
+ * @return array
+ */
+function submission_schema() : array {
+	$schema = [
+		'$schema'    => 'http://json-schema.org/draft-04/schema#',
+		'type'       => 'object',
+		'properties' => [
+			'wiki_username' => [
+				'type'        => 'string',
+				'required'    => true,
+				'description' => __( 'Participant Wikimedia Username', 'wikimedia-contest' ),
+				'validate_callback' => function ( $value ) {
+					return is_string( $value ) && ! empty( $value );
+				},
+				'sanitize_callback' => function ( $value ) {
+					return sanitize_text_field( wp_unslash( $value ) );
+				},
+			],
+			'legal_name' => [
+				'type'        => 'string',
+				'required'    => true,
+				'description' => __( 'Participant Legal Name', 'wikimedia-contest' ),
+			],
+			'date_birth' => [
+				'type'        => 'string',
+				'required'    => true,
+				'description' => __( 'Participant Date of Birth', 'wikimedia-contest' ),
+			],
+			'participant_email' => [
+				'type'        => 'string',
+				'required'    => true,
+				'description' => __( 'Participant Email', 'wikimedia-contest' ),
+			],
+			'phone_number' => [
+				'type'        => 'string',
+				'required'    => true,
+				'description' => __( 'Participant Phone Number', 'wikimedia-contest' ),
+			],
+			'authors_contributed' => [
+				'type'        => 'string',
+				'required'    => true,
+				'description' => __( 'List all of the authors who contributed', 'wikimedia-contest' ),
+			],
+			'explanation_creation' => [
+				'type'        => 'string',
+				'required'    => true,
+				'description' => __( 'Brief explanation of how the sound was created logo', 'wikimedia-contest' ),
+			],
+			'explanation_inspiration' => [
+				'type'        => 'string',
+				'required'    => true,
+				'description' => __( 'Brief explanation about meaning and inspiration', 'wikimedia-contest' ),
+			],
+		]
+	];
+
+	return $schema;
 }
 
 /**
