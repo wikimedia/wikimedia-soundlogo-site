@@ -11,6 +11,7 @@
 
 wpcom_vip_load_plugin( 'asset-loader' );
 wpcom_vip_load_plugin( 'hm-gutenberg-tools' );
+wpcom_vip_load_plugin( 'safe-svg' );
 wpcom_vip_load_plugin( 'wikimedia-contest' );
 wpcom_vip_load_plugin( 'workflows' );
 
