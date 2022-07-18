@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6d4e57444e5ecd3da56d067530976290",
+    "content-hash": "14b574ee2b0eaceb190e4782f9c3ee0f",
     "packages": [
         {
             "name": "composer/installers",
@@ -257,6 +257,24 @@
                 "source": "https://github.com/humanmade/Workflows/tree/0.4.3"
             },
             "time": "2022-05-16T09:52:40+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/safe-svg",
+            "version": "2.0.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/safe-svg/",
+                "reference": "tags/2.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/safe-svg.2.0.2.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/safe-svg/"
         }
     ],
     "packages-dev": [
