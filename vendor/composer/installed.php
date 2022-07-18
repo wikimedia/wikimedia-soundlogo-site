@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '7e0417496454c812a8fcfdfaccbcfd8f9e428099',
+        'reference' => 'b7a6a283b19509a65d7726fe388dd2740805b800',
         'name' => 'automattic/vip-go-skeleton',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '7e0417496454c812a8fcfdfaccbcfd8f9e428099',
+            'reference' => 'b7a6a283b19509a65d7726fe388dd2740805b800',
             'dev_requirement' => false,
         ),
         'automattic/vipwpcs' => array(
@@ -147,6 +147,15 @@
             'aliases' => array(),
             'reference' => 'b5a453203114cc2284b1a614c4953456fbe4f546',
             'dev_requirement' => true,
+        ),
+        'wpackagist-plugin/safe-svg' => array(
+            'pretty_version' => '2.0.2',
+            'version' => '2.0.2.0',
+            'type' => 'wordpress-plugin',
+            'install_path' => __DIR__ . '/../../plugins/safe-svg',
+            'aliases' => array(),
+            'reference' => 'tags/2.0.2',
+            'dev_requirement' => false,
         ),
     ),
 );
