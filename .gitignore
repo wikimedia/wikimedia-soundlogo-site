@@ -43,6 +43,7 @@ phpcs.xml
 
 # Dependencies managed with Composer
 /plugins/asset-loader/
+/plugins/gf-hcaptcha/
 /plugins/hm-gutenberg-tools/
 /plugins/safe-svg/
 /plugins/workflows/
