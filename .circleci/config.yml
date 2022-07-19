@@ -29,8 +29,7 @@ jobs:
       # Enable deploy ssh keys in order to get private submodules and push built branch back to GitHub.
       - add_ssh_keys:
           fingerprints:
-            - "ce:64:7a:c0:5d:5f:2e:70:d3:3f:90:48:a2:a3:ce:37"
-            - "c3:6d:95:68:e3:2b:28:c3:4c:03:8a:40:f5:04:f8:3d"
+            - "a8:38:57:98:17:95:dd:3e:db:bb:27:16:fc:7a:29:e7"
       - run:
           name: Update submodules
           command: |
