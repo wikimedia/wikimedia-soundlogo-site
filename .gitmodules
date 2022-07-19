@@ -1,3 +1,6 @@
 [submodule "themes/shiro"]
 	path = themes/shiro
 	url = git@github.com:humanmade/wikimedia-shiro-theme.git
+[submodule "plugins/gravity-forms"]
+	path = plugins/gravity-forms
+	url = git@github.com:humanmade/gravity-forms.git
