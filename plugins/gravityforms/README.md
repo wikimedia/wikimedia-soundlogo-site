@@ -1,11 +1,13 @@
 # Gravity Forms
-Version 2.6.3.4 of Gravity Forms
+Version 2.6.4.1 of Gravity Forms
 
 ## Projects using this repository
 
 - SC CA
 - HM Agency Marketing Site
-*If other project uses this repository please add it here*
+- Wikimedia Sound Logo
+
+*If other projects use this repository, please add them here*
 
 ## Using this plugin as a submodule
 
