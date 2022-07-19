@@ -11,7 +11,7 @@ namespace Wikimedia_Contest\Theme\Editor;
  * Bootstrap hooks relevant to the block editor.
  */
 function bootstrap() {
-	//add_action( 'after_setup_theme', __NAMESPACE__ . '\\add_theme_supports', 30 );
+	add_action( 'after_setup_theme', __NAMESPACE__ . '\\add_theme_supports', 30 );
 }
 
 function add_theme_supports() {
