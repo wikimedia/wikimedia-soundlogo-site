@@ -41,9 +41,10 @@ jobs:
       - run:
           name: Lock node and npm to required versions
           command: |
+            set +e
             curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
             sh "$HOME/.nvm/nvm.sh"
-            nvm install
+            nvm install 14
       - run:
           name: Build project assets
           command: |
