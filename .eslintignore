@@ -7,6 +7,7 @@ plugins/asset-loader/
 plugins/hm-gutenberg-tools/
 plugins/multilingualpress/
 plugins/workflows/
+plugins/gravityforms/
 themes/
 
 # Built files
