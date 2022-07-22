@@ -41,7 +41,7 @@ jobs:
       - run:
           name: Lock node and npm to required versions
           command: |
-            curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+            curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash > /dev/null
             export NVM_DIR="$HOME/.nvm"
             . "$NVM_DIR/nvm.sh"
             nvm install 14
