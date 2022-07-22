@@ -43,7 +43,7 @@ jobs:
           command: |
             set +e
             curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
-            source /opt/circleci/.nvm/nvm.sh
+            source /home/circleci/.nvm/nvm.sh
             nvm install 14
       - run:
           name: Build project assets
