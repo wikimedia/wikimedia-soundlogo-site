@@ -20,5 +20,23 @@ module.exports = choosePort( 8080 ).then( port => [
 			publicPath: `http://localhost:${ port }/plugins/wikimedia-contest/build/`,
 		},
 	} ),
+	presets.development( {
+		name: 'Sound Logo Child Theme',
+		devServer: {
+			client: {
+				webSocketURL: `ws://localhost:${ port + 1 }/ws`,
+			},
+			allowedHosts: 'all',
+			port: port + 1,
+		},
+		externals,
+		entry: {
+			theme: filePath( 'themes/soundlogo/src/sass/index.scss' ),
+		},
+		output: {
+			path: filePath( 'themes/soundlogo/build/' ),
+			publicPath: `http://localhost:${ port + 1 }/themes/soundlogo/build/`,
+		},
+	} ),
 ] );
 

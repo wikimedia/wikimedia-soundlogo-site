@@ -56,6 +56,7 @@
 	<exclude-pattern>plugins/multilingualpress/*</exclude-pattern>
 	<exclude-pattern>plugins/safe-svg/*</exclude-pattern>
 	<exclude-pattern>plugins/workflows/*</exclude-pattern>
+	<exclude-pattern>plugins/gravityforms/*</exclude-pattern>
 
 	<!-- Ignore some files managed by VIP -->
 	<exclude-pattern>plugins/hello.php</exclude-pattern>
