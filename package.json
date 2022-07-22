@@ -41,6 +41,7 @@
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-sort-destructure-keys": "^1.4.0",
+    "npm": "^6.14.17",
     "sass": "^1.52.1",
     "stylelint": "^13.13.1",
     "webpack": "^5.72.1",
