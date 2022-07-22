@@ -54,6 +54,7 @@ jobs:
           name: Build shiro theme
           command: |
             cd themes/shiro
+            source /home/circleci/.nvm/nvm.sh
             nvm use
             npm i -g npm@6
             npm ci
