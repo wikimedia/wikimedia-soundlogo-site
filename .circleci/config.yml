@@ -42,7 +42,6 @@ jobs:
           name: Lock node and npm to required versions
           command: |
             curl -sSL "https://nodejs.org/dist/v14.20.0/node-v14.20.0-linux-x64.tar.xz" | sudo tar --strip-components=2 -xJ -C /usr/local/bin/ node-v14.20.0-linux-x64/bin/node
-            curl https://www.npmjs.com/install.sh | sudo bash
       - run:
           name: Build project assets
           command: |
@@ -52,8 +51,8 @@ jobs:
           name: Build shiro theme
           command: |
             cd themes/shiro
-            npm ci
-            npm run build
+            ./node_modules/npm/bin/npm-cli.js ci
+            ./node_modules/npm/bin/npm-cli.js run build
       - run: echo "Building..."
       - run:
           name: Create build directory
