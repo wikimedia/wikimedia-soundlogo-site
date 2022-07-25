@@ -341,17 +341,17 @@
         },
         {
             "name": "humanmade/asset-loader",
-            "version": "v0.5.0",
-            "version_normalized": "0.5.0.0",
+            "version": "dev-use-chunkhash-as-version-number",
+            "version_normalized": "dev-use-chunkhash-as-version-number",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/asset-loader.git",
-                "reference": "717ebc20e999affe7c601015221fe76037c011c4"
+                "reference": "c6dea8b2e45ce941c3b37f94bb7ecb5fdad766c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/asset-loader/zipball/717ebc20e999affe7c601015221fe76037c011c4",
-                "reference": "717ebc20e999affe7c601015221fe76037c011c4",
+                "url": "https://api.github.com/repos/humanmade/asset-loader/zipball/c6dea8b2e45ce941c3b37f94bb7ecb5fdad766c4",
+                "reference": "c6dea8b2e45ce941c3b37f94bb7ecb5fdad766c4",
                 "shasum": ""
             },
             "require": {
@@ -362,7 +362,7 @@
                 "humanmade/coding-standards": "^1.1.0",
                 "phpunit/phpunit": "^7.5"
             },
-            "time": "2021-01-27T15:20:46+00:00",
+            "time": "2022-07-25T14:13:11+00:00",
             "type": "wordpress-plugin",
             "installation-source": "dist",
             "scripts": {
@@ -378,7 +378,7 @@
             ],
             "description": "Utilities to seamlessly consume Webpack-bundled assets in WordPress themes & plugins.",
             "support": {
-                "source": "https://github.com/humanmade/asset-loader/tree/v0.5.0",
+                "source": "https://github.com/humanmade/asset-loader/tree/use-chunkhash-as-version-number",
                 "issues": "https://github.com/humanmade/asset-loader/issues"
             },
             "install-path": "../../plugins/asset-loader"

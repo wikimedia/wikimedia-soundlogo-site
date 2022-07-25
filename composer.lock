@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a1d4f4591c955788fd847765fc70008a",
+    "content-hash": "52ef313bf1d50c4247ed980c7c989864",
     "packages": [
         {
             "name": "composer/installers",
@@ -159,16 +159,16 @@
         },
         {
             "name": "humanmade/asset-loader",
-            "version": "v0.5.0",
+            "version": "dev-use-chunkhash-as-version-number",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/asset-loader.git",
-                "reference": "717ebc20e999affe7c601015221fe76037c011c4"
+                "reference": "c6dea8b2e45ce941c3b37f94bb7ecb5fdad766c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/asset-loader/zipball/717ebc20e999affe7c601015221fe76037c011c4",
-                "reference": "717ebc20e999affe7c601015221fe76037c011c4",
+                "url": "https://api.github.com/repos/humanmade/asset-loader/zipball/c6dea8b2e45ce941c3b37f94bb7ecb5fdad766c4",
+                "reference": "c6dea8b2e45ce941c3b37f94bb7ecb5fdad766c4",
                 "shasum": ""
             },
             "require": {
@@ -193,10 +193,10 @@
             ],
             "description": "Utilities to seamlessly consume Webpack-bundled assets in WordPress themes & plugins.",
             "support": {
-                "source": "https://github.com/humanmade/asset-loader/tree/v0.5.0",
+                "source": "https://github.com/humanmade/asset-loader/tree/use-chunkhash-as-version-number",
                 "issues": "https://github.com/humanmade/asset-loader/issues"
             },
-            "time": "2021-01-27T15:20:46+00:00"
+            "time": "2022-07-25T14:13:11+00:00"
         },
         {
             "name": "humanmade/hm-gutenberg-tools",
@@ -798,7 +798,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "humanmade/asset-loader": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
