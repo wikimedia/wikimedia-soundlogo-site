@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "14b574ee2b0eaceb190e4782f9c3ee0f",
+    "content-hash": "264aaaf7f4ae525bcb9cdeeb8ace6193",
     "packages": [
         {
             "name": "composer/installers",
@@ -180,14 +180,21 @@
                 "phpunit/phpunit": "^7.5"
             },
             "type": "wordpress-plugin",
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "lint": [
+                    "phpcs ."
+                ],
+                "test": [
+                    "phpunit"
+                ]
+            },
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Utilities to seamlessly consume Webpack-bundled assets in WordPress themes & plugins.",
             "support": {
-                "issues": "https://github.com/humanmade/asset-loader/issues",
-                "source": "https://github.com/humanmade/asset-loader/tree/v0.5.0"
+                "source": "https://github.com/humanmade/asset-loader/tree/v0.5.0",
+                "issues": "https://github.com/humanmade/asset-loader/issues"
             },
             "time": "2021-01-27T15:20:46+00:00"
         },
