@@ -2,21 +2,21 @@
 	"$schema": "https: //schemas.wp.org/trunk/theme.json",
 	"version": 2,
 	"settings": {
-	   "layout": {
-		  "contentSize": "800px",
-		  "wideSize": "1000px"
-	   },
-	   "color": {
-		  "background": true,
-		  "link": true,
-		  "text": true,
-		  "defaultPalette": false,
-		  "custom": false,
-		  "gradients": [
+		"layout": {
+			"contentSize": "800px",
+			"wideSize": "1000px"
+		},
+		"color": {
+			"background": true,
+			"link": true,
+			"text": true,
+			"defaultPalette": false,
+			"custom": false,
+			"gradients": [
 
-		  ],
-		  "customGradient": false,
-		  "palette": [
+			],
+			"customGradient": false,
+			"palette": [
 			{
 				"slug": "black",
 				"color": "#000000",
@@ -31,113 +31,238 @@
 				"slug": "strong-red",
 				"color": "#970302",
 				"name": "Strong Red"
-			 },
-			 {
+				},
+				{
 				"slug": "strong-pink",
 				"color": "#E679A6",
 				"name": "Strong Pink"
-			 },
-			 {
+				},
+				{
 				"slug": "strong-orange",
 				"color": "#EE8019",
 				"name": "Strong Orange"
-			 },
-			 {
+				},
+				{
 				"slug": "strong-yellow",
 				"color": "#F0BC00",
 				"name": "Strong Yellow"
-			 },
-			 {
+				},
+				{
 				"slug": "strong-purple",
 				"color": "#5748B5",
 				"name": "Strong Purple"
-			 },
-			 {
+				},
+				{
 				"slug": "strong-dark-green",
 				"color": "#305D70",
 				"name": "Strong Dark Green"
-			 },
-			 {
+				},
+				{
 				"slug": "strong-blue",
 				"color": "#0E65C0",
 				"name": "Strong Blue"
-			 },
-			 {
+				},
+				{
 				"slug": "strong-bright-blue",
 				"color": "#049DFF",
 				"name": "Strong Bright Blue"
-			 },
-			 {
+				},
+				{
 				"slug": "strong-bright-yellow",
 				"color": "#E9E7C4",
 				"name": "Strong Bright Yellow"
-			 },
-			 {
+				},
+				{
 				"slug": "strong-green",
 				"color": "#308557",
 				"name": "Strong Green"
-			 },
-			 {
+				},
+				{
 				"slug": "strong-bright-green",
 				"color": "#71D1B3",
 				"name": "Strong Bright Green"
-			 },
-			 {
+				},
+				{
 				"slug": "light-red",
 				"color": "#E5C0C0",
 				"name": "Light Red"
-			 },
-			 {
+				},
+				{
 				"slug": "light-pink",
 				"color": "#F9DDE9",
 				"name": "Light Pink"
-			 },
-			 {
+				},
+				{
 				"slug": "light-orange",
 				"color": "#FBDFC5",
 				"name": "Light Orange"
-			 },
-			 {
+				},
+				{
 				"slug": "light-yellow",
 				"color": "#FBEEBF",
 				"name": "Light Yellow"
-			 },
-			 {
+				},
+				{
 				"slug": "light-purple",
 				"color": "#D5D1EC",
 				"name": "Light Purple"
-			 },
-			 {
+				},
+				{
 				"slug": "light-dark-green",
 				"color": "#CBD6DB",
 				"name": "Light Dark Green"
-			 },
-			 {
+				},
+				{
 				"slug": "light-blue",
 				"color": "#C3D8EF",
 				"name": "Light Blue"
-			 },
-			 {
+				},
+				{
 				"slug": "light-bright-blue",
 				"color": "#C0E6FF",
 				"name": "Light Bright Blue"
-			 },
-			 {
+				},
+				{
 				"slug": "light-bright-yellow",
 				"color": "#F9F9F0",
 				"name": "Light Bright Yellow"
-			 },
-			 {
+				},
+				{
 				"slug": "light-green",
 				"color": "#CBE0D5",
 				"name": "Light Green"
-			 },
-			 {
+				},
+				{
 				"slug": "light-bright-green",
 				"color": "#DBF3EC",
 				"name": "Light Bright Green"
-			 }
-		  ]
-	   }
+				}
+			]
+		},
+		"typography": {
+			"customFontSize": false
+		},
+		"blocks": {
+			"shiro/banner": {
+				"typography": {
+					"fontFamilies": [
+						{
+							"fontFamily": "Montserrat,sans-serif",
+							"slug": "montserrat",
+							"name": "Montserrat"
+						}
+					]
+				}
+			},
+			"shiro/home-page-hero": {
+				"typography": {
+					"fontFamilies": [
+						{
+							"fontFamily": "Montserrat,sans-serif",
+							"slug": "montserrat",
+							"name": "Montserrat"
+						}
+					]
+				}
+			},
+			"shiro/landing-page-hero": {
+				"typography": {
+					"fontFamilies": [
+						{
+							"fontFamily": "Montserrat,sans-serif",
+							"slug": "montserrat",
+							"name": "Montserrat"
+						}
+					]
+				}
+			},
+			"shiro/spotlight": {
+				"typography": {
+					"fontFamilies": [
+						{
+							"fontFamily": "Montserrat,sans-serif",
+							"slug": "montserrat",
+							"name": "Montserrat"
+						}
+					]
+				}
+			},
+			"core/heading": {
+				"typography": {
+					"fontFamilies": [
+						{
+							"fontFamily": "Montserrat,sans-serif",
+							"slug": "montserrat",
+							"name": "Montserrat"
+						}
+					],
+					"fontSizes": [
+						{
+							"slug": "medium",
+							"size": "42px",
+							"name": "Medium"
+						}
+					],
+					"fontWeight": "700"
+				}
+			},
+			"core/paragraph": {
+				"typography": {
+					"fontFamilies": [
+						{
+							"fontFamily": "Lato,sans-serif",
+							"slug": "lato",
+							"name": "Lato"
+						}
+					],
+					"fontSizes": [
+						{
+							"slug": "medium",
+							"size": "26px",
+							"name": "Medium"
+						}
+					],
+					"fontWeight": "400"
+				}
+			},
+			"core/list": {
+				"typography": {
+					"fontFamilies": [
+						{
+							"fontFamily": "Lato,sans-serif",
+							"slug": "lato",
+							"name": "Lato"
+						}
+					],
+					"fontSizes": [
+						{
+							"slug": "medium",
+							"size": "26px",
+							"name": "Medium"
+						}
+					],
+					"fontWeight": "400"
+				}
+			},
+			"core/table": {
+				"typography": {
+					"fontFamilies": [
+						{
+							"fontFamily": "Lato,sans-serif",
+							"slug": "lato",
+							"name": "Lato"
+						}
+					],
+					"fontSizes": [
+						{
+							"slug": "medium",
+							"size": "26px",
+							"name": "Medium"
+						}
+					],
+					"fontWeight": "400"
+				}
+			}
+		}
 	}
  }
