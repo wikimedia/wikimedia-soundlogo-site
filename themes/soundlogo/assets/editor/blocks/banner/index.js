@@ -2,7 +2,11 @@
  * Custom settings for banner custom block.
  */
 
- const { addFilter } = wp.hooks;
+import { useBlockProps, RichText } from '@wordpress/block-editor';
+import { useCallback } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+
+const { addFilter } = wp.hooks;
 
 function filterBannerAlignSupport(settings, name) {
 	if (name === 'shiro/banner') {
@@ -18,7 +22,10 @@ function filterBannerAlignSupport(settings, name) {
 			},
 		};
 
-		settings.edit = function BannerEdit( { attributes, setAttributes } ) {
+		settings.edit = (props) => {
+
+			const { attributes, setAttributes } = props;
+
 			const {
 				heading,
 				text,
@@ -27,7 +34,7 @@ function filterBannerAlignSupport(settings, name) {
 				imageID,
 				imageSrc,
 				imageFilter,
-				align
+				align,
 			} = attributes;
 
 			const blockProps = useBlockProps( {
@@ -63,7 +70,7 @@ function filterBannerAlignSupport(settings, name) {
 			return (
 				<div { ...applyDefaultStyle( blockProps ) } >
 
-					<div className={`banner__content ${align}`}>
+					<div className="banner__content {align}">
 						<RichText
 							allowedFormats={ [ 'core/bold', 'core/italic' ] }
 							className="banner__heading is-style-h4"
