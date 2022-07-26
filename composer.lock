@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "52ef313bf1d50c4247ed980c7c989864",
+    "content-hash": "f74b0a9a87e49793a53208afcddf8698",
     "packages": [
         {
             "name": "composer/installers",
@@ -159,16 +159,16 @@
         },
         {
             "name": "humanmade/asset-loader",
-            "version": "dev-use-chunkhash-as-version-number",
+            "version": "v0.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/asset-loader.git",
-                "reference": "c6dea8b2e45ce941c3b37f94bb7ecb5fdad766c4"
+                "reference": "0292258fa1391278d04e2802ba87628cade0ce52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/asset-loader/zipball/c6dea8b2e45ce941c3b37f94bb7ecb5fdad766c4",
-                "reference": "c6dea8b2e45ce941c3b37f94bb7ecb5fdad766c4",
+                "url": "https://api.github.com/repos/humanmade/asset-loader/zipball/0292258fa1391278d04e2802ba87628cade0ce52",
+                "reference": "0292258fa1391278d04e2802ba87628cade0ce52",
                 "shasum": ""
             },
             "require": {
@@ -180,23 +180,16 @@
                 "phpunit/phpunit": "^7.5"
             },
             "type": "wordpress-plugin",
-            "scripts": {
-                "lint": [
-                    "phpcs ."
-                ],
-                "test": [
-                    "phpunit"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Utilities to seamlessly consume Webpack-bundled assets in WordPress themes & plugins.",
             "support": {
-                "source": "https://github.com/humanmade/asset-loader/tree/use-chunkhash-as-version-number",
-                "issues": "https://github.com/humanmade/asset-loader/issues"
+                "issues": "https://github.com/humanmade/asset-loader/issues",
+                "source": "https://github.com/humanmade/asset-loader/tree/v0.6.2"
             },
-            "time": "2022-07-25T14:13:11+00:00"
+            "time": "2022-07-26T16:43:22+00:00"
         },
         {
             "name": "humanmade/hm-gutenberg-tools",
@@ -798,9 +791,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "humanmade/asset-loader": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '7abefa0bf71cd78e14f345424b65892fe39e0a0e',
+        'reference' => '19c33b9747024b068e0dfc5a8d552e5fa4b6774e',
         'name' => 'automattic/vip-go-skeleton',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '7abefa0bf71cd78e14f345424b65892fe39e0a0e',
+            'reference' => '19c33b9747024b068e0dfc5a8d552e5fa4b6774e',
             'dev_requirement' => false,
         ),
         'automattic/vipwpcs' => array(
@@ -56,12 +56,12 @@
             'dev_requirement' => true,
         ),
         'humanmade/asset-loader' => array(
-            'pretty_version' => 'dev-use-chunkhash-as-version-number',
-            'version' => 'dev-use-chunkhash-as-version-number',
+            'pretty_version' => 'v0.6.2',
+            'version' => '0.6.2.0',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../plugins/asset-loader',
             'aliases' => array(),
-            'reference' => 'c6dea8b2e45ce941c3b37f94bb7ecb5fdad766c4',
+            'reference' => '0292258fa1391278d04e2802ba87628cade0ce52',
             'dev_requirement' => false,
         ),
         'humanmade/coding-standards' => array(

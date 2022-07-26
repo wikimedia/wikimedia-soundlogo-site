@@ -341,17 +341,17 @@
         },
         {
             "name": "humanmade/asset-loader",
-            "version": "dev-use-chunkhash-as-version-number",
-            "version_normalized": "dev-use-chunkhash-as-version-number",
+            "version": "v0.6.2",
+            "version_normalized": "0.6.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/asset-loader.git",
-                "reference": "c6dea8b2e45ce941c3b37f94bb7ecb5fdad766c4"
+                "reference": "0292258fa1391278d04e2802ba87628cade0ce52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/asset-loader/zipball/c6dea8b2e45ce941c3b37f94bb7ecb5fdad766c4",
-                "reference": "c6dea8b2e45ce941c3b37f94bb7ecb5fdad766c4",
+                "url": "https://api.github.com/repos/humanmade/asset-loader/zipball/0292258fa1391278d04e2802ba87628cade0ce52",
+                "reference": "0292258fa1391278d04e2802ba87628cade0ce52",
                 "shasum": ""
             },
             "require": {
@@ -362,24 +362,17 @@
                 "humanmade/coding-standards": "^1.1.0",
                 "phpunit/phpunit": "^7.5"
             },
-            "time": "2022-07-25T14:13:11+00:00",
+            "time": "2022-07-26T16:43:22+00:00",
             "type": "wordpress-plugin",
             "installation-source": "dist",
-            "scripts": {
-                "lint": [
-                    "phpcs ."
-                ],
-                "test": [
-                    "phpunit"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Utilities to seamlessly consume Webpack-bundled assets in WordPress themes & plugins.",
             "support": {
-                "source": "https://github.com/humanmade/asset-loader/tree/use-chunkhash-as-version-number",
-                "issues": "https://github.com/humanmade/asset-loader/issues"
+                "issues": "https://github.com/humanmade/asset-loader/issues",
+                "source": "https://github.com/humanmade/asset-loader/tree/v0.6.2"
             },
             "install-path": "../../plugins/asset-loader"
         },
