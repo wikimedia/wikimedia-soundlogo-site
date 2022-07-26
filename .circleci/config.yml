@@ -41,8 +41,10 @@ jobs:
       - run:
           name: Lock node and npm to required versions
           command: |
-            curl -sSL "https://nodejs.org/download/release/v12.22.12/node-v12.22.12-linux-x64.tar.xz" | sudo tar --strip-components=2 -xJ -C /usr/local/bin/ node-v12.22.12-linux-x64/bin/node
-            curl https://www.npmjs.com/install.sh | sudo bash
+            set +e
+            curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+            source /home/circleci/.nvm/nvm.sh
+            nvm install 14
       - run:
           name: Build project assets
           command: |
@@ -52,6 +54,9 @@ jobs:
           name: Build shiro theme
           command: |
             cd themes/shiro
+            source /home/circleci/.nvm/nvm.sh
+            nvm use
+            npm i -g npm@6
             npm ci
             npm run build
       - run: echo "Building..."

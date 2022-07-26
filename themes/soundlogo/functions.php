@@ -9,18 +9,32 @@
 
 namespace Wikimedia_Contest\Theme;
 
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_parent_stylesheet' );
+use Asset_Loader;
+use Asset_Loader\Manifest;
+
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_stylesheets' );
 add_action( 'wp_head', __NAMESPACE__ . '\\embed_fonts' );
+
+require_once __DIR__ . '/inc/editor/namespace.php';
+\Wikimedia_Contest\Theme\Editor\bootstrap();
 
 /**
  * Enqueue the stylesheet from this theme, as well as the shiro stylesheet.
  */
-function enqueue_parent_stylesheet() {
-	wp_enqueue_style(
-		'wikimedia-contest',
-		get_stylesheet_uri(),
-		[ 'shiro-style' ],
-		md5_file( get_theme_file_path( 'style.css' ) )
+function enqueue_stylesheets() {
+
+	$manifest = Manifest\get_active_manifest( [
+		__DIR__ . '/build/development-asset-manifest.json',
+		__DIR__ . '/build/production-asset-manifest.json',
+	] );
+
+	Asset_Loader\enqueue_asset(
+		$manifest,
+		'theme.css',
+		[
+			'dependencies' => [ 'shiro-style' ],
+			'handle' => 'soundlogo-style',
+		]
 	);
 }
 
