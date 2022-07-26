@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "14b574ee2b0eaceb190e4782f9c3ee0f",
+    "content-hash": "2517c594fd2c01ade5afa955cad0e6a8",
     "packages": [
         {
             "name": "composer/installers",
@@ -257,6 +257,24 @@
                 "source": "https://github.com/humanmade/Workflows/tree/0.4.3"
             },
             "time": "2022-05-16T09:52:40+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/gf-hcaptcha",
+            "version": "1.3.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/gf-hcaptcha/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/gf-hcaptcha.zip?timestamp=1657893216"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/gf-hcaptcha/"
         },
         {
             "name": "wpackagist-plugin/safe-svg",
