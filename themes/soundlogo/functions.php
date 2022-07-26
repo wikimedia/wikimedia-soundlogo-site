@@ -13,6 +13,7 @@ use Asset_Loader;
 use Asset_Loader\Manifest;
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_stylesheets' );
+add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\\enqueue_stylesheets' );
 add_action( 'wp_head', __NAMESPACE__ . '\\embed_fonts' );
 
 require_once __DIR__ . '/inc/editor/namespace.php';
