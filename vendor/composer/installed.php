@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '28c76c037db8983f6d79b32f7417e96691ca9c77',
+        'reference' => 'afb97109f6d616a06c3d390a72f6a539a06e043a',
         'name' => 'automattic/vip-go-skeleton',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '28c76c037db8983f6d79b32f7417e96691ca9c77',
+            'reference' => 'afb97109f6d616a06c3d390a72f6a539a06e043a',
             'dev_requirement' => false,
         ),
         'automattic/vipwpcs' => array(
@@ -147,6 +147,15 @@
             'aliases' => array(),
             'reference' => 'b5a453203114cc2284b1a614c4953456fbe4f546',
             'dev_requirement' => true,
+        ),
+        'wpackagist-plugin/gf-hcaptcha' => array(
+            'pretty_version' => '1.3.1',
+            'version' => '1.3.1.0',
+            'type' => 'wordpress-plugin',
+            'install_path' => __DIR__ . '/../../plugins/gf-hcaptcha',
+            'aliases' => array(),
+            'reference' => 'trunk',
+            'dev_requirement' => false,
         ),
         'wpackagist-plugin/safe-svg' => array(
             'pretty_version' => '2.0.2',

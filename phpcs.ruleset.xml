@@ -52,6 +52,7 @@
 	<exclude-pattern>vendor/*</exclude-pattern>
 
 	<exclude-pattern>plugins/asset-loader/*</exclude-pattern>
+	<exclude-pattern>plugins/gf-hcaptcha/*</exclude-pattern>
 	<exclude-pattern>plugins/hm-gutenberg-tools/*</exclude-pattern>
 	<exclude-pattern>plugins/multilingualpress/*</exclude-pattern>
 	<exclude-pattern>plugins/safe-svg/*</exclude-pattern>
