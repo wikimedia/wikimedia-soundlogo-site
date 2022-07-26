@@ -11,8 +11,6 @@ function filterBannerAlignSupport(settings, name) {
 
 		settings.supports.align = ['full', 'wide', 'center'];
 
-		//settings.supports.className = ['miguel'];
-
 		settings.attributes = {
 			align: {
 				type: 'string',
