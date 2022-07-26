@@ -12,11 +12,9 @@ namespace Wikimedia_Contest\Theme;
 use Asset_Loader;
 use Asset_Loader\Manifest;
 
-add_theme_support( 'editor-styles' );
-
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_stylesheets' );
 add_action( 'wp_head', __NAMESPACE__ . '\\embed_fonts' );
-add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\\add_editor_styles' );
+add_action( 'admin_init', __NAMESPACE__ . '\\add_editor_styles' );
 
 require_once __DIR__ . '/inc/editor/namespace.php';
 \Wikimedia_Contest\Theme\Editor\bootstrap();
@@ -25,7 +23,7 @@ require_once __DIR__ . '/inc/editor/namespace.php';
  * Add editor styles
  */
 function add_editor_styles() {
-	add_editor_style( get_stylesheet_directory_uri() . '/src/saas/editor-style.scss' );
+	add_editor_style( 'src/css/editor-style.css' );
 }
 
 /**
