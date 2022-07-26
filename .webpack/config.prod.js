@@ -1,4 +1,4 @@
-const { helpers, externals, presets } = require( '@humanmade/webpack-helpers' );
+const { helpers, externals, presets, plugins } = require( '@humanmade/webpack-helpers' );
 const { filePath } = helpers;
 
 module.exports = [
@@ -11,6 +11,9 @@ module.exports = [
 		output: {
 			path: filePath( 'plugins/wikimedia-contest/build/' ),
 		},
+		plugins: [
+			plugins.clean(),
+		],
 	} ),
 	presets.production( {
 		externals,
@@ -21,5 +24,8 @@ module.exports = [
 		output: {
 			path: filePath( 'themes/soundlogo/build/' ),
 		},
+		plugins: [
+			plugins.clean(),
+		],
 	} ),
 ];
