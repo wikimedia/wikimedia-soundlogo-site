@@ -14,18 +14,10 @@ use Asset_Loader\Manifest;
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_stylesheets' );
 add_action( 'wp_head', __NAMESPACE__ . '\\embed_fonts' );
-add_action( 'admin_init', __NAMESPACE__ . '\\add_editor_styles' );
 add_action( 'admin_init', __NAMESPACE__ . '\\add_editor_fonts' );
 
 require_once __DIR__ . '/inc/editor/namespace.php';
 \Wikimedia_Contest\Theme\Editor\bootstrap();
-
-/**
- * Add editor styles
- */
-function add_editor_styles() {
-	add_editor_style( 'editor-style.css' );
-}
 
 /**
  * Add editor fonts

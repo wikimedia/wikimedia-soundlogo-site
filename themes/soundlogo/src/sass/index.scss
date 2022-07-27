@@ -76,11 +76,24 @@
 	font-weight: 400;
 }
 
+.article-main h1 {
+	font-size: 56px;
+	font-family: var(--font-family-sans);
+	font-weight: 800;
+}
+
 .article-main h2 {
 	font-size: 42px;
 	font-family: var(--font-family-sans);
 	font-weight: 700;
 }
+
+.article-main h3 {
+	font-size: 34px;
+	font-family: var(--font-family-sans);
+	font-weight: 700;
+}
+
 
 .spotlight__content h2 {
 	font-size: 42px;
