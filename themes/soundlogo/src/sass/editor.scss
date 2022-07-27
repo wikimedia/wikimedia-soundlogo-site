@@ -10,3 +10,27 @@
 */
 
 @import "shared-styles";
+
+p {
+	font-size: 26px;
+	font-family: var(--font-family-serif);
+	font-weight: 400;
+}
+
+h1 {
+	font-size: 56px;
+	font-family: var(--font-family-sans);
+	font-weight: 800;
+}
+
+h2 {
+	font-size: 42px;
+	font-family: var(--font-family-sans);
+	font-weight: 700;
+}
+
+h3 {
+	font-size: 34px;
+	font-family: var(--font-family-sans);
+	font-weight: 700;
+}

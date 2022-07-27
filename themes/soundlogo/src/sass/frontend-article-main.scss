@@ -1,23 +1,50 @@
 p {
 	font-family: var(--font-family-serif);
-	font-size: 26px;
 	font-weight: 400;
+
+	@include mq('phone') {
+		font-size: 17px;
+	}
+	@include mq('tablet') {
+		font-size: 26px;
+	}
 }
 
 h1 {
-	font-size: 56px;
 	font-family: var(--font-family-sans);
 	font-weight: 800;
+
+	@include mq('phone') {
+		font-size: 42px;
+	}
+
+	@include mq('tablet') {
+		font-size: 56px;
+	}
 }
 
 h2 {
-	font-size: 42px;
 	font-family: var(--font-family-sans);
 	font-weight: 700;
+
+	@include mq('phone') {
+		font-size: 32px;
+	}
+
+	@include mq('tablet') {
+		font-size: 42px;
+	}
 }
 
 h3 {
-	font-size: 34px;
 	font-family: var(--font-family-sans);
 	font-weight: 700;
+
+	@include mq('phone') {
+		font-size: 17px;
+	}
+
+	@include mq('tablet') {
+		font-size: 34px;
+	}
 }

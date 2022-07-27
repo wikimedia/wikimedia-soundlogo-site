@@ -231,10 +231,12 @@ function add_editor_stylesheet() {
 		__DIR__ . '/../../build/production-asset-manifest.json',
 	] );
 
-	$json = file_get_contents( $manifest );
+	$json = file_get_contents( $manifest ); //phpcs:ignore WordPressVIPMinimum.Performance.FetchingRemoteData.FileGetContentsUnknown
 	$json_data = json_decode( $json, true );
 
-	if ( isset( $json_data['editor.css'] ) ) {
-		add_editor_style( __DIR__ . "/../../build/{$json_data['editor.css']}" );
+	if ( isset( $json_data['editor_soundlogo_styles.css'] ) ) {
+		add_editor_style( "build/{$json_data['editor_soundlogo_styles.css']}" );  // Builded css file.
+	} elseif ( isset( $json_data['editor_soundlogo_styles.js'] ) ) {
+		wp_enqueue_script( 'soundlogo-theme-editor-styles', $json_data['editor_soundlogo_styles.js'], [], null, true ); // Enqueue hot reloading stylesheet javascript.
 	}
 }
