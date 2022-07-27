@@ -31,6 +31,7 @@ module.exports = choosePort( 8080 ).then( port => [
 		},
 		externals,
 		entry: {
+			themeScripts: filePath( 'themes/soundlogo/src/js/frontend.js' ),
 			frontend: filePath( 'themes/soundlogo/src/sass/frontend.scss' ),
 			editor: filePath( 'themes/soundlogo/src/sass/editor.scss' ),
 		},

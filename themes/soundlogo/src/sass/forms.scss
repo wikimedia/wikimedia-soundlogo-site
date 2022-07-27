@@ -1,0 +1,348 @@
+/**
+ * Generic and Gravity forms styles.
+ *
+ * The Gravity Forms CSS is not enqueued so we need to style their fields manually.
+ * Stylelint is disabled in multiple places because we need to target gravity
+ * forms markup in different ways. :`(
+ */
+
+// stylelint-disable selector-class-pattern
+
+@mixin focus-shadow {
+	box-shadow: 0px 2px 15px rgba(84, 89, 93, 0.2);
+}
+
+
+$color-white: var( --wp--preset--color--white );
+$color-red: var( --wp--preset--color--strong-red );
+$color-yellow: var( --wp--preset--color--strong-yellow );
+$color-green: var( --wp--preset--color--strong-green );
+$color-bright-green: var( --wp--preset--color--strong-bright-green );
+$color-default: var( --wp--preset--color--black );
+
+// stylelint-disable color-no-hex;
+$color-black-90: #202122;
+$color-input-border: #EAECF0;
+
+$tablet: 800px;
+$desktop: 1024px;
+$desktop-wide: 1200px;
+$space-l: 20px;
+$space-s: 10px;
+
+.gfield_required_asterisk {
+	margin: 0.25em;
+}
+
+.gform_wrapper {
+
+	@include focus-shadow;
+	padding: $space-l;
+
+	.gform_fields {
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+	.gfield {
+		margin-bottom: px-to-rem( 35 );
+		position: relative;
+		padding: 12px;
+
+		@media( min-width: $tablet ) {
+			flex-basis: 45%;
+		}
+
+		@media( min-width: $desktop ) {
+			flex-basis: 30%;
+		}
+
+		&.gsection,
+		&.gfield--fullwidth {
+			flex-basis: 100%;
+		}
+
+	}
+
+	.gfield_description {
+		font-size: 12px;
+		padding: $space-l;
+	}
+
+	.button {
+		//background-color: transparent;
+		//background-image: none;
+		//border-color: $color-white;
+		//color: $color-white;
+	}
+
+	.button:focus {
+		@include focus-shadow;
+		//outline: $color-white dotted thin;
+	}
+
+	// General input field styles
+	input[type="text"],
+	input[type="tel"],
+	input[type="email"],
+	select,
+	.textarea {
+		border-color: $color-input-border;
+		border-width: 2px;
+		color: $color-black-90;
+		font-size: 17px;
+		padding: 10px 12px;
+	}
+
+	select option {
+		background-color: $color-bright-green;
+		line-height: 2;
+		padding: 10px 12px;
+
+		&:hover {
+			background-color: $color-green;
+		}
+
+		+ option {
+			border-top: 2px solid $color-green;
+		}
+	}
+
+	.textarea {
+		/*
+		 * This will have javascript applied to allow it
+		 * to auto expand height as text falls on to new lines.
+		 */
+		width: 100%;
+		max-width: 980px;
+		height: px-to-rem( 66 );
+		max-height: 50vh;
+	}
+
+	input[type="text"]:focus,
+	input[type="text"]:active,
+	input[type="email"]:focus,
+	input[type="email"]:active,
+	.textarea:focus,
+	.textarea:active {
+		// Moves the focus ring so its overlapping the border.
+		outline-offset: 0;
+	}
+
+	::placeholder {
+		color: $color-white;
+	}
+
+	/*
+	 * Gravity form field size settings.
+	 * Nested because of how generic the class names are.
+	 */
+	.small {
+		width: 50%;
+	}
+
+	.medium {
+		width: 75%;
+	}
+
+	.large {
+		width: 100%;
+	}
+
+}
+
+/*
+ * no-descending-specificity disabled as these styles all
+ * control how inputs and labels display based on different
+ * criteria determined by outer classes being applied.
+ *
+ * This completely messes with the the descending specificity
+ * as it always expects these to come before the more general
+ * active / focus styles :`(
+ */
+
+/* stylelint-disable no-descending-specificity */
+
+/*
+ * Submit button.
+ * Floated so that it sits next to the privacy text in forms on desktop.
+ */
+.gform_footer {
+	//height: px-to-rem( 45 ); // Height fixes container 0 because of float.
+
+	.gform_button {
+		background-color: $color-bright-green;
+		font-family: var( --font-family-serif );
+		font-weight: 700;
+		font-size: 17px;
+		border-radius: 3px;
+		color: $color-black-90;
+		padding: 12px;
+
+		&:before {
+			display: block;
+			content: " ";
+			width: 20px;
+			height: 20px;
+			background-image: url( '../../../shiro/assets/src/images/arrow-right.svg' );
+
+		}
+
+		//@media ( min-width: $tablet ) {
+			//float: right;
+			//width: auto;
+		//}
+	}
+}
+
+/**
+ * Validation.
+ */
+
+/*
+ * Hidden field for honeypot validation.
+ * Set to display none as scr readers should not see this either. Passes validation if left empty.
+ */
+.gform_validation_container {
+	display: none;
+}
+
+/*
+ * no-descending-specificity disabled as these styles all
+ * control how inputs and labels display when validation fails.
+ */
+
+/* stylelint-disable no-descending-specificity */
+
+/*
+ * General validation styles.
+ */
+.gform_validation_error {
+	.gfield_error {
+		border-left: solid 10px $color-red;
+		color: $color-yellow;
+
+		input[type="text"],
+		input[type="email"],
+		.textarea,
+		label {
+			border-color: $color-yellow;
+			color: $color-yellow;
+			margin-left: -10px; // 10px border knocks out the fields alignment.
+		}
+	}
+
+	.validation_message {
+		//@include teeny-text( $color-yellow );
+		font-size: 12px;
+		font-style: italic;
+		margin-top: px-to-rem( 5 );
+		margin-left: -10px;
+
+		&--did-you-mean {
+			font-weight: 600;
+			color: $color-white;
+			cursor: pointer;
+		}
+	}
+}
+
+/**
+ * Interactions & Validation.
+ *
+ * With and without javascript specifically
+ * Start with if javascript is disabled.
+ */
+
+/*
+ * no-descending-specificity disabled as these styles can't be grouped
+ * in the right order and also wrapped in .js / .no-js without either
+ * duplicating a lot of styles or making things overly specific and/or nested too deeply.
+ */
+.no-js {
+	/*
+	 * General validation error messages.
+	 */
+	.gform_validation_error {
+		.validation_error {
+			background-color: $color-white;
+			color: $color-default;
+			margin-bottom: $space-l;
+			padding: $space-s;
+		}
+	}
+
+	/*
+	 * Set the label to always be small above the input.
+	 */
+	.gfield_label {
+		font-size: 12px;
+	}
+
+	.gfield {
+		input[type="text"]:focus,
+		input[type="text"]:active,
+		input[type="email"]:focus,
+		input[type="email"]:active,
+		.textarea:focus,
+		.textarea:active {
+			color: $color-yellow;
+			border-color: $color-yellow;
+		}
+	}
+}
+
+/*
+ * Now with all the js goodness.
+ */
+body {
+	/*
+	 * Position the label over the input so that we can animate it up.
+	 */
+	.gfield_label {
+		position: absolute;
+		transform: translate( 16px, 16px );
+		transition: all 300ms ease;
+		pointer-events: none;
+	}
+
+	// Class applied using javascript.
+	.gfield.has-focus {
+		.gfield_label {
+			//@include teeny-text( $color-white );
+			font-size: 12px;
+			transform: translateY( -115% );
+			transition: all 300ms ease;
+		}
+	}
+
+	// Class applied by js when a field has been populated.
+	.has-value {
+		.gfield_label {
+			//@include teeny-text( $color-white );
+			font-size: 12px;
+			transform: translateY( -115% );
+		}
+	}
+
+	/*
+	 * General validation error messages.
+	 * The design doesn't require these but they are still
+	 * nice to have for screen readers.
+	 */
+	.gform_validation_error {
+		.validation_error {
+
+		}
+	}
+}
+/* stylelint-enable no-descending-specificity */
+
+//.gform_confirmation_message {
+	//@include form-background;
+	//color: $color-white;
+	//padding: $content-space-l;
+	//text-align: center;
+
+	//@include section-vertical-rhythm;
+//}
