@@ -15,7 +15,7 @@
   ],
   "require": {
     "php": ">= 7.4",
-    "humanmade/asset-loader": "^0.5.0",
+    "humanmade/asset-loader": "^0.6.2",
     "humanmade/hm-gutenberg-tools": "^1.6",
     "humanmade/workflows": "^0.4.3",
     "wpackagist-plugin/gf-hcaptcha": "^1.3",
