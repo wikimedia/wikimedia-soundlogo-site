@@ -232,6 +232,10 @@ function add_editor_stylesheet() {
 		__DIR__ . '/../../build/production-asset-manifest.json',
 	] );
 
-	// Find out the build name of editor stylesheet
-	// Add it using add_editor_style()
+	$json = file_get_contents( $manifest );
+	$json_data = json_decode( $json, true );
+
+	if ( isset( $json_data['editor.css'] ) ) {
+		add_editor_style( __DIR__ . "/../../build/{$json_data['editor.css']}" );
+	}
 }
