@@ -1,0 +1,70 @@
+/*
+ Theme Name:   Sound Logo Contest
+ Description:  Styles shared between frontend and editor for Sound Logo child theme
+ Author:       Human Made
+ Template:     shiro
+ Version:      0.1
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Text Domain:  wikimedia-contest
+*/
+
+:root {
+	--font-family-sans: "Montserrat", "Helvetica", "Liberation Sans", "Arial", sans-serif;
+	--font-family-serif: "Lato", "Arial", sans-serif;
+	--font-family-monospace: "Menlo", "Consolas", "Liberation Mono", "Courier New", monospace;
+}
+
+.banner__content h2 {
+	font-size: 32px;
+	font-family: var(--font-family-sans);
+	font-weight: 800;
+}
+
+.banner__content p {
+	font-family: var(--font-family-serif);
+	font-size: 26px;
+	font-weight: 400;
+}
+
+.hero__kicker {
+	font-family: var(--font-family-sans);
+	font-weight: 800;
+	font-size: 32px;
+}
+
+.hero__title {
+	font-family: var(--font-family-sans);
+	font-weight: 800;
+	font-size: 56px;
+}
+
+.hero__intro p {
+	font-family: var(--font-family-serif);
+	font-weight: 400;
+	font-size: 26px;
+}
+
+p {
+	font-size: 26px;
+	font-family: var(--font-family-serif);
+	font-weight: 400;
+}
+
+h1 {
+	font-size: 56px;
+	font-family: var(--font-family-sans);
+	font-weight: 800;
+}
+
+h2 {
+	font-size: 42px;
+	font-family: var(--font-family-sans);
+	font-weight: 700;
+}
+
+h3 {
+	font-size: 34px;
+	font-family: var(--font-family-sans);
+	font-weight: 700;
+}

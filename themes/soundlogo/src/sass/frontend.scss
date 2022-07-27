@@ -9,11 +9,8 @@
  Text Domain:  wikimedia-contest
 */
 
-:root {
-	--font-family-sans: "Montserrat", "Helvetica", "Liberation Sans", "Arial", sans-serif;
-	--font-family-serif: "Lato", "Arial", sans-serif;
-	--font-family-monospace: "Menlo", "Consolas", "Liberation Mono", "Courier New", monospace;
-}
+@import "shared-styles";
+@import "forms";
 
 .site-header {
 	min-height: 3.5rem;
@@ -68,4 +65,8 @@
 
 .header-default .header-content {
 	margin-top: 0;
+}
+
+.article-main {
+	@import "frontend-article-main";
 }
