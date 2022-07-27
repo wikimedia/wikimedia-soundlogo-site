@@ -1,6 +1,6 @@
 /*
  Theme Name:   Sound Logo Contest
- Description:  Editor styles for Sound Logo child theme, used for Wikimedia Sound Logo content
+ Description:  Styles shared between frontend and editor for Sound Logo child theme
  Author:       Human Made
  Template:     shiro
  Version:      0.1
@@ -43,18 +43,6 @@
 	font-family: var(--font-family-serif);
 	font-weight: 400;
 	font-size: 26px;
-}
-
-.spotlight__content h2 {
-	font-size: 42px;
-	font-family: var(--font-family-sans);
-	font-weight: 700;
-}
-
-.spotlight__content p {
-	font-size: 26px;
-	font-family: var(--font-family-serif);
-	font-weight: 400;
 }
 
 p {
