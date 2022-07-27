@@ -19,21 +19,6 @@ function bootstrap() : void {
 }
 
 /**
- * Enqueue admin scripts for shiro banner custom alignment.
- *
- * @return void
- */
-function enqueue_banner_custom_block_scripts() : void {
-	wp_enqueue_script(
-		'wikimedia-contest-banner-custom-block-scripts',
-		get_theme_file_uri( '/assets/editor/blocks/banner/index.js' ),
-		[ 'wp-blocks' ],
-		filemtime( get_theme_file_path( '/assets/editor/blocks/banner/index.js' ) )
-	);
-}
-
-
-/**
  * Enqueue client-side script to unregister the undesired shiro block styles.
  *
  * @return void
