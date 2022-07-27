@@ -1,4 +1,7 @@
 {
-  "theme.css": "theme.4f8b94f72c743b5f0cda.css",
-  "theme.js": "theme.31d6cfe0d16ae931b73c.js"
+  "themeScripts.js": "themeScripts.d00e6f9d85fea1fc271c.js",
+  "frontend.css": "frontend.7f4fbd3bdebeba3045b6.css",
+  "frontend.js": "frontend.31d6cfe0d16ae931b73c.js",
+  "editor.css": "editor.8ba88addfa20849fda6b.css",
+  "editor.js": "editor.31d6cfe0d16ae931b73c.js"
 }
