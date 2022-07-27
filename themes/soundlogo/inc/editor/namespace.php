@@ -218,7 +218,6 @@ function register_block_styles() : void {
 function add_editor_fonts() {
 	add_editor_style( [
 		'https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700;800&display=swap',
-		'css/type.css'
 	] );
 }
 
