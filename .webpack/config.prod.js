@@ -20,6 +20,7 @@ module.exports = [
 		name: 'Sound Logo Child Theme',
 		entry: {
 			theme: filePath( 'themes/soundlogo/src/sass/index.scss' ),
+			editor: filePath( 'themes/soundlogo/src/js/editor/blocks-custom-settings.js' ),
 		},
 		output: {
 			path: filePath( 'themes/soundlogo/build/' ),
