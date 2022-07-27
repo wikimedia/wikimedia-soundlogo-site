@@ -12,14 +12,19 @@ function filterBannerAlignSupport(settings, name) {
 
 		console.log(settings);
 
-		settings.supports.align = ['full', 'wide', 'center'];
+		settings.supports.align = [ 'wide' ];
 
-		settings.attributes = {
-			align: {
-				type: 'string',
-				default: 'wide',
+		const newSettings = {
+			...settings,
+			attributes: {
+				...settings.attributes,
+				align: { type: 'string', default: 'wide' },
 			},
 		};
+
+		console.log(newSettings);
+
+		return newSettings;
 
 		// settings.edit = (props) => {
 
