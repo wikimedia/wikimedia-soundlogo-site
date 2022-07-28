@@ -68,6 +68,10 @@
 		padding: 10px 12px;
 	}
 
+	input[type="checkbox"] {
+		margin: 0 .5em;
+	}
+
 	select option {
 		background-color: $color-bright-green;
 		line-height: 2;
@@ -105,6 +109,10 @@
 
 	::placeholder {
 		color: $color-white;
+	}
+
+	fieldset {
+		border: 0;
 	}
 
 	/*
@@ -296,6 +304,13 @@ body {
 			//@include teeny-text( $color-white );
 			font-size: 12px;
 			transform: translateY( -115% );
+		}
+	}
+
+	// Allow hiding labels on fields that don't require them
+	.hidden_label {
+		.gfield_label {
+			display: none;
 		}
 	}
 
