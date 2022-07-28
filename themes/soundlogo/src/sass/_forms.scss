@@ -13,23 +13,6 @@
 }
 
 
-$color-white: var( --wp--preset--color--white );
-$color-red: var( --wp--preset--color--strong-red );
-$color-yellow: var( --wp--preset--color--strong-yellow );
-$color-green: var( --wp--preset--color--strong-green );
-$color-bright-green: var( --wp--preset--color--strong-bright-green );
-$color-default: var( --wp--preset--color--black );
-
-// stylelint-disable color-no-hex;
-$color-black-90: #202122;
-$color-input-border: #EAECF0;
-
-$tablet: 800px;
-$desktop: 1024px;
-$desktop-wide: 1200px;
-$space-l: 20px;
-$space-s: 10px;
-
 .gfield_required_asterisk {
 	margin: 0.25em;
 }
@@ -45,15 +28,15 @@ $space-s: 10px;
 	}
 
 	.gfield {
-		margin-bottom: px-to-rem( 35 );
+		margin-bottom: 35px;
 		position: relative;
 		padding: 12px;
 
-		@media( min-width: $tablet ) {
+		@include mq( tablet ) {
 			flex-basis: 45%;
 		}
 
-		@media( min-width: $desktop ) {
+		@include mq( desktop ) {
 			flex-basis: 30%;
 		}
 
@@ -61,7 +44,6 @@ $space-s: 10px;
 		&.gfield--fullwidth {
 			flex-basis: 100%;
 		}
-
 	}
 
 	.gfield_description {
@@ -69,16 +51,8 @@ $space-s: 10px;
 		padding: $space-l;
 	}
 
-	.button {
-		//background-color: transparent;
-		//background-image: none;
-		//border-color: $color-white;
-		//color: $color-white;
-	}
-
 	.button:focus {
 		@include focus-shadow;
-		//outline: $color-white dotted thin;
 	}
 
 	// General input field styles
@@ -92,6 +66,10 @@ $space-s: 10px;
 		color: $color-black-90;
 		font-size: 17px;
 		padding: 10px 12px;
+	}
+
+	input[type="checkbox"] {
+		margin: 0 .5em;
 	}
 
 	select option {
@@ -115,7 +93,7 @@ $space-s: 10px;
 		 */
 		width: 100%;
 		max-width: 980px;
-		height: px-to-rem( 66 );
+		height: 66px;
 		max-height: 50vh;
 	}
 
@@ -131,6 +109,10 @@ $space-s: 10px;
 
 	::placeholder {
 		color: $color-white;
+	}
+
+	fieldset {
+		border: 0;
 	}
 
 	/*
@@ -168,7 +150,7 @@ $space-s: 10px;
  * Floated so that it sits next to the privacy text in forms on desktop.
  */
 .gform_footer {
-	//height: px-to-rem( 45 ); // Height fixes container 0 because of float.
+	//height: 45px; // Height fixes container 0 because of float.
 
 	.gform_button {
 		background-color: $color-bright-green;
@@ -179,19 +161,9 @@ $space-s: 10px;
 		color: $color-black-90;
 		padding: 12px;
 
-		&:before {
-			display: block;
-			content: " ";
-			width: 20px;
-			height: 20px;
-			background-image: url( '../../../shiro/assets/src/images/arrow-right.svg' );
-
+		&:hover {
+			background-color: $color-green;
 		}
-
-		//@media ( min-width: $tablet ) {
-			//float: right;
-			//width: auto;
-		//}
 	}
 }
 
@@ -219,31 +191,21 @@ $space-s: 10px;
  */
 .gform_validation_error {
 	.gfield_error {
-		border-left: solid 10px $color-red;
-		color: $color-yellow;
+		color: $color-red;
 
 		input[type="text"],
 		input[type="email"],
 		.textarea,
 		label {
-			border-color: $color-yellow;
-			color: $color-yellow;
-			margin-left: -10px; // 10px border knocks out the fields alignment.
+			border-color: $color-red;
+			color: $color-red;
 		}
 	}
 
 	.validation_message {
-		//@include teeny-text( $color-yellow );
 		font-size: 12px;
 		font-style: italic;
-		margin-top: px-to-rem( 5 );
-		margin-left: -10px;
-
-		&--did-you-mean {
-			font-weight: 600;
-			color: $color-white;
-			cursor: pointer;
-		}
+		margin-top: 5px;
 	}
 }
 
@@ -309,7 +271,6 @@ body {
 	// Class applied using javascript.
 	.gfield.has-focus {
 		.gfield_label {
-			//@include teeny-text( $color-white );
 			font-size: 12px;
 			transform: translateY( -115% );
 			transition: all 300ms ease;
@@ -319,9 +280,15 @@ body {
 	// Class applied by js when a field has been populated.
 	.has-value {
 		.gfield_label {
-			//@include teeny-text( $color-white );
 			font-size: 12px;
 			transform: translateY( -115% );
+		}
+	}
+
+	// Allow hiding labels on fields that don't require them
+	.hidden_label {
+		.gfield_label {
+			display: none;
 		}
 	}
 
@@ -337,12 +304,3 @@ body {
 	}
 }
 /* stylelint-enable no-descending-specificity */
-
-//.gform_confirmation_message {
-	//@include form-background;
-	//color: $color-white;
-	//padding: $content-space-l;
-	//text-align: center;
-
-	//@include section-vertical-rhythm;
-//}

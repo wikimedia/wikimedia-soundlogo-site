@@ -21,7 +21,7 @@ module.exports = [
 		entry: {
 			themeScripts: filePath( 'themes/soundlogo/src/js/frontend.js' ),
 			frontend: filePath( 'themes/soundlogo/src/sass/frontend.scss' ),
-			editor: filePath( 'themes/soundlogo/src/sass/editor.scss' ),
+			editor_soundlogo_styles: filePath( 'themes/soundlogo/src/sass/editor.scss' ),
 		},
 		output: {
 			path: filePath( 'themes/soundlogo/build/' ),
