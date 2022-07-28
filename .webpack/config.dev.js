@@ -14,6 +14,7 @@ module.exports = choosePort( 8080 ).then( port => [
 		externals,
 		entry: {
 			editor: filePath( 'plugins/wikimedia-contest/src/editor.js' ),
+			submissionForm: filePath( 'plugins/wikimedia-contest/src/submission-form.js' ),
 		},
 		output: {
 			path: filePath( 'plugins/wikimedia-contest/build/' ),
@@ -31,6 +32,7 @@ module.exports = choosePort( 8080 ).then( port => [
 		},
 		externals,
 		entry: {
+			themeScripts: filePath( 'themes/soundlogo/src/js/frontend.js' ),
 			frontend: filePath( 'themes/soundlogo/src/sass/frontend.scss' ),
 			editor_soundlogo_styles: filePath( 'themes/soundlogo/src/sass/editor.scss' ),
 		},

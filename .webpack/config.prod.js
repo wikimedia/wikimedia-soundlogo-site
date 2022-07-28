@@ -7,6 +7,7 @@ module.exports = [
 		name: 'Wikimedia Contest Plugin',
 		entry: {
 			editor: filePath( 'plugins/wikimedia-contest/src/editor.js' ),
+			submissionForm: filePath( 'plugins/wikimedia-contest/src/submission-form.js' ),
 		},
 		output: {
 			path: filePath( 'plugins/wikimedia-contest/build/' ),
@@ -19,6 +20,7 @@ module.exports = [
 		externals,
 		name: 'Sound Logo Child Theme',
 		entry: {
+			themeScripts: filePath( 'themes/soundlogo/src/js/frontend.js' ),
 			frontend: filePath( 'themes/soundlogo/src/sass/frontend.scss' ),
 			editor_soundlogo_styles: filePath( 'themes/soundlogo/src/sass/editor.scss' ),
 		},
