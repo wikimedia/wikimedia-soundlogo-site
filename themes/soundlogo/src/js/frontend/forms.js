@@ -159,7 +159,8 @@ const markupFieldContainers = () => {
 			[
 				'.ginput_container_textarea',
 				'.ginput_container_fileupload',
-				'ginput_container_hcaptcha',
+				'.ginput_container_hcaptcha',
+				'.ginput_container_consent',
 			].join( ',' )
 		)
 	];
