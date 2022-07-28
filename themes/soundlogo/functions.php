@@ -30,7 +30,7 @@ function enqueue_stylesheets() {
 
 	Asset_Loader\enqueue_asset(
 		$manifest,
-		'theme.css',
+		'frontend.css',
 		[
 			'dependencies' => [ 'shiro-style' ],
 			'handle' => 'soundlogo-style',
