@@ -28,7 +28,7 @@
 	}
 
 	.gfield {
-		margin-bottom: px-to-rem( 35 );
+		margin-bottom: 35px;
 		position: relative;
 		padding: 12px;
 
@@ -93,7 +93,7 @@
 		 */
 		width: 100%;
 		max-width: 980px;
-		height: px-to-rem( 66 );
+		height: 66px;
 		max-height: 50vh;
 	}
 
@@ -150,7 +150,7 @@
  * Floated so that it sits next to the privacy text in forms on desktop.
  */
 .gform_footer {
-	//height: px-to-rem( 45 ); // Height fixes container 0 because of float.
+	//height: 45px; // Height fixes container 0 because of float.
 
 	.gform_button {
 		background-color: $color-bright-green;
@@ -161,19 +161,9 @@
 		color: $color-black-90;
 		padding: 12px;
 
-		&:before {
-			display: block;
-			content: " ";
-			width: 20px;
-			height: 20px;
-			background-image: url( '../../../shiro/assets/src/images/arrow-right.svg' );
-
+		&:hover {
+			background-color: $color-green;
 		}
-
-		//@media ( min-width: $tablet ) {
-			//float: right;
-			//width: auto;
-		//}
 	}
 }
 
@@ -201,31 +191,21 @@
  */
 .gform_validation_error {
 	.gfield_error {
-		border-left: solid 10px $color-red;
-		color: $color-yellow;
+		color: $color-red;
 
 		input[type="text"],
 		input[type="email"],
 		.textarea,
 		label {
-			border-color: $color-yellow;
-			color: $color-yellow;
-			margin-left: -10px; // 10px border knocks out the fields alignment.
+			border-color: $color-red;
+			color: $color-red;
 		}
 	}
 
 	.validation_message {
-		//@include teeny-text( $color-yellow );
 		font-size: 12px;
 		font-style: italic;
-		margin-top: px-to-rem( 5 );
-		margin-left: -10px;
-
-		&--did-you-mean {
-			font-weight: 600;
-			color: $color-white;
-			cursor: pointer;
-		}
+		margin-top: 5px;
 	}
 }
 
@@ -291,7 +271,6 @@ body {
 	// Class applied using javascript.
 	.gfield.has-focus {
 		.gfield_label {
-			//@include teeny-text( $color-white );
 			font-size: 12px;
 			transform: translateY( -115% );
 			transition: all 300ms ease;
@@ -301,7 +280,6 @@ body {
 	// Class applied by js when a field has been populated.
 	.has-value {
 		.gfield_label {
-			//@include teeny-text( $color-white );
 			font-size: 12px;
 			transform: translateY( -115% );
 		}
@@ -326,12 +304,3 @@ body {
 	}
 }
 /* stylelint-enable no-descending-specificity */
-
-//.gform_confirmation_message {
-	//@include form-background;
-	//color: $color-white;
-	//padding: $content-space-l;
-	//text-align: center;
-
-	//@include section-vertical-rhythm;
-//}
