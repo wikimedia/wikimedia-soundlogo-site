@@ -12,7 +12,7 @@ namespace Wikimedia_Contest\Theme;
 use Asset_Loader;
 use Asset_Loader\Manifest;
 
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_stylesheets' );
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_assets' );
 add_action( 'wp_head', __NAMESPACE__ . '\\embed_fonts' );
 
 require_once __DIR__ . '/inc/editor/namespace.php';
@@ -21,7 +21,7 @@ require_once __DIR__ . '/inc/editor/namespace.php';
 /**
  * Enqueue the stylesheet from this theme, as well as the shiro stylesheet.
  */
-function enqueue_stylesheets() {
+function enqueue_assets() {
 
 	$manifest = Manifest\get_active_manifest( [
 		__DIR__ . '/build/development-asset-manifest.json',
@@ -34,6 +34,14 @@ function enqueue_stylesheets() {
 		[
 			'dependencies' => [ 'shiro-style' ],
 			'handle' => 'soundlogo-style',
+		]
+	);
+
+	Asset_Loader\enqueue_asset(
+		$manifest,
+		'themeScripts.js',
+		[
+			'handle' => 'soundlogo-script',
 		]
 	);
 }
