@@ -9,8 +9,9 @@
  Text Domain:  wikimedia-contest
 */
 
-@import "shared-styles";
+@import "variables";
 @import "mixins";
+@import "shared-styles";
 @import "forms";
 
 .site-header {
