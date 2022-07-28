@@ -19,7 +19,8 @@ module.exports = [
 		externals,
 		name: 'Sound Logo Child Theme',
 		entry: {
-			theme: filePath( 'themes/soundlogo/src/sass/index.scss' ),
+			frontend: filePath( 'themes/soundlogo/src/sass/frontend.scss' ),
+			editor_soundlogo_styles: filePath( 'themes/soundlogo/src/sass/editor.scss' ),
 		},
 		output: {
 			path: filePath( 'themes/soundlogo/build/' ),
