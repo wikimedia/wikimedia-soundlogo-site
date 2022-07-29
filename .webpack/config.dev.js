@@ -14,6 +14,7 @@ module.exports = choosePort( 8080 ).then( port => [
 		externals,
 		entry: {
 			editor: filePath( 'plugins/wikimedia-contest/src/editor.js' ),
+			submissionForm: filePath( 'plugins/wikimedia-contest/src/submission-form.js' ),
 		},
 		output: {
 			path: filePath( 'plugins/wikimedia-contest/build/' ),
