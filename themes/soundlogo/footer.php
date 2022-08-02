@@ -19,7 +19,12 @@ if ( isset( $footer_reusable_block_id ) ) {
 ?>
 
 <?php if ( isset( $footer_content ) ) : ?>
-<footer class="footer__reusable-block">
-	<?php echo $footer_content; ?>
+<footer class="footer__container">
+	<div class="footer__reusable-block">
+		<?php
+			// This content comes from a reusable block, and it needs to be displayed as it is.
+			echo $footer_content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		?>
+	</div>
 </footer>
 <?php endif; ?>

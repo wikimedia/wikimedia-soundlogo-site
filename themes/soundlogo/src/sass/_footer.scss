@@ -1,4 +1,10 @@
 .footer {
+	&__container {
+		background-color: #f8f9fa;
+		padding-top: 40px;
+		width: 100%;
+	}
+
 	&__reusable-block {
 		margin-left: auto;
 		margin-right: auto;

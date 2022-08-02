@@ -82,7 +82,13 @@ function add_footer_reusable_block_setting() : void {
 		]
 	);
 
-	register_setting('general','footer_reusable_block_id', 'esc_attr');
+	$args = [
+		'type' => 'integer',
+		'sanitize_callback' => 'absint',
+		'default' => null,
+	];
+
+	register_setting( 'general', 'footer_reusable_block_id', $args );
 }
 
 /**
@@ -91,17 +97,24 @@ function add_footer_reusable_block_setting() : void {
  * @return void
  */
 function soundlogo_theme_message() : void {
-    echo '<p>Custom settings for Wikimedia Sound Logo Contest Theme</p>';
+	// Following HTML needs to be displayed as it is, so we can't use esc_html.
+	echo '<p>' . __( 'Custom settings for Wikimedia Sound Logo Contest Theme', 'soundlogo-theme-admin' ) . '</p>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 
 /**
  * Prints a text input for the Footer Reusable Block ID setting
  *
- * @param array $args
+ * @param array $args The arguments for the field.
  * @return void
  */
 function footer_reusable_block_id_field( $args ) : void {
 	$option = get_option( $args[0] );
-	echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
-    echo '<p>The ID of the Reusable Block to use for the footer. You can find it <a href="/wp-admin/edit.php?post_type=wp_block" target="_blank">here</a>.</p>';
+
+	// Following HTML needs to be displayed as it is, so we can't use esc_html.
+	echo '<input type="text" id="' . esc_attr( $args[0] ) . '" name="' . esc_attr( $args[0] ) . '" value="' . esc_attr( $option ) . '" />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+
+	echo '<p>' . sprintf(
+		__( 'The ID of the Reusable Block which will be displayed on the site footer. You can find it here: %s', 'soundlogo-theme-admin' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		'<a href="' . esc_url( admin_url() ) . 'edit.php?post_type=wp_block" target="_blank">' . esc_url( admin_url() ) . 'edit.php?post_type=wp_block</a>'
+	) . '</p>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
