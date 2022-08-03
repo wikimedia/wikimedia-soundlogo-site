@@ -1,0 +1,12 @@
+# WPVIP files
+mu-plugins/
+
+# Dependencies
+themes/
+vendor/
+plugins/asset-loader/
+plugins/hm-gutenberg-tools/
+plugins/workflows/
+
+# Built files
+plugins/wikimedia-contest/build/

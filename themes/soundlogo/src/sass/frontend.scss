@@ -1,0 +1,74 @@
+/*
+ Theme Name:   Sound Logo Contest
+ Description:  Shiro child theme, used for Wikimedia Sound Logo content
+ Author:       Human Made
+ Template:     shiro
+ Version:      0.1
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Text Domain:  wikimedia-contest
+*/
+
+@import "variables";
+@import "mixins";
+@import "shared-styles";
+@import "forms";
+
+.site-header {
+	min-height: 3.5rem;
+}
+
+.site-header__inner {
+	height: 200px;
+}
+
+.primary-nav {
+	margin-top: 200px;
+}
+
+.nav-logo {
+	height: 100px;
+}
+
+.nav-logo__image {
+	max-height: 100px;
+}
+
+.mw-980,
+.site-header__inner {
+	max-width: 79.5rem;
+}
+
+.nav-donate__link {
+	background-color: #E779A8;
+	vertical-align: middle;
+}
+
+.nav-donate__icon.icon {
+	fill: #ffffff;
+	width: 1.5rem;
+	height: 1.5rem;
+	display: inline-block;
+	margin-right: 0.25rem;
+}
+
+.nav-learn-more__link:hover {
+	background-color: red;
+}
+
+.primary-nav__items li a {
+	font-size: 21px;
+	line-height: 30px;
+}
+
+.primary-nav__items li a span::after {
+	transform: none;
+}
+
+.header-default .header-content {
+	margin-top: 0;
+}
+
+.article-main {
+	@import "frontend-article-main";
+}
