@@ -215,6 +215,8 @@ function register_block_styles() : void {
  * Add needed fonts and stylesheet to the editor
  */
 function add_editor_assets() {
+
+	// Enqueue fonts to editor.
 	add_editor_style( [
 		'https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700;800&display=swap',
 	] );
@@ -222,11 +224,20 @@ function add_editor_assets() {
 	$manifest = Manifest\get_active_manifest( [
 		__DIR__ . '/../../build/development-asset-manifest.json',
 		__DIR__ . '/../../build/production-asset-manifest.json',
-	] );
+		] );
 
+	// Enqueue Landing Page Hero Block custom features script.
+	Asset_Loader\enqueue_asset(
+		$manifest,
+		'landing_page_hero.js',
+		[
+			'handle' => 'landing_page_hero',
+		]
+	);
+
+	// Enqueue editor styles.
 	$json = file_get_contents( $manifest ); //phpcs:ignore WordPressVIPMinimum.Performance.FetchingRemoteData.FileGetContentsUnknown
 	$json_data = json_decode( $json, true );
-
 	if ( isset( $json_data['editor_soundlogo_styles.css'] ) ) {
 		add_editor_style( "build/{$json_data['editor_soundlogo_styles.css']}" );
 	}
