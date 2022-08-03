@@ -56,3 +56,64 @@ function embed_fonts() {
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
 	<?php
 }
+
+/**
+ * Add on Settings > General a parameter for Footer Reusable Block ID
+ *
+ * @return void
+ */
+function add_footer_reusable_block_setting() : void {
+	add_settings_section(
+		'soundlogo_theme_settings_section',
+		'Sound Logo Theme',
+		__NAMESPACE__ . '\\soundlogo_theme_message',
+		'general'
+	);
+
+	add_settings_field(
+		'footer_reusable_block_id',
+		'Footer Reusable Block ID',
+		__NAMESPACE__ . '\\footer_reusable_block_id_field',
+		'general',
+		'soundlogo_theme_settings_section',
+		[
+			'footer_reusable_block_id',
+		]
+	);
+
+	$args = [
+		'type' => 'integer',
+		'sanitize_callback' => 'absint',
+		'default' => null,
+	];
+
+	register_setting( 'general', 'footer_reusable_block_id', $args );
+}
+
+/**
+ * Prints a message for the Sound Logo Theme settings section
+ *
+ * @return void
+ */
+function soundlogo_theme_message() : void {
+	// Following HTML needs to be displayed as it is, so we can't use esc_html.
+	echo '<p>' . __( 'Custom settings for Wikimedia Sound Logo Contest Theme', 'soundlogo-theme-admin' ) . '</p>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+}
+
+/**
+ * Prints a text input for the Footer Reusable Block ID setting
+ *
+ * @param array $args The arguments for the field.
+ * @return void
+ */
+function footer_reusable_block_id_field( $args ) : void {
+	$option = get_option( $args[0] );
+
+	// Following HTML needs to be displayed as it is, so we can't use esc_html.
+	echo '<input type="text" id="' . esc_attr( $args[0] ) . '" name="' . esc_attr( $args[0] ) . '" value="' . esc_attr( $option ) . '" />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+
+	echo '<p>' . sprintf(
+		__( 'The ID of the Reusable Block which will be displayed on the site footer. You can find it here: %s', 'soundlogo-theme-admin' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		'<a href="' . esc_url( admin_url() ) . 'edit.php?post_type=wp_block" target="_blank">' . esc_url( admin_url() ) . 'edit.php?post_type=wp_block</a>'
+	) . '</p>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+}
