@@ -4,7 +4,7 @@ const { InspectorControls } = wp.blockEditor;
 const { SelectControl, Panel, PanelBody, } = wp.components;
 const { __ } = wp.i18n;
 
-const assignAttributes = ( settings, name ) => {
+const assignNewAttributes = ( settings, name ) => {
 	if ( name !== 'shiro/landing-page-hero' ) {
 		return settings;
 	}
@@ -34,7 +34,7 @@ const assignAttributes = ( settings, name ) => {
 wp.hooks.addFilter(
     'blocks.registerBlockType',
     'soundlogo/landing-page-hero/attributes',
-    assignAttributes,
+    assignNewAttributes,
 );
 
 
