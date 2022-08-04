@@ -4,37 +4,49 @@ const { InspectorControls } = wp.blockEditor;
 const { SelectControl, Panel, PanelBody, } = wp.components;
 const { __ } = wp.i18n;
 
-const landingPageHeroCustomAttributes = createHigherOrderComponent( ( BlockEdit ) => {
+const assignAttributes = ( settings, name ) => {
+	if ( name !== 'shiro/landing-page-hero' ) {
+		return settings;
+	}
+
+	const ctaButtonStyle = {
+		type: 'string',
+		default: 'no-icon-blue-background',
+	};
+
+	const headingDescription = {
+		type: 'string',
+		source: 'html',
+		selector: '.hero__description',
+		multiline: 'p',
+	};
+
+	const currentSettings =  Object.assign( {}, settings, {
+		attributes: Object.assign( {}, settings.attributes, {
+			ctaButtonStyle: ctaButtonStyle,
+			headingDescription: headingDescription,
+		} ),
+	} );
+
+	return currentSettings;
+};
+
+wp.hooks.addFilter(
+    'blocks.registerBlockType',
+    'soundlogo/landing-page-hero/attributes',
+    assignAttributes,
+);
+
+
+const customControls = createHigherOrderComponent( ( BlockEdit ) => {
     return ( props ) => {
 
 		if ( props.name !== 'shiro/landing-page-hero' ) {
 			return <BlockEdit { ...props } />;
 		}
 
-		// const ctaButtonStyle = {
-		// 	type: 'string',
-		// 	default: 'no-icon-blue-background',
-		// };
-
-		// const headingDescription = {
-		// 	type: 'string',
-		// 	source: 'html',
-		// 	selector: '.hero__description',
-		// 	multiline: 'p',
-		// };
-
-		const ctaButtonStyle = 'no-icon-blue-background';
-		const headingDescription = __( 'People all over the world ask their voice-activated devices all sorts of questions, and search engines query Wikipedia knowledge to provide them with answers. That is why we are looking to co-create a sound logo that will be played each time a person is served an answer to a question that was responded with Wikimedia projects.', 'shiro-admin' );
-
-		const { attributes } = props;
-
-		props.attributes = {
-			...attributes,
-			ctaButtonStyle,
-			headingDescription,
-		};
-
-		console.log(props);
+		const { attributes, setAttributes } = props;
+		const { ctaButtonStyle, headingDescription } = attributes;
 
 		const ctaButtonStyleOptions = [
 			{ label: __( 'No icon / Blue background', 'shiro-admin' ), value: 'no-icon-blue-background' },
@@ -74,6 +86,6 @@ const landingPageHeroCustomAttributes = createHigherOrderComponent( ( BlockEdit 
 
 wp.hooks.addFilter(
     'editor.BlockEdit',
-    'soundlogo/landing-page-hero',
-    landingPageHeroCustomAttributes
+    'soundlogo/landing-page-hero/custom-controls',
+    customControls,
 );
