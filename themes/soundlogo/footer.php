@@ -28,3 +28,10 @@ if ( isset( $footer_reusable_block_id ) ) {
 	</div>
 </footer>
 <?php endif; ?>
+
+
+<?php wp_footer(); ?>
+
+</div>
+</body>
+</html>
