@@ -96,4 +96,25 @@
 		font-weight: 400;
 		font-size: 26px;
 	}
+
+	&__description p {
+		font-family: var(--font-family-serif);
+		font-weight: 400;
+		font-size: 17px !important;
+	}
+
+	&__cta-button {
+
+		border-radius: 4px;
+		font-family: var(--font-family-serif);
+		font-size: 17px !important;
+		font-weight: 700;
+
+		:hover {
+			opacity: 0.9;
+			text-decoration: none;
+		}
+
+
+	}
 }
