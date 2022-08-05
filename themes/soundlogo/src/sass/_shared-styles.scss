@@ -106,65 +106,44 @@
 	&__description p:empty {
 		display: none;
 	}
+}
 
-	&__cta-button {
+.hero.hero__cta__button--info-icon-gray-background .cta-button {
+	color: #000 !important;
+	background-color: #F4F4F4;
+	background-image: url("../../assets/images/icon-info.svg");
 
-		background-position-x: 15px;
-		background-position-y: center;
-		background-repeat: no-repeat;
-		border-radius: 4px;
-		font-family: var(--font-family-serif);
-		font-size: 17px !important;
-		font-weight: 700;
-		height: 44px;
-		line-height: 30px;
-		padding-left: 60px;
-		padding-right: 30px;
-		width: auto;
+	&:hover {
+		color: #000 !important;
+		background-color: #F4F4F4;
+	}
+}
 
-		&--no-icon-blue-background {
-			color: #FFF !important;
-			background-color: #3a25ff;
-			padding: .375rem .75rem;
-		}
+.hero.hero__cta__button--no-icon-blue-background .cta-button {
+	color: #FFF !important;
+	background-color: #3a25ff;
+	padding: .375rem .75rem;
+}
 
-		&--info-icon-gray-background {
-			color: #000 !important;
-			background-color: #F4F4F4;
-			background-image: url("../../assets/images/icon-info.svg");
+.hero.hero__cta__button--info-icon-no-background .cta-button {
+	color: #FFF !important;
+	background-color: transparent;
+	border: 2px solid white;
+	background-image: url("../../assets/images/icon-info.svg");
 
-			&:hover {
-				color: #000 !important;
-				background-color: #F4F4F4;
-			}
-		}
+	&:hover {
+		color: #FFF !important;
+		background-color: transparent;
+	}
+}
 
-		&--info-icon-no-background {
-			color: #FFF !important;
-			background-color: transparent;
-			border: 2px solid white;
-			background-image: url("../../assets/images/icon-info.svg");
+.hero.hero__cta__button--expand-icon-gray-background .cta-button {
+	color: #000 !important;
+	background-color: #F4F4F4;
+	background-image: url("../../assets/images/icon-expand.svg");
 
-			&:hover {
-				color: #FFF !important;
-				background-color: transparent;
-			}
-		}
-
-		&--expand-icon-gray-background {
-			color: #000 !important;
-			background-color: #F4F4F4;
-			background-image: url("../../assets/images/icon-expand.svg");
-
-			&:hover {
-				color: #000 !important;
-				background-color: #F4F4F4;
-			}
-		}
-
-		&:hover {
-			opacity: 0.9;
-			text-decoration: none;
-		}
+	&:hover {
+		color: #000 !important;
+		background-color: #F4F4F4;
 	}
 }

@@ -1,10 +1,10 @@
 const { createHigherOrderComponent } = wp.compose;
 const { Fragment } = wp.element;
-const { InspectorControls } = wp.blockEditor;
+const { InspectorControls, RichText, useBlockProps } = wp.blockEditor;
 const { SelectControl, Panel, PanelBody, } = wp.components;
 const { __ } = wp.i18n;
 
-const assignNewAttributes = ( settings, name ) => {
+const addNewAttributes = ( settings, name ) => {
 	if ( name !== 'shiro/landing-page-hero' ) {
 		return settings;
 	}
@@ -34,16 +34,19 @@ const assignNewAttributes = ( settings, name ) => {
 wp.hooks.addFilter(
     'blocks.registerBlockType',
     'soundlogo/landing-page-hero/attributes',
-    assignNewAttributes,
+    addNewAttributes,
 );
 
 
-const customControls = createHigherOrderComponent( ( BlockEdit ) => {
+const customCtaButtonStyleControl = createHigherOrderComponent( ( BlockEdit ) => {
     return ( props ) => {
 
 		if ( props.name !== 'shiro/landing-page-hero' ) {
 			return <BlockEdit { ...props } />;
 		}
+
+		const blockProps = useBlockProps( { className: 'hero' } );
+		console.log(blockProps);
 
 		const { attributes, setAttributes } = props;
 		const { ctaButtonStyle, headingDescription } = attributes;
@@ -87,5 +90,50 @@ const customControls = createHigherOrderComponent( ( BlockEdit ) => {
 wp.hooks.addFilter(
     'editor.BlockEdit',
     'soundlogo/landing-page-hero/custom-controls',
-    customControls,
+    customCtaButtonStyleControl,
 );
+
+
+const addCtaButtonStyleClass = createHigherOrderComponent( ( BlockListBlock ) => {
+    return ( props ) => {
+		if ( props.name !== 'shiro/landing-page-hero' ) {
+			return <BlockEdit { ...props } />;
+		}
+
+		console.log(props.wrapperProps);
+
+		const { attributes } = props;
+		const { ctaButtonStyle } = attributes;
+
+		if ( ctaButtonStyle ) {
+			return <BlockListBlock { ...props } className={ `hero__cta__button--${ ctaButtonStyle }` } />
+		} else {
+			return <BlockListBlock { ...props } />
+		}
+    };
+}, 'addCtaButtonStyleClass' );
+
+wp.hooks.addFilter(
+    'editor.BlockListBlock',
+    'soundlogo/landing-page-hero/custom-cta-class',
+    addCtaButtonStyleClass
+);
+
+
+// const saveCtaClassAttribute = ( extraProps, blockType, attributes ) => {
+// 	//console.log(extraProps, blockType, attributes);
+// 	// if ( props.name === 'shiro/landing-page-hero' ) {
+//     //     const { ctaButtonStyle } = attributes;
+//     //     if ( ctaButtonStyle ) {
+//     //         extraProps.className = classnames( extraProps.className, 'hero__cta-button--' + ctaButtonStyle )
+//     //     }
+//     // }
+
+//     return extraProps;
+
+// };
+// wp.hooks.addFilter(
+//     'blocks.getSaveContent.extraProps',
+//     'soundlogo/landing-page-hero/save-cta-class-attribute',
+//     saveCtaClassAttribute,
+// );

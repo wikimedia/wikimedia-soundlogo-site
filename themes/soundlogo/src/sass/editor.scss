@@ -36,3 +36,24 @@ h3 {
 	font-family: var(--font-family-sans);
 	font-weight: 700;
 }
+
+.hero .cta-button {
+	background-position-x: 15px;
+	background-position-y: center;
+	background-repeat: no-repeat;
+	border-radius: 4px;
+	font-family: var(--font-family-serif);
+	font-size: 17px !important;
+	font-weight: 700;
+	height: 44px;
+	line-height: 30px;
+	padding-left: 60px;
+	padding-right: 30px;
+	width: auto;
+
+	:hover {
+		opacity: 0.9;
+		text-decoration: none;
+	}
+}
+
