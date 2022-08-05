@@ -2,7 +2,7 @@
 mu-plugins/
 
 # Dependencies
-themes/
+themes/shiro/
 vendor/
 plugins/asset-loader/
 plugins/hm-gutenberg-tools/
