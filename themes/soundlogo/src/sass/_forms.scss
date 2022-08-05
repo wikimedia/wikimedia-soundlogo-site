@@ -12,6 +12,8 @@
 	box-shadow: 0px 2px 15px rgba(84, 89, 93, 0.2);
 }
 
+// This form uses a bright "UI Red" color than the brand strong red.
+$color-red: #ff4242;
 
 .gfield_required_asterisk {
 	margin: 0.25em;
@@ -31,24 +33,28 @@
 		margin-bottom: 35px;
 		position: relative;
 		padding: 12px;
+		flex-basis: 100%;
 
-		@include mq( tablet ) {
-			flex-basis: 45%;
+		&--width-half {
+			@include mq( tablet ) {
+				flex-basis: 45%;
+			}
 		}
 
-		@include mq( desktop ) {
-			flex-basis: 30%;
-		}
+		&--width-third {
+			@include mq( tablet ) {
+				flex-basis: 45%;
+			}
 
-		&.gsection,
-		&.gfield--fullwidth {
-			flex-basis: 100%;
+			@include mq( desktop ) {
+				flex-basis: 30%;
+			}
 		}
 	}
 
 	.gfield_description {
 		font-size: 12px;
-		padding: $space-l;
+		padding: $space-s $space-l;
 	}
 
 	.button:focus {
@@ -131,6 +137,31 @@
 		width: 100%;
 	}
 
+	.gform_validation_errors {
+
+		.gform_submission_error {
+			font-size: 18px;
+			color: #ff4242;
+
+		}
+
+		ol li {
+			font-size: 14px;
+			margin-bottom: 0;
+			color: #ff4242;
+		}
+
+		.gform_validation_error_link {
+			font-size: 14px;
+			color: #ff4242;
+		}
+	}
+
+	.gform_validation_error {
+		.validation_error {
+
+		}
+	}
 }
 
 /*
@@ -184,8 +215,6 @@
  * control how inputs and labels display when validation fails.
  */
 
-/* stylelint-disable no-descending-specificity */
-
 /*
  * General validation styles.
  */
@@ -204,8 +233,6 @@
 
 	.validation_message {
 		font-size: 12px;
-		font-style: italic;
-		margin-top: 5px;
 	}
 }
 
