@@ -36,3 +36,10 @@ h3 {
 	font-family: var(--font-family-sans);
 	font-weight: 700;
 }
+
+// Make sure landing page hero renders full-wide in the editor.
+.wp-block-shiro-landing-page-hero {
+	width: 100%;
+	max-width: unset !important;
+	padding: 0 !important;
+}
