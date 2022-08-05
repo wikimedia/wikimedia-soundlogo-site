@@ -95,17 +95,26 @@ $color-green-active: #00af89;
 			text-align: left;
 			appearance: none;
 
+			// Copied from shiro theme focus for inputs.
+			&:focus {
+				border-radius: 0.125rem;
+				box-shadow: 0 0 0 3px rgba( 0, 125, 250, 0.6 );
+				outline: none;
+			}
+
 			&:hover {
 				@include focus-shadow;
 				transform: translateY( 2px );
 			}
 
+			// stylelint-disable max-nesting-depth
 			&::after {
 				display: block;
 				content: "7";
 				position: absolute;
 				right: $space-l;
 				top: 50%;
+				transform: translateY( -50% );
 			}
 		}
 
@@ -121,7 +130,7 @@ $color-green-active: #00af89;
 			font-size: 17px;
 			z-index: 1;
 
-			&:focus-within {
+			&.is-opened {
 				display: block;
 				@include focus-shadow;
 			}
@@ -135,7 +144,7 @@ $color-green-active: #00af89;
 			margin-bottom: 0;
 			text-overflow: ellipsis;
 
-			&[selected] {
+			&.is-selected {
 				background-color: $color-green-active;;
 				color: $color-white;
 			}
