@@ -6,6 +6,7 @@
 
 		@include mq( phone ) {
 			font-size: 32px;
+			font-weight: 800;
 		}
 
 		@include mq( tablet ) {
@@ -63,13 +64,39 @@
 	}
 }
 
+$column-width: 1192px;
+
 .hero {
-	&__kicker {
-		font-family: var( --font-family-sans );
-		font-weight: 800;
+
+	@include mq( desktop ) {
+		margin-left: calc( #{$column-width / 2} - 50vw );
+		margin-right: calc( #{$column-width / 2} - 50vw );
+		width: 100vw;
+	}
+
+	&__header {
+		flex-direction: column;
+		padding: 60px 20px;
+		margin: 0;
 
 		@include mq( phone ) {
-			font-size: 21px;
+			padding: 115px 45px;
+		}
+
+		@include mq( desktop ) {
+			flex-direction: row;
+			align-items: center;
+			padding: 120px calc( 50vw - #{$column-width / 2} );
+		}
+	}
+
+	&__kicker {
+		font-family: var( --font-family-sans );
+		font-weight: 700;
+		font-size: 21px;
+
+		@include mq( phone ) {
+			font-size: 32px;
 		}
 
 		@include mq( tablet ) {
@@ -80,13 +107,13 @@
 	&__title {
 		font-family: var( --font-family-sans );
 		font-weight: 800;
+		font-size: 32px;
 
 		@include mq( phone ) {
-			font-size: 32px;
+			font-size: 56px;
 		}
 
 		@include mq( tablet ) {
-			font-size: 56px;
 		}
 	}
 
@@ -96,21 +123,42 @@
 		font-size: 26px;
 	}
 
-	&__description p {
+	& &__description p {
 		font-family: var( --font-family-serif );
 		font-weight: 400;
-		font-size: 17px !important;
+		font-size: 17px;
+		margin-bottom: 1.5em;
 	}
 
 	&__cta-button {
-		border-radius: 4px;
+		border-radius: 2px;
 		font-family: var( --font-family-serif );
 		font-size: 17px !important;
 		font-weight: 700;
+		margin-bottom: 0;
 
-		:hover {
+		&:hover {
 			opacity: 0.9;
 			text-decoration: none;
+		}
+	}
+
+	&__image-container {
+		display: block;
+		width: 100%;
+		margin-top: 50px;
+
+		@include mq( phone ) {
+			margin-top: 75px;
+		}
+
+		@include mq( desktop ) {
+			width: 50%;
+			margin-top: 0;
+		}
+
+		.hero__image {
+			width: 100%;
 		}
 	}
 }
