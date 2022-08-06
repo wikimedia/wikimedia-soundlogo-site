@@ -29,7 +29,8 @@ $space-s: 10px;
 $breakpoints: (
 	"phone":   480px,
 	"tablet":  780px,
-	"desktop": 1200px,
+	"small-desktop": 1068px,
+	"desktop": 1272px,
 );
 
 // CSS variables, to override those in parent theme

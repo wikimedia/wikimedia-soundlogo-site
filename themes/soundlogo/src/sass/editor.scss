@@ -42,4 +42,16 @@ h3 {
 	width: 100%;
 	max-width: unset !important;
 	padding: 0 !important;
+
+	.hero__header {
+		width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+		box-sizing: border-box;
+	}
+
+	// Hide the hero-intro since it's not part of the designs.
+	.hero__intro {
+		display: none;
+	}
 }

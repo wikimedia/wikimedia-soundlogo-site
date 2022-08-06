@@ -67,27 +67,34 @@
 $column-width: 1192px;
 
 .hero {
-
-	@include mq( desktop ) {
-		margin-left: calc( #{$column-width / 2} - 50vw );
-		margin-right: calc( #{$column-width / 2} - 50vw );
-		width: 100vw;
-	}
-
 	&__header {
 		flex-direction: column;
 		padding: 60px 20px;
-		margin: 0;
+		width: 100vw;
+		max-width: $column-width;
 
 		@include mq( phone ) {
 			padding: 115px 45px;
 		}
 
+		// Override breakpoint in shiro theme.
+		@include mq( small-desktop ) {
+			margin: 0 -40px;
+		}
+
 		@include mq( desktop ) {
 			flex-direction: row;
 			align-items: center;
+			margin-left: calc( #{$column-width / 2} - 50vw );
+			margin-right: calc( #{$column-width / 2} - 50vw );
 			padding: 120px calc( 50vw - #{$column-width / 2} );
+			box-sizing: content-box;
 		}
+
+		@include mq( desktop ) {
+			width: 100vw;
+		}
+
 	}
 
 	&__kicker {
@@ -140,6 +147,14 @@ $column-width: 1192px;
 		&:hover {
 			opacity: 0.9;
 			text-decoration: none;
+		}
+	}
+
+	&__text-column {
+		width: 100%;
+
+		@include mq( desktop ) {
+			width: 50%;
 		}
 	}
 
