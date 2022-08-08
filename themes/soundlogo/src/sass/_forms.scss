@@ -36,17 +36,17 @@ $color-red: #ff4242;
 		flex-basis: 100%;
 
 		&--width-half {
-			@include mq( tablet ) {
+			@include mq( medium ) {
 				flex-basis: 45%;
 			}
 		}
 
 		&--width-third {
-			@include mq( tablet ) {
+			@include mq( medium ) {
 				flex-basis: 45%;
 			}
 
-			@include mq( desktop ) {
+			@include mq( large ) {
 				flex-basis: 30%;
 			}
 		}
