@@ -109,9 +109,8 @@ $color-green-active: #00af89;
 			}
 
 			// stylelint-disable max-nesting-depth
-			&::after {
-				display: block;
-				content: "7";
+			.icon {
+				width: 1rem;
 				position: absolute;
 				right: $space-l;
 				top: 50%;
