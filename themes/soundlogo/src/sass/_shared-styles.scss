@@ -80,6 +80,7 @@ $column-width: 1192px;
 		//Override breakpoint in shiro theme.
 		@include mq( medium ) {
 			margin: 0 -40px;
+			max-width: unset;
 		}
 
 		@include mq( large ) {
@@ -89,12 +90,8 @@ $column-width: 1192px;
 			margin-right: calc( #{$column-width / 2} - 50vw );
 			padding: 120px calc( 50vw - #{$column-width / 2} );
 			box-sizing: content-box;
+			max-width: $column-width;
 		}
-
-		@include mq( large ) {
-			width: 100vw;
-		}
-
 	}
 
 	&__kicker {
