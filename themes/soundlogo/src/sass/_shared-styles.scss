@@ -146,8 +146,9 @@ $column-width: 1192px;
 		width: 100%;
 		margin-top: 50px;
 
-		@include mq( small ) {
-			margin-top: 75px;
+		@include mq( medium ) {
+			margin-top: auto;
+			margin-bottom: auto;
 		}
 
 		@include mq( large ) {
