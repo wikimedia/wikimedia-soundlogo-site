@@ -4,16 +4,16 @@
 		font-family: var( --font-family-sans );
 		font-weight: 800;
 
-		@include mq( phone ) {
+		@include mq( small ) {
 			font-size: 32px;
 			font-weight: 800;
 		}
 
-		@include mq( tablet ) {
+		@include mq( medium ) {
 			font-size: 42px;
 		}
 
-		@include mq( desktop ) {
+		@include mq( large ) {
 			font-size: 56px;
 		}
 	}
@@ -22,11 +22,11 @@
 		font-family: var( --font-family-serif );
 		font-weight: 400;
 
-		@include mq( phone ) {
+		@include mq( small ) {
 			font-size: 17px;
 		}
 
-		@include mq( tablet ) {
+		@include mq( medium ) {
 			font-size: 26px;
 		}
 	}
@@ -36,15 +36,15 @@
 	font-family: var( --font-family-sans );
 	font-weight: 800;
 
-	@include mq( phone ) {
+	@include mq( small ) {
 		font-size: 32px;
 	}
 
-	@include mq( tablet ) {
+	@include mq( medium ) {
 		font-size: 42px;
 	}
 
-	@include mq( desktop ) {
+	@include mq( large ) {
 		font-size: 56px;
 	}
 }
@@ -54,11 +54,11 @@
 		font-family: var( --font-family-serif );
 		font-weight: 400;
 
-		@include mq( phone ) {
+		@include mq( small ) {
 			font-size: 17px;
 		}
 
-		@include mq( tablet ) {
+		@include mq( medium ) {
 			font-size: 26px;
 		}
 	}
@@ -73,16 +73,16 @@ $column-width: 1192px;
 		width: 100vw;
 		max-width: $column-width;
 
-		@include mq( phone ) {
+		@include mq( small ) {
 			padding: 115px 45px;
 		}
 
-		// Override breakpoint in shiro theme.
-		@include mq( small-desktop ) {
+		//Override breakpoint in shiro theme.
+		@include mq( medium ) {
 			margin: 0 -40px;
 		}
 
-		@include mq( desktop ) {
+		@include mq( large ) {
 			flex-direction: row;
 			align-items: center;
 			margin-left: calc( #{$column-width / 2} - 50vw );
@@ -91,7 +91,7 @@ $column-width: 1192px;
 			box-sizing: content-box;
 		}
 
-		@include mq( desktop ) {
+		@include mq( large ) {
 			width: 100vw;
 		}
 
@@ -102,12 +102,9 @@ $column-width: 1192px;
 		font-weight: 700;
 		font-size: 21px;
 
-		@include mq( phone ) {
+		@include mq( small ) {
 			font-size: 32px;
-		}
-
-		@include mq( tablet ) {
-			font-size: 32px;
+			font-weight: 800;
 		}
 	}
 
@@ -116,11 +113,11 @@ $column-width: 1192px;
 		font-weight: 800;
 		font-size: 32px;
 
-		@include mq( phone ) {
+		@include mq( small ) {
 			font-size: 56px;
 		}
 
-		@include mq( tablet ) {
+		@include mq( medium ) {
 		}
 	}
 
@@ -153,7 +150,7 @@ $column-width: 1192px;
 	&__text-column {
 		width: 100%;
 
-		@include mq( desktop ) {
+		@include mq( large ) {
 			width: 50%;
 		}
 	}
@@ -163,11 +160,11 @@ $column-width: 1192px;
 		width: 100%;
 		margin-top: 50px;
 
-		@include mq( phone ) {
+		@include mq( small ) {
 			margin-top: 75px;
 		}
 
-		@include mq( desktop ) {
+		@include mq( large ) {
 			width: 50%;
 			margin-top: 0;
 		}

@@ -27,10 +27,9 @@ $space-s: 10px;
 
 // Media queries
 $breakpoints: (
-	"phone":   480px,
-	"tablet":  780px,
-	"small-desktop": 1068px,
-	"desktop": 1272px,
+	"small":   480px, // Identified as Mobile on Figma mockup
+	"medium":  768px, // Identified as Tablet on Figma mockup
+	"large": 1272px, // Identified as Desktop on Figma mockup
 );
 
 // CSS variables, to override those in parent theme
