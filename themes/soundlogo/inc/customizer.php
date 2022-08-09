@@ -22,7 +22,7 @@ function bootstrap() {
 function customize_register( $wp_customize ) {
 	$sections = $wp_customize->sections();
 
-	// Remove all Shiro theme footer controls
+	// Remove all Shiro theme footer controls.
 	$removed_controls = [
 		'wmf_footer_logo',
 		'wmf_footer_text',
