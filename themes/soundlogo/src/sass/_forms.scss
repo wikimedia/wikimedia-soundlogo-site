@@ -14,6 +14,8 @@
 
 // This form uses a bright "UI Red" color than the brand strong red.
 $color-red: #ff4242;
+$color-green-light: #d5fdf4;
+$color-green-active: #00af89;
 
 .gfield_required_asterisk {
 	margin: 0.25em;
@@ -36,17 +38,17 @@ $color-red: #ff4242;
 		flex-basis: 100%;
 
 		&--width-half {
-			@include mq( tablet ) {
+			@include mq( medium ) {
 				flex-basis: 45%;
 			}
 		}
 
 		&--width-third {
-			@include mq( tablet ) {
+			@include mq( medium ) {
 				flex-basis: 45%;
 			}
 
-			@include mq( desktop ) {
+			@include mq( large ) {
 				flex-basis: 30%;
 			}
 		}
@@ -66,6 +68,8 @@ $color-red: #ff4242;
 	input[type="tel"],
 	input[type="email"],
 	select,
+	.gfield_custom_select,
+	.gfield_toggle,
 	.textarea {
 		border-color: $color-input-border;
 		border-width: 2px;
@@ -78,17 +82,90 @@ $color-red: #ff4242;
 		margin: 0 .5em;
 	}
 
-	select option {
-		background-color: $color-bright-green;
-		line-height: 2;
-		padding: 10px 12px;
+	.gfield_custom_select {
+		position: relative;
+		padding: 0;
 
-		&:hover {
-			background-color: $color-green;
+		.gfield_toggle {
+			width: 100%;
+			height: 45px;
+			border: 2px solid #eaecf0;
+			margin: 3px 0;
+			background-color: transparent;
+			text-align: left;
+			appearance: none;
+			color: #202122;
+
+			// Copied from shiro theme focus for inputs.
+			&:focus {
+				border-radius: 0.125rem;
+				box-shadow: 0 0 0 3px rgba( 0, 125, 250, 0.6 );
+				outline: none;
+			}
+
+			&:hover {
+				@include focus-shadow;
+				transform: translateY( 2px );
+			}
+
+			// stylelint-disable max-nesting-depth
+			.icon {
+				width: 1rem;
+				position: absolute;
+				right: $space-l;
+				top: 50%;
+				transform: translateY( -50% );
+			}
 		}
 
-		+ option {
-			border-top: 2px solid $color-green;
+		.gfield_listbox {
+			display: none;
+
+			position: absolute;
+			top: calc( 100% - 3px );
+			width: 100%;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			font-size: 17px;
+			z-index: 1;
+
+			&.is-opened {
+				display: block;
+				@include focus-shadow;
+			}
+		}
+
+		.gfield_option {
+			margin-bottom: 0;
+			text-overflow: ellipsis;
+
+			button {
+				background-color: $color-green-light;
+				width: 100%;
+				height: 32px;
+				font-size: 17px;
+				font-weight: 400;
+				line-height: 32px;
+				padding: 0 12px;
+				color: inherit;
+				text-align: left;
+
+				&:hover,
+				&:focus {
+					background-color: $color-green-active;
+					color: $color-white;
+				}
+			}
+
+			&.is-selected button {
+				background-color: $color-green-active;;
+				color: $color-white;
+			}
+
+			+ .gfield_option {
+				border-top: 2px solid $color-green-active;
+			}
 		}
 	}
 

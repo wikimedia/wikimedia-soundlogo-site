@@ -1,0 +1,112 @@
+# Copyright (C) 2022 Human Made
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Sound Logo Contest 0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/soundlogo\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2022-08-06T15:20:45-04:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.5.0\n"
+"X-Domain: wikimedia-contest-admin\n"
+
+#. Plugin Name of the plugin
+msgid "Wikimedia Contest"
+msgstr ""
+
+#. Description of the plugin
+msgid "Manage the Wikimedia Contests"
+msgstr ""
+
+#. Author of the plugin
+#. Author of the theme
+msgid "Human Made"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://github.com/humanmade"
+msgstr ""
+
+#: inc/class-screening-queue-list-table.php:29
+msgid "Sound Logo Entry"
+msgstr ""
+
+#: inc/class-screening-queue-list-table.php:30
+msgid "Sound Logo Entries"
+msgstr ""
+
+#: inc/class-screening-queue-list-table.php:123
+msgid "Submission ID"
+msgstr ""
+
+#: inc/class-screening-queue-list-table.php:124
+msgid "Submission Date"
+msgstr ""
+
+#: inc/class-screening-queue-list-table.php:125
+msgid "Screening Results"
+msgstr ""
+
+#: inc/screening-results.php:58
+msgid "Screener"
+msgstr ""
+
+#: inc/screening-results.php:84
+#: inc/screening-results.php:85
+#: inc/screening-results.php:93
+#: inc/screening-results.php:94
+#: inc/screening-results.php:113
+msgid "Screening Queue"
+msgstr ""
+
+#: inc/screening-results.php:140
+msgid "< 1s duration"
+msgstr ""
+
+#: inc/screening-results.php:141
+msgid "> 4s duration"
+msgstr ""
+
+#: inc/screening-results.php:142
+msgid "Bitrate too low"
+msgstr ""
+
+#: inc/workflows-triggers.php:65
+msgid "When a new entry is submitted"
+msgstr ""
+
+#: inc/workflows-triggers.php:73
+msgid "Sound Logo Creator"
+msgstr ""
+
+#. Theme Name of the theme
+msgid "Sound Logo Contest"
+msgstr ""
+
+#. Description of the theme
+msgid "Shiro child theme, used for Wikimedia Sound Logo content"
+msgstr ""
+
+#: inc/editor/namespace.php:54
+msgid "Black"
+msgstr ""
+
+#: inc/editor/namespace.php:60
+msgid "White"
+msgstr ""
+
+#: inc/editor/namespace.php:66
+msgid "Pink"
+msgstr ""
+
+#: inc/editor/namespace.php:72
+msgid "Strong Bright Green"
+msgstr ""
+
+#: inc/editor/namespace.php:78
+msgid "Light Bright Green"
+msgstr ""
