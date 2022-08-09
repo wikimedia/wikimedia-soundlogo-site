@@ -47,9 +47,11 @@
 
 	<!-- Ignore 3rd-party code -->
 	<exclude-pattern>mu-plugins/*</exclude-pattern>
-	<exclude-pattern>themes/*</exclude-pattern>
 	<exclude-pattern>uploads/*</exclude-pattern>
 	<exclude-pattern>vendor/*</exclude-pattern>
+
+	<!-- Ignore all themes except for soundlogo -->
+	<exclude-pattern type="relative">^(?!themes/(soundlogo)).+</exclude-pattern>
 
 	<exclude-pattern>plugins/asset-loader/*</exclude-pattern>
 	<exclude-pattern>plugins/gf-hcaptcha/*</exclude-pattern>
