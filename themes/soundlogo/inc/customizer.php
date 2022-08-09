@@ -50,8 +50,8 @@ function customize_register( $wp_customize ) {
 		[
 			'label' => __( 'Reusable Block to use for footer', 'wikimedia-contest-admin' ),
 			'description' => __( 'Choose a block to hold footer content.', 'wikimedia-contest-admin' ),
-			'section'     => 'wmf_footer',
-			'type'        => 'select',
+			'section' => 'wmf_footer',
+			'type' => 'select',
 			'choices' => wp_list_pluck( $available_blocks, 'post_title', 'ID' ),
 		]
 	);
