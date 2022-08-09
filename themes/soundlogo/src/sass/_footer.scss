@@ -1,0 +1,38 @@
+.footer {
+	&__container {
+		background-color: #f8f9fa;
+		padding-top: 40px;
+		width: 100%;
+	}
+
+	&__reusable-block {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 79.5rem;
+		padding: 1rem;
+		width: 100%;
+
+		h2 {
+			font-family: var(--font-family-sans);
+		}
+
+		p {
+			font-family: var(--font-family-serif);
+		}
+
+		.wp-block-columns {
+			margin-bottom: 0px;
+		}
+
+		.social-media-icons {
+			max-width: 50%;
+			flex-flow: nowrap;
+			align-items: baseline;
+			margin-top: -20px;
+
+			.wp-block-column:not(:first-child) {
+				margin-left: 20px;
+			}
+		}
+	}
+}

@@ -54,3 +54,6 @@ phpcs.xml
 # Built assets
 /plugins/wikimedia-contest/build/
 /themes/soundlogo/build/
+
+# VSCode directory
+.vscode/

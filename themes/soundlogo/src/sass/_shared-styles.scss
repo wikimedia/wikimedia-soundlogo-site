@@ -1,99 +1,162 @@
 .banner__content {
-
-	h2, h4 {
-		font-family: var(--font-family-sans);
+	h2,
+	h4 {
+		font-family: var( --font-family-sans );
 		font-weight: 800;
+		font-size: 32px;
 
-		@include mq('phone') {
-			font-size: 32px;
-		}
-
-		@include mq('tablet') {
+		@include mq( small ) {
 			font-size: 42px;
+			font-weight: 800;
 		}
 
-		@include mq('desktop') {
+		@include mq( large ) {
 			font-size: 56px;
 		}
 	}
 
 	p {
-		font-family: var(--font-family-serif);
+		font-family: var( --font-family-serif );
 		font-weight: 400;
+		font-size: 17px;
 
-		@include mq('phone') {
-			font-size: 17px;
-		}
-		@include mq('tablet') {
+		@include mq( medium ) {
 			font-size: 26px;
 		}
 	}
 }
 
 .spotlight__content > .spotlight__heading {
-
-	font-family: var(--font-family-sans);
+	font-family: var( --font-family-sans );
 	font-weight: 800;
+	font-size: 32px;
 
-	@include mq('phone') {
-		font-size: 32px;
-	}
-
-	@include mq('tablet') {
+	@include mq( medium ) {
 		font-size: 42px;
 	}
 
-	@include mq('desktop') {
+	@include mq( large ) {
 		font-size: 56px;
 	}
 }
 
 .spotlight__content {
-
 	p {
-		font-family: var(--font-family-serif);
+		font-family: var( --font-family-serif );
 		font-weight: 400;
+		font-size: 17px;
 
-		@include mq('phone') {
-			font-size: 17px;
-		}
-		@include mq('tablet') {
+		@include mq( medium ) {
 			font-size: 26px;
 		}
 	}
 }
 
+$column-width: 1192px;
+
 .hero {
+	&__header {
+		flex-direction: column;
+		padding: 60px 20px;
+		width: 100vw;
+		max-width: $column-width;
 
-	&__kicker {
-		font-family: var(--font-family-sans);
-		font-weight: 800;
-
-		@include mq('phone') {
-			font-size: 21px;
+		@include mq( small ) {
+			padding: 115px 45px;
 		}
 
-		@include mq('tablet') {
+		//Override breakpoint in shiro theme.
+		@include mq( medium ) {
+			margin: 0 -40px;
+			max-width: unset;
+			flex-direction: row;
+		}
+
+		@include mq( large ) {
+			flex-direction: row;
+			align-items: center;
+			margin-left: calc( #{$column-width / 2} - 50vw );
+			margin-right: calc( #{$column-width / 2} - 50vw );
+			padding: 120px calc( 50vw - #{$column-width / 2} );
+			box-sizing: content-box;
+			max-width: $column-width;
+		}
+	}
+
+	&__kicker {
+		font-family: var( --font-family-sans );
+		font-weight: 700;
+		font-size: 21px;
+
+		@include mq( small ) {
 			font-size: 32px;
+			font-weight: 800;
 		}
 	}
 
 	&__title {
-		font-family: var(--font-family-sans);
+		font-family: var( --font-family-sans );
 		font-weight: 800;
+		font-size: 32px;
 
-		@include mq('phone') {
-			font-size: 32px;
+		@include mq( small ) {
+			font-size: 56px;
 		}
 
-		@include mq('tablet') {
-			font-size: 56px;
+		@include mq( medium ) {
 		}
 	}
 
 	&__intro p {
-		font-family: var(--font-family-serif);
+		font-family: var( --font-family-serif );
 		font-weight: 400;
 		font-size: 26px;
+	}
+
+	& &__description p {
+		font-family: var( --font-family-serif );
+		font-weight: 400;
+		font-size: 17px;
+		margin-bottom: 1.5em;
+	}
+
+	&__cta-button {
+		border-radius: 2px;
+		font-family: var( --font-family-serif );
+		font-size: 17px !important;
+		font-weight: 700;
+		margin-bottom: 0;
+
+		&:hover {
+			opacity: 0.9;
+			text-decoration: none;
+		}
+	}
+
+	&__text-column {
+		width: 100%;
+
+		@include mq( large ) {
+			width: 50%;
+		}
+	}
+
+	&__image-container {
+		display: block;
+		width: 100%;
+		margin-top: 50px;
+
+		@include mq( medium ) {
+			margin-top: auto;
+			margin-bottom: auto;
+		}
+
+		@include mq( large ) {
+			width: 50%;
+		}
+
+		.hero__image {
+			width: 100%;
+		}
 	}
 }

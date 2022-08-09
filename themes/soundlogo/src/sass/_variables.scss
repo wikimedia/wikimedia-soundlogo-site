@@ -12,6 +12,9 @@ $color-yellow: var( --wp--preset--color--strong-yellow );
 $color-green: var( --wp--preset--color--strong-green );
 $color-bright-green: var( --wp--preset--color--strong-bright-green );
 $color-default: var( --wp--preset--color--black );
+$color-strong-orange: var( --wp--preset--color--strong-orange );
+$color-strong-pink: var( --wp--preset--color--strong-pink );
+$color-strong-purple: var( --wp--preset--color--strong-purple );
 
 // stylelint-disable color-no-hex
 $color-black-90: #202122;
@@ -24,14 +27,15 @@ $space-s: 10px;
 
 // Media queries
 $breakpoints: (
-	"phone":   480px,
-	"tablet":  780px,
-	"desktop": 1200px,
+	"small":   480px, // Identified as Mobile on Figma mockup
+	"medium":  768px, // Identified as Tablet on Figma mockup
+	"large": 1272px, // Identified as Desktop on Figma mockup
 );
 
 // CSS variables, to override those in parent theme
 :root {
 	--font-family-sans: "Montserrat", "Helvetica", "Liberation Sans", "Arial", sans-serif;
+	--font-family-sans-alternate: "Helvetica", "Liberation Sans", "Arial", sans-serif;
 	--font-family-serif: "Lato", "Arial", sans-serif;
 	--font-family-monospace: "Menlo", "Consolas", "Liberation Mono", "Courier New", monospace;
 }
