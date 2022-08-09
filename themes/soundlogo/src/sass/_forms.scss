@@ -376,7 +376,8 @@ body {
 	}
 
 	// Class applied using javascript.
-	.gfield.has-focus {
+	.gfield.has-focus,
+	.gfield.no-focus-animation {
 		.gfield_label {
 			transform: scale( math.div( 12, 17 ) ) translateY( -115% );
 			transform-origin: top left;
