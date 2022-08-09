@@ -19,6 +19,9 @@ add_action( 'admin_init', __NAMESPACE__ . '\\add_footer_reusable_block_setting' 
 require_once __DIR__ . '/inc/editor/namespace.php';
 \Wikimedia_Contest\Theme\Editor\bootstrap();
 
+require_once __DIR__ . '/inc/customizer.php';
+\Wikimedia_Contest\Theme\Customizer\bootstrap();
+
 /**
  * Enqueue the stylesheet from this theme, as well as the shiro stylesheet.
  */
