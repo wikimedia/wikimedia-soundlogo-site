@@ -20,7 +20,6 @@ function bootstrap() {
  * @param object $wp_customize Full WP_Customizer object.
  */
 function customize_register( $wp_customize ) {
-	$sections = $wp_customize->sections();
 
 	// Remove all Shiro theme footer controls.
 	$removed_controls = [
