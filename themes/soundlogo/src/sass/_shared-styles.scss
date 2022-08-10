@@ -102,9 +102,6 @@ $column-width: 1192px;
 		@include mq( small ) {
 			font-size: 56px;
 		}
-
-		@include mq( medium ) {
-		}
 	}
 
 	&__intro p {
@@ -157,8 +154,8 @@ $column-width: 1192px;
  */
 
 .wp-block-button {
-    margin-right: 15px!important;
-    margin-top: 20px!important;
+	margin-right: 15px !important;
+	margin-top: 20px !important;
 
 	&.has-icon .wp-block-button__link {
 		padding-right: 25px;
@@ -167,11 +164,11 @@ $column-width: 1192px;
 		display: inline-flex;
 		align-items: center;
 
-		&:before {
+		&::before {
 			background-size: cover;
 			min-width: 1.5em;
 			height: 22px;
-			top: 0px;
+			top: 0;
 		}
 
 		@include cta_button();
@@ -179,7 +176,7 @@ $column-width: 1192px;
 
 	&.is-style-transparent .wp-block-button__link {
 		border-width: 3px;
-		padding-top: .55rem;
+		padding-top: 0.55rem;
 	}
 }
 
@@ -187,13 +184,27 @@ $column-width: 1192px;
  * Adjusting wide alignment for block group to center align 125% wider than the container
  * and center align the block group within the container
   */
- .wp-block-group.alignfull {
+.wp-block-group.alignfull {
 	@include mq( large ) {
 		width: 126%;
 		max-width: 126%;
 		margin-left: -13%;
 		margin-right: -13%;
-		padding-left: 0px;
-		padding-right: 0px;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+/*
+ * Adjusting font size of the Seeking of Sound content block
+ */
+.wp-block-group h1 {
+	font-family: var( --font-family-sans );
+	font-weight: 700;
+	font-size: 21px;
+
+	@include mq( small ) {
+		font-size: 56px;
+		font-weight: 800;
 	}
 }
