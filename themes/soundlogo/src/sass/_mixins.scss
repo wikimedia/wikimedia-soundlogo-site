@@ -16,3 +16,16 @@
 		}
 	}
 }
+
+@mixin cta_button() {
+	border-radius: 2px;
+	font-family: var( --font-family-serif );
+	font-size: 17px !important;
+	font-weight: 700;
+	margin-bottom: 0;
+
+	&:hover {
+		opacity: 0.9;
+		text-decoration: none;
+	}
+}
