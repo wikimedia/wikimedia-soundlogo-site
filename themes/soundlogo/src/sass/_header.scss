@@ -109,3 +109,29 @@
 .header-default .header-content {
 	margin-top: 0;
 }
+
+// Ensure that clicks on the icon inside the language switcher button bubble
+// up to the button.
+// stylelint-disable no-descending-specificity
+.language-switcher__button .icon {
+	pointer-events: none;
+}
+
+[data-dropdown-status="initialized"] .language-switcher__content {
+	@include mq( medium, max ) {
+		top: var( --header-height );
+		max-height: calc( var( --full-window-height, 100vh ) - var( --header-height ) );
+		border-top: 1px solid #eaecf0;
+
+		// Necessary to override shiro's "pinned-header" style definitions.
+		.admin-bar & {
+			top: calc( var( --header-height ) + var( --admin-bar-height ) ) !important;
+			max-height:
+				calc(
+					var( --full-window-height, 100vh ) -
+					( var( --header-height ) + var( --admin-bar-height ) )
+				) !important;
+		}
+	}
+
+}
