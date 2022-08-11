@@ -174,6 +174,10 @@ $column-width: 1192px;
 		@include cta_button();
 	}
 
+	&:hover {
+		opacity: 0.7;
+	}
+
 	&.is-style-transparent .wp-block-button__link {
 		border-width: 3px;
 		padding-top: 0.55rem;
@@ -184,9 +188,23 @@ $column-width: 1192px;
  * Adjusting wide alignment for block group to center align 125% wider than the container
  * and center align the block group within the container
   */
-.wp-block-group.alignfull {
+.wp-block-group.alignwide {
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+
+	@include mq( medium ) {
+		min-width: 100%;
+		margin-left: -2.5rem;
+		margin-right: -2.5rem;
+		padding-left: -2.5rem;
+		padding-right: -2.5rem;
+	}
+
 	@include mq( large ) {
 		width: 126%;
+		min-width: 126%;
 		max-width: 126%;
 		margin-left: -13%;
 		margin-right: -13%;
