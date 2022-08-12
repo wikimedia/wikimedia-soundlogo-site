@@ -4,4 +4,6 @@
  * @package wikimedia-contest
  */
 
+require( './frontend/mobile-nav' );
+
 require( './frontend/forms' );
