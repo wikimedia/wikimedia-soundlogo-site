@@ -195,7 +195,7 @@ $column-width: 1192px;
     padding-right: 1.25rem;
 
 	@include mq( medium ) {
-		min-width: 100%;
+		min-width: 100vw;
 		margin-left: -2.5rem;
 		margin-right: -2.5rem;
 		padding-left: -2.5rem;
