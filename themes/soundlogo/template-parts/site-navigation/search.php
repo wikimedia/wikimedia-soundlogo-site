@@ -5,3 +5,5 @@
  * This site only has a couple pages, so search is not a useful functionality
  * to have.
  */
+
+// Silence is golden.
