@@ -34,10 +34,13 @@ $color-green-active: #00af89;
 	}
 
 	.gfield {
-		margin-bottom: 35px;
 		position: relative;
 		padding: 12px;
 		flex-basis: 100%;
+
+		@include mq ( medium ) {
+			margin-bottom: 35px;
+		}
 
 		&--width-half {
 			@include mq( medium ) {
@@ -367,29 +370,31 @@ body {
 	/*
 	 * Position the label over the input so that we can animate it up.
 	 */
-	.gfield_label {
-		position: absolute;
-		max-width: calc( 100% - 56px ); // account for padding outside and inside inputs.
-		transform: translate( 16px, 16px );
-		transition: all 300ms ease;
-		pointer-events: none;
-	}
-
-	// Class applied using javascript.
-	.gfield.has-focus,
-	.gfield.no-focus-animation {
+	@include mq( medium ) {
 		.gfield_label {
-			transform: scale( math.div( 12, 17 ) ) translateY( -115% );
-			transform-origin: top left;
+			position: absolute;
+			max-width: calc( 100% - 56px ); // account for padding outside and inside inputs.
+			transform: translate( 16px, 16px );
 			transition: all 300ms ease;
+			pointer-events: none;
 		}
-	}
 
-	// Class applied by js when a field has been populated.
-	.has-value {
-		.gfield_label {
-			font-size: 12px;
-			transform: translateY( -115% );
+		// Class applied using javascript.
+		.gfield.has-focus:not(.no-focus-animation),
+		.gfield.no-focus-animation {
+			.gfield_label {
+				transform: scale( math.div( 12, 17 ) ) translateY( -115% );
+				transform-origin: top left;
+				transition: all 300ms ease;
+			}
+		}
+
+		// Class applied by js when a field has been populated.
+		.has-value {
+			.gfield_label {
+				font-size: 12px;
+				transform: translateY( -115% );
+			}
 		}
 	}
 
