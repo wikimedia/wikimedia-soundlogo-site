@@ -380,7 +380,7 @@ body {
 		}
 
 		// Class applied using javascript.
-		.gfield.has-focus:not(.no-focus-animation),
+		.gfield.has-focus,
 		.gfield.no-focus-animation {
 			.gfield_label {
 				transform: scale( math.div( 12, 17 ) ) translateY( -115% );
@@ -392,7 +392,6 @@ body {
 		// Class applied by js when a field has been populated.
 		.has-value {
 			.gfield_label {
-				font-size: 12px;
 				transform: translateY( -115% );
 			}
 		}
@@ -412,7 +411,6 @@ body {
 	 */
 	.gform_validation_error {
 		.validation_error {
-
 		}
 	}
 }
