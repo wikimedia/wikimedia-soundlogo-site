@@ -9,25 +9,44 @@ const _languagePicker = document.querySelector(
 );
 
 /**
- * Ensures that the language switcher prevents document scrolling.
+ * Handle document focus and scroll trapping when toggling the language picker.
  *
- * The admin bar can be sticky at some viewport sizes, which throws off the
- * positioning of the site header and language dropdown. This fixes that issue
- * by scrolling up to the top of the page and locking body scrolling while the
- * language dropdown is open.
- *
- * @param {Event} Click event on the toggle button.
+ * @param {Event} Click event on the language-switcher button.
  */
-const toggleLanguagePicker = ( { target } ) => {
+const controlContentInteraction = ( { target } ) => {
+	if ( target.getAttribute( 'aria-expanded' ) === 'true' ) {
+		disableContentInteraction();
+	} else if ( target.getAttribute( 'aria-expanded' ) === 'false' ) {
+		enableContentInteraction();
+	}
+};
 
-	// Set a timeout to allow other listeners to complete first.
-	setTimeout( () => {
-		window.scrollTo( 0, 0 );
-		document.body.classList.toggle(
-			'disable-body-scrolling',
-			target.getAttribute( 'aria-expanded' ) === 'true'
-		);
-	} );
+/**
+ * Handle the escape key when the language switcher menu is open.
+ *
+ * @param {Event} Keydown event
+ */
+const handleKeyPress = ( { keyCode } ) => {
+	if ( keyCode === 27 ) { // esc
+		enableContentInteraction();
+	}
+};
+
+/**
+ * Disable scrolling when the language switcher is open.
+ */
+const disableContentInteraction = () => {
+	window.scrollTo( 0, 0 );
+	document.body.classList.toggle( 'disable-body-scrolling', true );
+	document.addEventListener( 'keydown', handleKeyPress );
+};
+
+/**
+ * Re-enable scrolling when the language switcher is closed.
+ */
+const enableContentInteraction = () => {
+	document.body.classList.toggle( 'disable-body-scrolling', false );
+	document.removeEventListener( 'keydown', handleKeyPress );
 };
 
 /**
@@ -37,8 +56,7 @@ const init = () => {
 	if ( ! _languagePicker ) {
 		return;
 	}
-
-	_languagePicker.addEventListener( 'click', toggleLanguagePicker );
+	_languagePicker.addEventListener( 'click', controlContentInteraction );
 };
 
 document.addEventListener( 'DOMContentLoaded', init );

@@ -102,9 +102,6 @@ $column-width: 1192px;
 		@include mq( small ) {
 			font-size: 56px;
 		}
-
-		@include mq( medium ) {
-		}
 	}
 
 	&__intro p {
@@ -121,16 +118,7 @@ $column-width: 1192px;
 	}
 
 	&__cta-button {
-		border-radius: 2px;
-		font-family: var( --font-family-serif );
-		font-size: 17px !important;
-		font-weight: 700;
-		margin-bottom: 0;
-
-		&:hover {
-			opacity: 0.9;
-			text-decoration: none;
-		}
+		@include cta_button();
 	}
 
 	&__text-column {
@@ -158,5 +146,83 @@ $column-width: 1192px;
 		.hero__image {
 			width: 100%;
 		}
+	}
+}
+
+/*
+ * Adjusting button icon styles of Seeking Sound of Open Source block
+ */
+
+.wp-block-button {
+	margin-right: 15px !important;
+	margin-top: 20px !important;
+
+	&.has-icon .wp-block-button__link {
+		padding-right: 25px;
+		padding-left: 16px;
+		height: 44px;
+		display: inline-flex;
+		align-items: center;
+
+		&::before {
+			background-size: cover;
+			min-width: 1.5em;
+			height: 22px;
+			top: 0;
+		}
+
+		@include cta_button();
+	}
+
+	&:hover {
+		opacity: 0.7;
+	}
+
+	&.is-style-transparent .wp-block-button__link {
+		border-width: 3px;
+		padding-top: 0.55rem;
+	}
+}
+
+/*
+ * Adjusting wide alignment for block group to center align 125% wider than the container
+ * and center align the block group within the container
+  */
+.wp-block-group.alignwide {
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+
+	@include mq( medium ) {
+		min-width: 100vw;
+		margin-left: -2.5rem;
+		margin-right: -2.5rem;
+		padding-left: -2.5rem;
+		padding-right: -2.5rem;
+	}
+
+	@include mq( large ) {
+		width: 126%;
+		min-width: 126%;
+		max-width: 126%;
+		margin-left: -13%;
+		margin-right: -13%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+/*
+ * Adjusting font size of the Seeking of Sound content block
+ */
+.wp-block-group h1 {
+	font-family: var( --font-family-sans );
+	font-weight: 700;
+	font-size: 21px;
+
+	@include mq( small ) {
+		font-size: 56px;
+		font-weight: 800;
 	}
 }
