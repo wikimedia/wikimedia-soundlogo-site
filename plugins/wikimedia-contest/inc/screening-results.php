@@ -40,7 +40,7 @@ const COMMENT_AGENT = 'screening_result';
 function bootstrap() {
 	add_action( 'init', __NAMESPACE__ . '\\register_screener_role' );
 	add_action( 'init', __NAMESPACE__ . '\\support_editorial_comments' );
-	add_action( 'admin_menu', __NAMESPACE__ . '\\register_screening_queue_menu_page' );
+	add_action( 'admin_menu', __NAMESPACE__ . '\\register_screening_queue_menu_pages' );
 	add_action( 'comments_clauses', __NAMESPACE__ . '\\add_agent_fields_to_query', 10, 2 );
 	add_action( 'wikimedia_contest_inserted_submission', __NAMESPACE__ . '\\inserted_submission', 10, 2 );
 	add_filter( 'rest_comment_query', __NAMESPACE__ . '\\allow_custom_statuses_in_workflows_query' );
@@ -76,7 +76,7 @@ function register_screener_role() {
  * If the user can edit submissions, this page will be a submenu page under the
  * Submissions header. Otherwise, it's a top-level menu item.
  */
-function register_screening_queue_menu_page() {
+function register_screening_queue_menu_pages() {
 
 	if ( current_user_can( 'edit_submissions' ) ) {
 		add_submenu_page(
@@ -88,6 +88,15 @@ function register_screening_queue_menu_page() {
 			__NAMESPACE__ . '\\render_screening_queue',
 			5
 		);
+		add_submenu_page(
+			'edit.php?post_type=submission',
+			__( 'Screen Submission', 'wikimedia-contest-admin' ),
+			__( 'Screen Submission', 'wikimedia-contest-admin' ),
+			'screen_submissions',
+			'screen-submission',
+			__NAMESPACE__ . '\\render_screening_interface',
+			5
+		);
 	} else {
 		add_menu_page(
 			__( 'Screening Queue', 'wikimedia-contest-admin' ),
@@ -96,6 +105,15 @@ function register_screening_queue_menu_page() {
 			'screening-queue',
 			__NAMESPACE__ . '\\render_screening_queue',
 			'dashicons-yes-alt',
+			5
+		);
+		add_submenu_page(
+			'screening-queue',
+			__( 'Screen Submission', 'wikimedia-contest-admin' ),
+			__( 'Screen Submission', 'wikimedia-contest-admin' ),
+			'screen_submissions',
+			'screen-submission',
+			__NAMESPACE__ . '\\render_screening_interface',
 			5
 		);
 	}
@@ -116,6 +134,61 @@ function render_screening_queue() {
 	$list_table->display();
 
 	echo '</div>';
+}
+
+/**
+ * Render the Screening interface.
+ */
+function render_screening_interface() {
+	$post_id = $_REQUEST['post'] ?? null;
+
+	if ( ! $post_id ) {
+		wp_safe_redirect( admin_url( 'edit.php?post_type=submission&page=screening-queue' ) );
+	}
+
+	if ( ! empty( $_POST['_screen_submission_nonce'] ) ) {
+		handle_screening_results();
+	}
+
+	require_once dirname( __DIR__ ) . '/templates/screening-interface.php';
+}
+
+/**
+ * Get a link to edit a submission post.
+ *
+ * @param int $submission_id Submission ID.
+ * @return string Screening interface URL for this post.
+ */
+function get_screening_link( $submission_id ) {
+	return add_query_arg(
+		[
+			'post_type' => 'submission',
+			'page' => 'screen-submission',
+			'post' => $submission_id,
+		],
+		admin_url( 'edit.php' )
+	);
+}
+
+/**
+ * Handle user-submitted screening results.
+ */
+function handle_screening_results() {
+	check_admin_referer( 'screen-submission', '_screen_submission_nonce' );
+
+	$post_id = $_REQUEST['post'];
+
+	if ( ! current_user_can( 'screen-submissions' ) ) {
+		return;
+	}
+
+	$flags = array_intersect_key( $_POST['moderation-flags'] ?? [], get_moderation_flags() );
+	$is_invalid = ! empty( $_POST['moderation-invalid'] ) || count( $flags );
+	$other = $_POST['moderation-other'];
+
+	add_screening_comment( $post_id, $is_invalid ? 'ineligible' : 'eligible', array_keys( $flags ) );
+
+	wp_safe_redirect( admin_url( 'edit.php?post_type=submission&page=screening-queue' ) );
 }
 
 /**
@@ -144,19 +217,49 @@ function get_available_flags() {
 }
 
 /**
+ * Define moderation flags available in screeners' interface.
+ *
+ * @return string[] Key-value array of screening flags to hu/**
+ */
+function get_moderation_flags() {
+	// Flags which are set by screeners.
+	return [
+		'sound_too_long' => __( 'More than five seconds', 'wikimedia-contest-admin' ),
+		'sound_too_short' => __( 'Less than one second', 'wikimedia-contest-admin' ),
+		'single_layer' => __( 'Single layer', 'wikimedia-contest-admin' ),
+		'includes_spoken_words' => __( 'Includes spoken words ', 'wikimedia-contest-admin' ),
+		'unacceptable_file_type' => __( 'Unacceptable file type (OGG, WAV, MP3)', 'wikimedia-contest-admin' ),
+		'unacceptable_quality' => __( 'Unacceptable quality', 'wikimedia-contest-admin' ),
+		'suspect_copyright_infringment' => __( 'Suspected of copyright infringement', 'wikimedia-contest-admin' ),
+		'suspect_license_infringement' => __( 'Suspected of license infringement', 'wikimedia-contest-admin' ),
+		'vandalism' => __( 'Vandalism', 'wikimedia-contest-admin' ),
+		'related_violence' => __( 'Related to violence', 'wikimedia-contest-admin' ),
+		'related_gambling' => __( 'Related to gambling', 'wikimedia-contest-admin' ),
+		'related_crime' => __( 'Related to crime', 'wikimedia-contest-admin' ),
+		'related_sexual_behavior' => __( 'Related to sexual behaviour', 'wikimedia-contest-admin' ),
+		'threatening_behavior' => __( 'Threatening behavior', 'wikimedia-contest-admin' ),
+		'related_drugs' => __( 'Related to illicit drugs', 'wikimedia-contest-admin' ),
+	];
+}
+
+/**
  * Insert a new screening result.
  *
  * @param int $submission_id Post ID of submission being screened.
  * @param string? $status Status recommended by screener ('eligible'/'ineligible'/null for no decision)
  * @param array $flags Flags to assign to post.
+ * @param bool $is_auto If this is the result of an automated check, and therefore shouldn't have a user ID.
  */
-function add_screening_comment( int $submission_id, $status = 'none', array $flags = [] ) {
+function add_screening_comment( int $submission_id, $status = 'none', array $flags = [], $is_auto = false ) {
 	// Validate the flags specified against the allowed list.
-	$allowed_flags = get_available_flags();
+	$allowed_flags = array_merge(
+		get_available_flags(),
+		get_moderation_flags()
+	);
 
 	$flags = array_intersect( $flags, array_keys( $allowed_flags ) );
 
-	$comment_author = wp_get_current_user();
+	$comment_author = $is_auto ? [] : wp_get_current_user();
 
 	$comment_content = wp_json_encode( [
 		'status' => $status,
@@ -262,7 +365,7 @@ function inserted_submission( $post_data, $post_id ) {
 	}
 
 	if ( $flags ) {
-		add_screening_comment( $post_id, null, $flags );
+		add_screening_comment( $post_id, null, $flags, true );
 	}
 }
 
