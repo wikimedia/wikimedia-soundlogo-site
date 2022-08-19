@@ -8,6 +8,7 @@ module.exports = [
 		entry: {
 			editor: filePath( 'plugins/wikimedia-contest/src/editor.js' ),
 			submissionForm: filePath( 'plugins/wikimedia-contest/src/submission-form.js' ),
+			adminStyles: filePath( 'plugins/wikimedia-contest/src/sass/admin.scss' ),
 		},
 		output: {
 			path: filePath( 'plugins/wikimedia-contest/build/' ),
