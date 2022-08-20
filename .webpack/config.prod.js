@@ -6,10 +6,10 @@ module.exports = [
 		externals,
 		name: 'Wikimedia Contest Plugin',
 		entry: {
-			admin: filePath( 'plugins/wikimedia-contest/src/admin.js' ),
+			admin: filePath( 'plugins/wikimedia-contest/src/js/admin.js' ),
 			adminStyles: filePath( 'plugins/wikimedia-contest/src/sass/admin.scss' ),
-			editor: filePath( 'plugins/wikimedia-contest/src/editor.js' ),
-			submissionForm: filePath( 'plugins/wikimedia-contest/src/submission-form.js' ),
+			editor: filePath( 'plugins/wikimedia-contest/src/js/editor.js' ),
+			submissionForm: filePath( 'plugins/wikimedia-contest/src/js/submission-form.js' ),
 		},
 		output: {
 			path: filePath( 'plugins/wikimedia-contest/build/' ),
