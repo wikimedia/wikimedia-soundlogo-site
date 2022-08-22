@@ -1,0 +1,19 @@
+.accordion-item {
+
+	& &__title{
+
+		&:hover {
+			cursor: pointer;
+
+			&::after {
+				color: $color-strong-pink;
+			}
+		}
+
+		&-text {
+			font-family: var(--font-family-serif);
+			color: $color-strong-pink;
+			font-weight: normal;
+		}
+	}
+}
