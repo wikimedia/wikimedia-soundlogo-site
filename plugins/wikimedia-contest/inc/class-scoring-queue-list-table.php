@@ -1,6 +1,6 @@
 <?php
 /**
- * List table for rendering the Screening Queue.
+ * List table for rendering the Scoring Queue.
  *
  * @extends WP_PostsList_Table
  *
@@ -9,17 +9,16 @@
 
 namespace Wikimedia_Contest;
 
-use Wikimedia_Contest\Screening_Results;
+use Wikimedia_Contest\Scoring;
 use WP_Posts_List_Table;
-use WP_Query;
 
 /**
- * List table for displaying all submissions awaiting screening.
+ * List table for displaying all submissions awaiting scoring.
  *
- * Will be a top-level menu item for screeners, and a submenu item under
+ * Will be a top-level menu item for score panel, and a submenu item under
  * "Submissions" for admins.
  */
-class Screening_Queue_List_Table extends WP_Posts_List_Table {
+class Scoring_Queue_List_Table extends WP_Posts_List_Table {
 
 	/**
 	 * Override some base controls from the parent class.
@@ -30,40 +29,12 @@ class Screening_Queue_List_Table extends WP_Posts_List_Table {
 		parent::__construct( [
 			'singular' => __( 'Sound Logo Entry', 'wikimedia-contest-admin' ),
 			'plural' => __( 'Sound Logo Entries', 'wikimedia-contest-admin' ),
-			'screen' => 'edit-submission-screening-queue',
+			'screen' => 'edit-submission-scoring-queue',
+			'post_type' => 'submission',
 			'ajax' => false,
 		] );
-	}
 
-	/**
-	 * Filter submission queries for the screening queue.
-	 *
-	 * Users should only be able to view submissions
-	 * (a) in draft status, (b) which they have not yet judged.
-	 *
-	 * @param [] $sql_pieces Clauses for the WP Query request.
-	 * @return [] Updated SQL clauses.
-	 */
-	function filter_posts_clauses( $sql_pieces ) {
-		global $wpdb;
-		$user_id = get_current_user_id();
-
-		$sql_pieces['join'] .= $wpdb->prepare( "
-			LEFT OUTER JOIN {$wpdb->comments}
-			ON (
-				{$wpdb->posts}.ID = {$wpdb->comments}.comment_post_ID
-				AND {$wpdb->comments}.comment_agent = 'screening_result'
-				AND {$wpdb->comments}.user_id = %d
-			)
-			",
-			$user_id
-		);
-
-		$sql_pieces['where'] .= "
-			AND {$wpdb->comments}.comment_ID IS NULL
-		";
-
-		return $sql_pieces;
+		$this->screen->post_type = 'submission';
 	}
 
 	/**
@@ -81,13 +52,12 @@ class Screening_Queue_List_Table extends WP_Posts_List_Table {
 		$per_page = $this->get_items_per_page( 'edit_submissions_per_page', 20 );
 		$paged = absint( $_REQUEST['paged'] ?? 1 );
 
-		// Add comment filters to only show posts user can screen.
-		add_filter( 'posts_clauses', [ $this, 'filter_posts_clauses' ] );
+		add_filter( 'pre_get_posts', [ $this, '_add_assignees_meta_query' ] );
 
 		// Set up global WP_Query vars.
 		wp_edit_posts_query( [
 			'post_type' => 'submission',
-			'post_status' => 'draft',
+			'post_status' => get_site_option( 'contest_status' ) ?: 'scoring_phase_1',
 			'per_page' => $per_page ?? 20,
 			'orderby' => $_REQUEST['orderby'] ?? 'date',
 			'order' => $_REQUEST['order'] ?? 'desc',
@@ -95,13 +65,12 @@ class Screening_Queue_List_Table extends WP_Posts_List_Table {
 			'cache_results' => false,
 		] );
 
+		remove_filter( 'pre_get_posts', [ $this, '_add_assignees_meta_query' ] );
+
 		// phpcs:enable HM.Security.NonceVerification.Recommended
 		// phpcs:enable HM.Security.ValidatedSanitizedInput.MissingUnslash
 		// phpcs:enable WordPress.Security.NonceVerification.Recommended
 		// phpcs:enable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-
-		// Ensure not to mess with any other queries on the page.
-		remove_filter( 'posts_clauses', [ $this, 'filter_posts_clauses' ] );
 
 		$this->set_pagination_args( [
 			'total_items' => $wp_query->found_posts,
@@ -113,15 +82,36 @@ class Screening_Queue_List_Table extends WP_Posts_List_Table {
 	}
 
 	/**
+	 * Return only the submissions which the current users is assigned to.
+	 *
+	 * @param WP_Query $wp_query Main query on the scoring queue list table.
+	 */
+	function _add_assignees_meta_query( $wp_query ) {
+
+		// Admins and scoring panel leads can see all posts.
+		if ( current_user_can( 'assign_scorers' ) ) {
+			return;
+		}
+
+		$wp_query->set( 'meta_query', [
+			[
+				'key' => 'assignees',
+				'value' => get_current_user_id(),
+			]
+		] );
+	}
+
+	/**
 	 * Get a list of columns.
 	 *
 	 * @return [] Array of column slugs to titles.
 	 */
 	function get_columns() {
 		return [
+			'cb' => '<input type="checkbox">',
 			'col_submission_id' => __( 'Submission ID', 'wikimedia-contest-admin' ),
 			'col_submission_date' => __( 'Submission Date', 'wikimedia-contest-admin' ),
-			'col_screening_results' => __( 'Screening Results', 'wikimedia-contest-admin' ),
+			'col_scoring_results' => __( 'Scoring Results', 'wikimedia-contest-admin' ),
 		];
 	}
 
@@ -150,8 +140,8 @@ class Screening_Queue_List_Table extends WP_Posts_List_Table {
 		}
 
 		$actions = [
-			'screen' => '<a href="' . Screening_Results\get_screening_link( $item->ID ) . '">' .
-				esc_html__( 'Screen sound logo submission' ) .
+			'screen' => '<a href="' . Scoring\get_scoring_link( $item->ID ) . '">' .
+				esc_html__( 'Scoring sound logo submission' ) .
 				'</a>',
 		];
 
@@ -163,9 +153,9 @@ class Screening_Queue_List_Table extends WP_Posts_List_Table {
 	 *
 	 * @return [] Empty array - no bulk actions available in this view.
 	 */
-	function get_bulk_actions() {
-		return [];
-	}
+	//function get_bulk_actions() {
+		//return apply_filters( 'bulk_actions-edit-submission-scoring-queue', [] );
+	//}
 
 	/**
 	 * Render the submission ID column.
@@ -188,27 +178,5 @@ class Screening_Queue_List_Table extends WP_Posts_List_Table {
 		);
 		// phpcs:enable HM.Security.EscapeOutput.OutputNotEscaped
 		// phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped
-	}
-
-	/**
-	 * Render the "Screening Results" column.
-	 *
-	 * @param WP_Post $item Item being output.
-	 */
-	function column_col_screening_results( $item ) {
-		$screening_results = Screening_Results\get_screening_results( $item->ID );
-		$available_flags = Screening_Results\get_available_flags();
-		$moderation_flags = Screening_Results\get_moderation_flags();
-
-		if ( $screening_results['flags'] ) {
-			foreach ( $screening_results['flags'] as $flag ) {
-				if ( isset( $available_flags[ $flag ] ) ) {
-					echo '<span class="moderation-flag moderation-flag--yellow">' . esc_html( $available_flags[ $flag ] ) . '</span>';
-				}
-				if ( isset( $moderation_flags[ $flag ] ) ) {
-					echo '<span class="moderation-flag moderation-flag--red">' . esc_html( $moderation_flags[ $flag ] ) . '</span>';
-				}
-			}
-		}
 	}
 }

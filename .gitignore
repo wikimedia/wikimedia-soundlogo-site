@@ -57,3 +57,6 @@ phpcs.xml
 
 # VSCode directory
 .vscode/
+
+# VBox Logs
+*VBox*.log*
