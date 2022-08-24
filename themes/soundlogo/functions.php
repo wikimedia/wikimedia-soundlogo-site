@@ -32,14 +32,24 @@ function enqueue_assets() {
 		__DIR__ . '/build/production-asset-manifest.json',
 	] );
 
+	if ( is_rtl() ) {
+		wp_register_style(
+			'shiro-style-rtl',
+			get_template_directory_uri() . '/rtl.css',
+			[ 'shiro-style' ],
+			md5_file( get_template_directory() . '/rtl.css' )
+		);
+	}
+
 	Asset_Loader\enqueue_asset(
 		$manifest,
 		'frontend.css',
 		[
-			'dependencies' => [ 'shiro-style' ],
+			'dependencies' => [ is_rtl() ? 'shiro-style-rtl' : 'shiro-style' ],
 			'handle' => 'soundlogo-style',
 		]
 	);
+
 
 	Asset_Loader\enqueue_asset(
 		$manifest,
