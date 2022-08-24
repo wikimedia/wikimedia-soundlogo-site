@@ -86,7 +86,7 @@ function register_screening_queue_menu_pages() {
 		'screening-queue',
 		__NAMESPACE__ . '\\render_screening_queue',
 		'dashicons-yes-alt',
-		4
+		3
 	);
 	add_submenu_page(
 		'screening-queue',
@@ -209,11 +209,11 @@ function get_available_flags() {
 function get_moderation_flags() {
 	// Flags which are set by screeners.
 	return [
-		'sound_too_long' => __( 'More than five seconds', 'wikimedia-contest-admin' ),
+		'sound_too_long' => __( 'More than four seconds', 'wikimedia-contest-admin' ),
 		'sound_too_short' => __( 'Less than one second', 'wikimedia-contest-admin' ),
 		'single_layer' => __( 'Single layer', 'wikimedia-contest-admin' ),
 		'includes_spoken_words' => __( 'Includes spoken words ', 'wikimedia-contest-admin' ),
-		'unacceptable_file_type' => __( 'Unacceptable file type (OGG, WAV, MP3)', 'wikimedia-contest-admin' ),
+		'unacceptable_file_type' => __( 'Unacceptable file type (not OGG, WAV, MP3)', 'wikimedia-contest-admin' ),
 		'unacceptable_quality' => __( 'Unacceptable quality', 'wikimedia-contest-admin' ),
 		'suspect_copyright_infringment' => __( 'Suspected of copyright infringement', 'wikimedia-contest-admin' ),
 		'suspect_license_infringement' => __( 'Suspected of license infringement', 'wikimedia-contest-admin' ),
