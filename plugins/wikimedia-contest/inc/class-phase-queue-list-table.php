@@ -88,12 +88,17 @@ class Phase_Queue_List_Table extends WP_Posts_List_Table {
 			'internal' => false,
 		], 'objects' );
 
-		return [
+		$columns = [
 			'col_submission_id'   => 'Submission ID',
 			'col_submission_date' => 'Submission Date',
-			"col_phase_score"     => $custom_post_statuses[ $this->scoring_phase ]->label . " Score",
 			'col_user_score'      => 'Score Given by You',
 		];
+
+		if ( \Wikimedia_Contest\Scoring\user_has_scoring_leader_capability() ) {
+			$columns["col_phase_score"] = '"' . $custom_post_statuses[ $this->scoring_phase ]->label . "\" Phase Score";
+		}
+
+		return $columns;
 	}
 
 	/**
@@ -102,11 +107,17 @@ class Phase_Queue_List_Table extends WP_Posts_List_Table {
 	 * @return [] Array of column slugs to query arg.
 	 */
 	function get_sortable_columns() {
-		return [
+
+		$columns = [
 			'col_submission_id'   => 'title',
 			'col_submission_date' => [ 'date', true ],
-			"col_phase_score"     => "col_{$this->scoring_phase}_score",
 		];
+
+		if ( \Wikimedia_Contest\Scoring\user_has_scoring_leader_capability() ) {
+			$columns['col_phase_score'] = [ 'phase_score', true ];
+		}
+
+		return $columns;
 	}
 
 	/**

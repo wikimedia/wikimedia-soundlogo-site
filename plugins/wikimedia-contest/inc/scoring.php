@@ -491,3 +491,14 @@ function handle_bulk_assignment_controls( $return_url, $action, $post_ids ) {
 function get_scoring_panel_members() {
 	return get_users( [ 'role__in' => [ PANELIST_USER_ROLE, PANEL_LEAD_USER_ROLE ] ] );
 }
+
+/**
+ * Returns user scoring leader capability.
+ *
+ * @return bool True if user has scoring leader capabilities.
+ */
+function user_has_scoring_leader_capability() {
+	$user = wp_get_current_user();
+	$allowed_roles = array( \Wikimedia_Contest\Scoring\PANEL_LEAD_USER_ROLE, 'administrator' );
+	return array_intersect( $allowed_roles, $user->roles );
+}
