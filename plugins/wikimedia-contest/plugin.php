@@ -53,7 +53,7 @@ require_once __DIR__ . '/inc/network-settings.php';
 Network_Settings\bootstrap();
 
 require_once __DIR__ . '/inc/custom-stati-pages.php';
-Custom_Stati_Pages\bootstrap();
+Phase_Status_Pages\bootstrap();
 
 // Require core files in the admin that may not be loaded by default.
 if ( is_admin() ) {

@@ -1,6 +1,6 @@
 <?php
 /**
- * List table for rendering the Scoring Queue.
+ * List table for rendering queues for each contest status.
  *
  * @extends WP_PostsList_Table
  *
@@ -9,28 +9,31 @@
 
 namespace Wikimedia_Contest;
 
-use Wikimedia_Contest\Scoring;
 use WP_Posts_List_Table;
 
 /**
- * List table for displaying all submissions awaiting scoring.
- *
- * Will be a top-level menu item for score panel, and a submenu item under
- * "Submissions" for admins.
+ * Generic list table for displaying submissions on all statuses.
  */
-class Scoring_Queue_List_Table extends WP_Posts_List_Table {
+class Phase_Queue_List_Table extends WP_Posts_List_Table {
+
+	/**
+	 * This property stores the phase of submissions to be displayed.
+	 * @var string
+	 */
+	public $scoring_phase;
 
 	/**
 	 * Override some base controls from the parent class.
 	 *
-	 * @param [] $args Instantiation args (ignored).
+	 * @param string $scoring_phase The phase of scoring to display.
 	 */
-	function __construct( $args = [] ) {
+	public function __construct( $scoring_phase = 'screening' ) {
+		$this->scoring_phase = $scoring_phase;
 		parent::__construct( [
-			'singular' => __( 'Sound Logo Entry', 'wikimedia-contest-admin' ),
-			'plural' => __( 'Sound Logo Entries', 'wikimedia-contest-admin' ),
-			'screen' => 'edit-submission-scoring-queue',
-			'ajax' => false,
+			'singular' => 'Sound Logo Entry',
+			'plural'   => 'Sound Logo Entries',
+			'screen' => 'edit-submission-phase-queue',
+			'ajax'     => false,
 		] );
 	}
 
@@ -38,7 +41,7 @@ class Scoring_Queue_List_Table extends WP_Posts_List_Table {
 	 * Prepare the current query for display.
 	 */
 	function prepare_items() {
-		global $wpdb, $wp_query, $per_page;
+		global $wp_query, $per_page;
 
 		// phpcs:disable HM.Security.NonceVerification.Recommended
 		// phpcs:disable HM.Security.ValidatedSanitizedInput.MissingUnslash
@@ -52,7 +55,7 @@ class Scoring_Queue_List_Table extends WP_Posts_List_Table {
 		// Set up global WP_Query vars.
 		query_posts( [
 			'post_type' => 'submission',
-			'post_status' => \Wikimedia_Contest\Scoring\SCORING_STATUSES,
+			'post_status' => $this->scoring_phase,
 			'per_page' => $per_page ?? 20,
 			'orderby' => $_REQUEST['orderby'] ?? 'date',
 			'order' => $_REQUEST['order'] ?? 'desc',
@@ -80,10 +83,17 @@ class Scoring_Queue_List_Table extends WP_Posts_List_Table {
 	 * @return [] Array of column slugs to titles.
 	 */
 	function get_columns() {
+		$custom_post_statuses = get_post_stati( [
+			'_builtin' => false,
+			'internal' => false,
+		], 'objects' );
+
 		return [
-			'col_submission_id' => __( 'Submission ID', 'wikimedia-contest-admin' ),
-			'col_submission_date' => __( 'Submission Date', 'wikimedia-contest-admin' ),
-			'col_scoring_results' => __( 'Scoring Results', 'wikimedia-contest-admin' ),
+			'col_submission_id'   => 'Submission ID',
+			'col_submission_date' => 'Submission Date',
+			'col_overall_score'   => 'Overall Score',
+			"col_phase_score"     => $custom_post_statuses[ $this->scoring_phase ]->label . " Score",
+			'col_user_score'      => 'Score Given by You',
 		];
 	}
 
@@ -94,8 +104,10 @@ class Scoring_Queue_List_Table extends WP_Posts_List_Table {
 	 */
 	function get_sortable_columns() {
 		return [
-			'col_submission_id' => 'title',
+			'col_submission_id'   => 'title',
 			'col_submission_date' => [ 'date', true ],
+			'col_overall_score'   => 'col_overall_score',
+			"col_phase_score"     => "col_{$this->scoring_phase}_score",
 		];
 	}
 
@@ -111,10 +123,16 @@ class Scoring_Queue_List_Table extends WP_Posts_List_Table {
 			return;
 		}
 
+		if ( $this->scoring_phase == 'screening' ) {
+			$submission_link = Screening_Results\get_screening_link( $item->ID );
+			$link_label = 'Screening Submission';
+		} else {
+			$submission_link = Scoring\get_scoring_link( $item->ID );
+			$link_label = 'Scoring Submission';
+		}
+
 		$actions = [
-			'screen' => '<a href="' . Scoring\get_scoring_link( $item->ID ) . '">' .
-				esc_html__( 'Scoring sound logo submission' ) .
-				'</a>',
+			'screen' => '<a href="' . esc_url( $submission_link ) . '">' . esc_html( $link_label ) . '</a>',
 		];
 
 		return $this->row_actions( $actions );
@@ -150,5 +168,20 @@ class Scoring_Queue_List_Table extends WP_Posts_List_Table {
 		);
 		// phpcs:enable HM.Security.EscapeOutput.OutputNotEscaped
 		// phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped
+	}
+
+	function column_col_overall_score( $item ) {
+		$score = get_post_meta( $item->ID, 'score_overall', true );
+		echo is_numeric( $score ) ? round( $score, 2) : '-';
+	}
+
+	function column_col_phase_score( $item ) {
+		$score = get_post_meta( $item->ID, "score_{$this->scoring_phase}", true );
+		echo is_numeric( $score ) ? round( $score, 2) : '-';
+	}
+
+	function column_col_user_score( $item ) {
+		$score = Scoring\get_submission_score( $item->ID, get_current_user_id() )['overall'];
+		echo is_numeric( $score ) ? round( $score, 2) : '-';
 	}
 }
