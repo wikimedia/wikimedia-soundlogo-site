@@ -81,7 +81,6 @@ $score_given_weighted = Scoring\get_submission_score( $post_id, get_current_user
 							<th class="col--a"><?php esc_html_e( 'Weighted Score', 'wikimedia-contest-admin' ); ?></th>
 							<th class="col--b">
 								<?php
-									$score_given_weighted = Scoring\get_submission_score( $post_id, get_current_user_id() );
 									if ( $score_given_weighted !== null ) {
 										esc_html_e( round( $score_given_weighted['overall'], 2) . " / 10" );
 									} else {

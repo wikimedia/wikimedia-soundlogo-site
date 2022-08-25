@@ -200,7 +200,7 @@ function handle_scoring_results() : void {
 
 	$post_id = sanitize_text_field( $_REQUEST['post'] ?? null );
 
-	if ( ! current_user_can( 'score-submissions' ) ) {
+	if ( ! current_user_can( 'score-submissions' ) || ! user_has_scoring_leader_capability() ) {
 		return;
 	}
 
@@ -271,10 +271,6 @@ function add_scoring_comment( int $submission_id, array $results, $user_id ) : v
 		'comment_status' => 'approve',
 		'user_id' => $user_id,
 	] );
-
-	// Update the submission overall weighted score.
-	$submission_overall_score = get_submission_score( $submission_id );
-	update_post_meta( $submission_id, 'score_overall', $submission_overall_score['overall'] );
 
 	// Update the submission overall weighted score for current contest phase.
 	$current_contest_phase = get_site_option( 'contest_status' );
@@ -407,7 +403,6 @@ function inactivate_user_scoring_comments( $submission_id, $user_id ) : void {
 function add_bulk_assignment_controls( $bulk_actions ) {
 
 	if ( current_user_can( 'assign_scorers' ) && in_array( get_post_status(), SCORING_STATUSES, true ) ) {
-		$scoring_panel =
 		$assignment_dropdown = [];
 
 		foreach ( get_scoring_panel_members() as $user ) {

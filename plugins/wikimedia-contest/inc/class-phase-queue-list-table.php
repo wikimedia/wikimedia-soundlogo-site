@@ -132,13 +132,8 @@ class Phase_Queue_List_Table extends WP_Posts_List_Table {
 			return;
 		}
 
-		if ( $this->scoring_phase == 'screening' ) {
-			$submission_link = Screening_Results\get_screening_link( $item->ID );
-			$link_label = 'Screening Submission';
-		} else {
-			$submission_link = Scoring\get_scoring_link( $item->ID );
-			$link_label = 'Scoring Submission';
-		}
+		$submission_link = Scoring\get_scoring_link( $item->ID );
+		$link_label = 'Scoring Submission';
 
 		$actions = [
 			'screen' => '<a href="' . esc_url( $submission_link ) . '">' . esc_html( $link_label ) . '</a>',

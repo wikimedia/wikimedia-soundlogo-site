@@ -107,23 +107,6 @@ function render_phase_status_page( $status_name = null ) : void {
 }
 
 /**
- * Returns the submission link for a given submission ID
- *
- * @param int $post_id Submission ID
- *
- * @return string Submission link
- */
-function get_submission_link( $submission_id ) : string {
-	return add_query_arg(
-		[
-			'page' => 'score-submission',
-			'post' => $submission_id,
-		],
-		admin_url( 'admin.php' )
-	);
-}
-
-/**
  * Register sortable columns for the phase queue list table.
  *
  * @param array $columns The sortable columns.
