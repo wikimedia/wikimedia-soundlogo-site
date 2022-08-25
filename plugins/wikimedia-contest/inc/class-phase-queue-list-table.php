@@ -27,7 +27,7 @@ class Phase_Queue_List_Table extends WP_Posts_List_Table {
 	 *
 	 * @param string $scoring_phase The phase of scoring to display.
 	 */
-	public function __construct( $scoring_phase = 'screening' ) {
+	public function __construct( $scoring_phase ) {
 		$this->scoring_phase = $scoring_phase;
 		parent::__construct( [
 			'singular' => 'Sound Logo Entry',

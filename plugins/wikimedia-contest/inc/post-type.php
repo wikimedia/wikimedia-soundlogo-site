@@ -98,6 +98,7 @@ function register_submission_custom_post_statuses() {
 	register_post_status( 'screening', [
 		'label'                     => _x( 'Screening', 'post' ),
 		'public'                    => true,
+		'internal'                  => true,
 		'exclude_from_search'       => false,
 		'show_in_admin_all_list'    => true,
 		'show_in_admin_status_list' => true,

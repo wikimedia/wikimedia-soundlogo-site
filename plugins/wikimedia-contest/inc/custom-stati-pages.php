@@ -37,7 +37,7 @@ function register_custom_status_pages() : void {
 	}
 
 	// Add a custom page named "Seeder" if is admin.
-	if ( is_admin() && current_user_can( 'administrator' ) ) {
+	if ( current_user_can( 'administrator' ) ) {
 		add_menu_page(
 			'Seeder',
 			'Seeder',
