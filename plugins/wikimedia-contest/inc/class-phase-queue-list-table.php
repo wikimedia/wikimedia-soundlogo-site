@@ -91,7 +91,6 @@ class Phase_Queue_List_Table extends WP_Posts_List_Table {
 		return [
 			'col_submission_id'   => 'Submission ID',
 			'col_submission_date' => 'Submission Date',
-			'col_overall_score'   => 'Overall Score',
 			"col_phase_score"     => $custom_post_statuses[ $this->scoring_phase ]->label . " Score",
 			'col_user_score'      => 'Score Given by You',
 		];
@@ -106,7 +105,6 @@ class Phase_Queue_List_Table extends WP_Posts_List_Table {
 		return [
 			'col_submission_id'   => 'title',
 			'col_submission_date' => [ 'date', true ],
-			'col_overall_score'   => 'col_overall_score',
 			"col_phase_score"     => "col_{$this->scoring_phase}_score",
 		];
 	}
@@ -170,18 +168,19 @@ class Phase_Queue_List_Table extends WP_Posts_List_Table {
 		// phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
-	function column_col_overall_score( $item ) {
-		$score = get_post_meta( $item->ID, 'score_overall', true );
-		echo is_numeric( $score ) ? round( $score, 2) : '-';
-	}
-
+	/**
+	 * Render the phase score column.
+	 */
 	function column_col_phase_score( $item ) {
 		$score = get_post_meta( $item->ID, "score_{$this->scoring_phase}", true );
 		echo is_numeric( $score ) ? round( $score, 2) : '-';
 	}
 
+	/**
+	 * Render the score given by user column on the phase.
+	 */
 	function column_col_user_score( $item ) {
-		$score = Scoring\get_submission_score( $item->ID, get_current_user_id() )['overall'];
+		$score = Scoring\get_submission_score( $item->ID, get_current_user_id(), $this->scoring_phase )['overall'];
 		echo is_numeric( $score ) ? round( $score, 2) : '-';
 	}
 }

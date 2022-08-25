@@ -131,7 +131,6 @@ function get_submission_link( $submission_id ) : string {
  * @return array The sortable columns.
  */
 function register_sortable_columns( $columns ) : array {
-    $columns['col_overall_score'] = 'col_overall_score';
 
 	$custom_post_statuses = get_post_stati( [
 		'_builtin' => false,
@@ -154,11 +153,6 @@ function register_sortable_columns( $columns ) : array {
  */
 function register_meta_orderby( $query ) : void {
 	$orderby = $query->get( 'orderby');
-
-	if ( 'col_overall_score' == $orderby ) {
-		$query->set('meta_key','score_overall');
-		$query->set('orderby','meta_value_num');
-	}
 
 	$custom_post_statuses = get_post_stati( [
 		'_builtin' => false,
@@ -249,7 +243,7 @@ function render_seeder_page() : void {
 
 		// Insert 5 scoring comments for each phase from random panelists.
 		$panelists = get_users( [
-			'role' => 'panelist',
+			'role' => 'scoring_panel',
 		] );
 
 		foreach ( $custom_post_statuses as $custom_post_status ) {

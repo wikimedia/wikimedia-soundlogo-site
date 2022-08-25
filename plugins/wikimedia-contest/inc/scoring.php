@@ -279,7 +279,9 @@ function add_scoring_comment( int $submission_id, array $results, $user_id ) : v
  * @param int $submission_id Post ID of the submission to retrieve results for.
  * @param int $user_id_id User ID which inserted scoring comments.
  *
- * @return array|null Scoring results, or null if no results found.
+ * @return array Scoring results given by user
+ *  @var array  'criteria'           All scores given by user to each scoring fields.
+ *  @var string 'additional_comment' Free-text message field for additional comments.
   */
 function get_submission_score_given_by_user( $submission_id, $user_id ) : ?array {
 	$comments = get_comments( [
@@ -295,6 +297,8 @@ function get_submission_score_given_by_user( $submission_id, $user_id ) : ?array
 		return null;
 	}
 
+	$given_score = [];
+
 	$given_score['criteria'] = json_decode( get_comment_meta( $comment->comment_ID, 'given_score', true ), true );
 
 	// not natural values should not be here, but we never know.
@@ -302,9 +306,17 @@ function get_submission_score_given_by_user( $submission_id, $user_id ) : ?array
 
 	$given_score['additional_comment'] = get_comment_meta( $comment->comment_ID, 'additional_comment', true );
 
-	return $given_score ?? null;
+	return $given_score;
 }
 
+/**
+ * Get the overall (phase-specific) score for the provided post.
+ *
+ * @param int $submission_id Post ID of the submission to retrieve results for.
+ * @param int $user_id User ID which inserted scoring comments.
+ *
+ * @return array|null Scoring results, or null if no results found.
+ */
 function get_submission_score( $submission_id, $user_id = null, $phase = null ) {
 
 	$comment_search_args = [
