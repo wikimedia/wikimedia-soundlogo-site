@@ -50,7 +50,6 @@ function enqueue_assets() {
 		]
 	);
 
-
 	Asset_Loader\enqueue_asset(
 		$manifest,
 		'themeScripts.js',
