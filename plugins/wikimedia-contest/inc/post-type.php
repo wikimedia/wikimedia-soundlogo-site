@@ -7,6 +7,8 @@
 
 namespace Wikimedia_Contest\Post_Type;
 
+use Wikimedia_Contest\Screening_Results;
+
 const SLUG = 'submission';
 
 /**
@@ -71,6 +73,15 @@ function register_submission_custom_post_type() {
  * @return void
  */
 function register_submission_custom_post_statuses() {
+
+	// Rename "draft" to "screening".
+	global $wp_post_statuses;
+	$wp_post_statuses['draft']->label = __( 'Screening', 'wikimedia-contest-admin' );
+	$wp_post_statuses['draft']->label_count = _n_noop(
+		'Screening <span class="count">(%s)</span>',
+		'Screening <span class="count">(%s)</span>',
+		'wikimedia-contest-admin'
+	);
 
 	// Ineligible.
 	register_post_status( 'ineligible', [
@@ -148,6 +159,8 @@ function add_submission_box() : void {
 function set_custom_edit_submission_columns( $columns ) : array {
 	$columns['audio_file'] = 'Audio file';
 
+	$columns['screening_results'] = 'Screening Results';
+
 	// Including column "Review submission" only if it's on the main site of the network.
 	$site_id = get_current_blog_id();
 	if ( is_main_site( $site_id ) ) {
@@ -169,6 +182,16 @@ function custom_submission_column( $column, $post_id ) : void {
 
 		case 'audio_file':
 			echo sprintf( '<audio controls><source src="%s"></audio>', esc_attr( get_post_meta( $post_id, 'audio_file_path', true ) ) );
+			break;
+
+		case 'screening_results':
+			$results = Screening_Results\get_screening_results( $post_id );
+
+			if ( ! empty( $results['decision'] ) ) {
+				foreach ( $results['decision'] as $decision ) {
+					echo '<span class="moderation-flag screening-result">' . esc_html( $decision ) . '</span>';
+				}
+			}
 			break;
 
 		case 'status_change':
