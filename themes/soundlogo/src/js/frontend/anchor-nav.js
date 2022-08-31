@@ -27,21 +27,37 @@ const updateCurrentMenuItem = () => {
  *
  * @param {Event} event Click event on menu link.
  */
-const smoothScrollTo = event => {
+const handleAnchorLinkClick = event => {
 	event.preventDefault();
 
 	const { hash } = new URL( event.currentTarget );
 	window.location.hash = hash;
+	smoothScrollTo( hash );
+	updateCurrentMenuItem();
+};
 
+/**
+ * Scroll to the element identified by the hash link, if it's present.
+ *
+ * @param {string} hash Window location hash, with leading `#`.
+ */
+const smoothScrollTo = hash => {
 	const target = document.getElementById( hash.substring( 1 ) );
+	const headerHeight = document.querySelector( '.header-default' ).clientHeight;
 
 	if ( target ) {
-		window.scrollTo( 0, target.offsetTop - 100 );
+		window.scrollTo( {
+			left: 0,
+			top: target.offsetTop - headerHeight - 16,
+			behavior: 'smooth',
+		} );
 	} else {
-		window.scrollTo( 0, 0 );
+		window.scrollTo( {
+			left: 0,
+			top: 0,
+			behavior: 'smooth',
+		} );
 	}
-
-	updateCurrentMenuItem();
 };
 
 /**
@@ -54,11 +70,12 @@ const init = () => {
 	}
 
 	updateCurrentMenuItem();
+	smoothScrollTo( document.location.hash );
 
 	const links = currentMenuItems.map( listItem => listItem.querySelector( 'a' ) );
 
 	links.forEach(
-		link => link.addEventListener( 'click', smoothScrollTo )
+		link => link.addEventListener( 'click', handleAnchorLinkClick )
 	);
 };
 
