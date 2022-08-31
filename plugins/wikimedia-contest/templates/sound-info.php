@@ -90,9 +90,9 @@ $flag_labels = array(
 	'all_original_sounds'     => __( 'Completely original work', 'wikimedia-contest-admin' ),
 	'cc0_or_public_domain'    => __( 'Used sounds are CC0 or public domain', 'wikimedia-contest-admin' ),
 	'used_prerecorded_sounds' => __( 'Used prerecorded sounds', 'wikimedia-contest-admin' ),
-	'used_soundpack_library'  => __( 'Work from sound pack or a sample library', 'wikimedia-contest-admin' ),
+	'used_soundpack_library'  => __( 'Worked from a sound pack or a sample library', 'wikimedia-contest-admin' ),
 	'used_samples'            => __( 'Used one or more samples', 'wikimedia-contest-admin' ),
-	'source_urls'             => __( 'Source URLs of not created sounds', 'wikimedia-contest-admin' ),
+	'source_urls'             => __( 'Source URLs of pre-recorded sounds', 'wikimedia-contest-admin' ),
 );
 ?>
 
@@ -105,8 +105,10 @@ $flag_labels = array(
 	<h3>Audio Metadata</h3>
 	<ul>
 		<?php
-			foreach ( $audio_file_meta as $key => $value ) {
-				echo '<li>' . sprintf( $audio_file_meta_labels[ $key ], $value ) . '</li>';
+			if ( is_array( $audio_file_meta ) ) {
+				foreach ( $audio_file_meta as $key => $value ) {
+					echo '<li>' . sprintf( $audio_file_meta_labels[ $key ], $value ) . '</li>';
+				}
 			}
 		?>
 	</ul>
@@ -128,7 +130,13 @@ $flag_labels = array(
 	<dl>
 		<?php foreach ( $creation_process as $key => $value ) : ?>
 			<dt><?php echo "<b>" . esc_html( $flag_labels[ $key ] ) . "</b>"; ?></dt>
-			<dd><?php echo empty( $value ) ? '<i>-</i>' : esc_html( $value ); ?></dd>
+			<dd><?php
+				if ( $key === 'source_urls' ) {
+					echo wpautop( make_clickable( $value ) );
+				} else {
+					echo empty( $value ) ? '<i>-</i>' : esc_html( $value );
+				}
+			?></dd>
 		<?php endforeach; ?>
 	</dl>
 </div>
