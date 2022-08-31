@@ -34,6 +34,11 @@ const handleAnchorLinkClick = event => {
 	window.location.hash = hash;
 	smoothScrollTo( hash );
 	updateCurrentMenuItem();
+
+	// Close the mobile dropdown, if it's open.
+	if ( document.body.classList.contains( 'disable-body-scrolling' ) ) {
+		document.querySelector( '.primary-nav-toggle' ).dispatchEvent( new Event( 'click' ) );
+	}
 };
 
 /**
