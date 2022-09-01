@@ -74,6 +74,7 @@
 		display: inline-block;
 		margin-right: 0.25rem;
 		transition: 300ms all;
+		fill: $color-black-90;
 	}
 
 	&__link {
@@ -82,11 +83,11 @@
 		vertical-align: middle;
 
 		&:hover {
-			background-color: #cf2e2e; // "vivid-red"
-			color: $color-white;
+			background-color: $color-pale-pink;
+			color: $color-black;
 
 			.icon {
-				fill: $color-white;
+				fill: $color-black;
 			}
 		}
 	}
