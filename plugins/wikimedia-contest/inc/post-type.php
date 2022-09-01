@@ -26,7 +26,6 @@ function bootstrap() {
 	add_action( 'admin_footer-edit.php', __NAMESPACE__ . '\\custom_inline_edit');
 	add_action( 'admin_menu', __NAMESPACE__ . '\\remove_unused_boxes');
 	add_filter( 'post_row_actions', __NAMESPACE__ . '\\customize_row_actions', 10, 1 );
-	add_action( 'pre_get_posts', '\Wikimedia_Contest\Scoring\register_meta_orderby' );
 }
 
 /**
@@ -279,8 +278,6 @@ function update_translations( $post_id, $translation_submission ) {
 		array_map( 'sanitize_textarea_field', $translation_submission ),
 		array_flip( [ 'creation', 'inspiration' ] )
 	);
-
-	error_log( print_r( $translation_submission, true ) );
 
 	return update_post_meta( $post_id, 'translated_fields', $translation_submission );
 }
