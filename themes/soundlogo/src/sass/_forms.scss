@@ -137,6 +137,8 @@ $color-green-active: #00af89;
 
 			&.is-opened {
 				display: block;
+				max-height: 50vh;
+				overflow-y: auto;
 				@include focus-shadow;
 			}
 		}
