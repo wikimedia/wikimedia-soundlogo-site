@@ -4,9 +4,9 @@
  * @package soundlogo
  */
 
-
 // Color definitions;
 $color-white: var( --wp--preset--color--white );
+$color-black: var( --wp--preset--color--black );
 $color-red: var( --wp--preset--color--strong-red );
 $color-yellow: var( --wp--preset--color--strong-yellow );
 $color-green: var( --wp--preset--color--strong-green );
@@ -15,6 +15,7 @@ $color-default: var( --wp--preset--color--black );
 $color-strong-orange: var( --wp--preset--color--strong-orange );
 $color-strong-pink: var( --wp--preset--color--strong-pink );
 $color-strong-purple: var( --wp--preset--color--strong-purple );
+$color-pale-pink: var( --wp--preset--color--pale-pink );
 
 // stylelint-disable color-no-hex
 $color-black-90: #202122;
