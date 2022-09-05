@@ -24,13 +24,6 @@ import { __ } from '@wordpress/i18n';
 const audioContext = new AudioContext();
 
 /**
-=======
- * Allowed file types.
- *
- * @member {string[]}
- */
-const ALLOWED_TYPES = [ 'audio/mpeg', 'video/ogg', 'audio/ogg', 'audio/x-wav', 'audio/wav' ];
-
  * Maximum upload file size: 100MB.
  */
 const MAX_FILE_SIZE = 100000000;

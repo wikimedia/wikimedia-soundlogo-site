@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f74b0a9a87e49793a53208afcddf8698",
+    "content-hash": "6762719e2fc976d5589bb5be45339be8",
     "packages": [
         {
             "name": "composer/installers",
@@ -222,16 +222,16 @@
         },
         {
             "name": "humanmade/workflows",
-            "version": "0.4.3",
+            "version": "0.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/Workflows.git",
-                "reference": "2c0eb34b93baf41a2d958b4c2e9b0fc5ec8a8ee1"
+                "reference": "63416f5ba9282e15c8fa5c7cef0f4bb8f50cddbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/Workflows/zipball/2c0eb34b93baf41a2d958b4c2e9b0fc5ec8a8ee1",
-                "reference": "2c0eb34b93baf41a2d958b4c2e9b0fc5ec8a8ee1",
+                "url": "https://api.github.com/repos/humanmade/Workflows/zipball/63416f5ba9282e15c8fa5c7cef0f4bb8f50cddbb",
+                "reference": "63416f5ba9282e15c8fa5c7cef0f4bb8f50cddbb",
                 "shasum": ""
             },
             "require": {
@@ -254,9 +254,64 @@
             "description": "Workflow management for WordPress, an extensible event and notification system.",
             "support": {
                 "issues": "https://github.com/humanmade/Workflows/issues",
-                "source": "https://github.com/humanmade/Workflows/tree/0.4.3"
+                "source": "https://github.com/humanmade/Workflows/tree/0.4.6"
             },
-            "time": "2022-05-16T09:52:40+00:00"
+            "time": "2022-08-17T15:47:38+00:00"
+        },
+        {
+            "name": "wikimedia/wikipediapreview-wordpress",
+            "version": "v1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wikimedia/wikipediapreview-wordpress.git",
+                "reference": "a5522b00ab96864bc62faa18d084d4febdc7a2a8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wikimedia/wikipediapreview-wordpress/zipball/a5522b00ab96864bc62faa18d084d4febdc7a2a8",
+                "reference": "a5522b00ab96864bc62faa18d084d4febdc7a2a8",
+                "shasum": ""
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+                "phpcompatibility/phpcompatibility-wp": "^2.1",
+                "squizlabs/php_codesniffer": "^3.6",
+                "wp-coding-standards/wpcs": "^2.3"
+            },
+            "type": "wordpress-plugin",
+            "scripts": {
+                "lint": [
+                    "phpcs --ignore=build"
+                ],
+                "lint:fix": [
+                    "phpcbf --ignore=build"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Wikimedia Foundation",
+                    "homepage": "http://wikimediafoundation.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "WordPress plugin for Wikipedia Preview",
+            "homepage": "https://github.com/wikimedia/wikipediapreview-wordpress#readme",
+            "keywords": [
+                "card",
+                "facts",
+                "popup",
+                "wiki",
+                "wikipedia",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://phabricator.wikimedia.org/project/profile/4393/",
+                "source": "https://github.com/wikimedia/wikipediapreview-wordpress"
+            },
+            "time": "2022-07-28T14:35:13+00:00"
         },
         {
             "name": "wpackagist-plugin/gf-hcaptcha",
@@ -278,15 +333,15 @@
         },
         {
             "name": "wpackagist-plugin/safe-svg",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/safe-svg/",
-                "reference": "tags/2.0.2"
+                "reference": "tags/2.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/safe-svg.2.0.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/safe-svg.2.0.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
