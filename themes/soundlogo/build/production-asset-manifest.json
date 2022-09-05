@@ -1,7 +1,8 @@
 {
-  "themeScripts.js": "themeScripts.43a1539fcc4cbe154ea8.js",
-  "frontend.css": "frontend.a939cb73775f423ecbe2.css",
-  "frontend.js": "frontend.31d6cfe0d16ae931b73c.js",
-  "editor_soundlogo_styles.css": "editor_soundlogo_styles.30d8b653dec8c6b1e661.css",
-  "editor_soundlogo_styles.js": "editor_soundlogo_styles.31d6cfe0d16ae931b73c.js"
+  "buildTime": "2022-09-05T19:07:31.778Z",
+  "themeScripts.js": "themeScripts.js",
+  "frontend.css": "frontend.css",
+  "frontend.js": "frontend.js",
+  "editor_soundlogo_styles.css": "editor_soundlogo_styles.css",
+  "editor_soundlogo_styles.js": "editor_soundlogo_styles.js"
 }
