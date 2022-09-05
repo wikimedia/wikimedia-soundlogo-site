@@ -1,5 +1,6 @@
 const { helpers, externals, presets, plugins } = require( '@humanmade/webpack-helpers' );
 const { filePath } = helpers;
+const { clean, manifest, miniCssExtract } = plugins;
 
 module.exports = [
 	presets.production( {
@@ -13,9 +14,15 @@ module.exports = [
 		},
 		output: {
 			path: filePath( 'plugins/wikimedia-contest/build/' ),
+			filename: '[name].js',
 		},
 		plugins: [
-			plugins.clean(),
+			clean(),
+			manifest( {
+				fileName: 'production-asset-manifest.json',
+				seed: { buildTime: new Date().toISOString() },
+			} ),
+			miniCssExtract( { filename: '[name].css' } ),
 		],
 	} ),
 	presets.production( {
@@ -28,9 +35,15 @@ module.exports = [
 		},
 		output: {
 			path: filePath( 'themes/soundlogo/build/' ),
+			filename: '[name].js',
 		},
 		plugins: [
-			plugins.clean(),
+			clean(),
+			manifest( {
+				fileName: 'production-asset-manifest.json',
+				seed: { buildTime: new Date().toISOString() },
+			} ),
+			miniCssExtract( { filename: '[name].css' } ),
 		],
 	} ),
 ];
