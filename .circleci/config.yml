@@ -53,7 +53,7 @@ jobs:
       - run:
           name: Build Wikipedia-Preview plugin assets
           command: |
-            cd plugins/wikimediapreview-wordpress
+            cd plugins/wikipediapreview-wordpress
             npm ci
             npm run build
       - run:
