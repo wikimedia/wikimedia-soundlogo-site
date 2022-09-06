@@ -1,0 +1,243 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Sound Logo Contest 0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wikimedia-"
+"contest\n"
+"POT-Creation-Date: 2022-09-05T16:19:13-04:00\n"
+"PO-Revision-Date: 2022-09-05 16:20-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Domain: wikimedia-contest\n"
+
+#. Plugin Name of the plugin
+msgid "Wikimedia Contest"
+msgstr "위키미디어 콘테스트"
+
+#. Description of the plugin
+msgid "Manage the Wikimedia Contests"
+msgstr "위키미디어 콘테스트 관리"
+
+#. Author of the plugin
+msgid "Human Made"
+msgstr "사람 제작"
+
+#. Author URI of the plugin
+msgid "https://github.com/humanmade"
+msgstr "https://github.com/humanmade"
+
+#: inc/gravity-forms.php:225 build/submissionForm.js:1
+#: src/js/submission-form/sound-validator.js:99
+msgid "File must be one of the allowed types: MP3, OGG, or WAV."
+msgstr "파일은 다음중 하나의 형식이여야 합니다: MP3, OGG, or WAV."
+
+#: inc/gravity-forms.php:232 build/submissionForm.js:1
+#: src/js/submission-form/sound-validator.js:107
+msgid "File must be less than 100MB."
+msgstr "파일의 용량은 100MB를 초과해서는 안됩니다."
+
+#: inc/gravity-forms.php:239 build/submissionForm.js:1
+#: src/js/submission-form/sound-validator.js:126
+msgid "Sound must be less than 10s."
+msgstr "소리는 10초 미만이여야 합니다."
+
+#: inc/gravity-forms.php:244 build/submissionForm.js:1
+#: src/js/submission-form/sound-validator.js:131
+msgid "Sound must be at least 1s."
+msgstr "소리는 최소 1초여야 합니다."
+
+#: inc/submitters.php:90
+#, fuzzy
+msgid "Invalid email address."
+msgstr "잘못된 이메일 주소."
+
+#: inc/submitters.php:95 inc/submitters.php:235
+#, fuzzy
+msgid ""
+"You have met the maximum number of submissions for this contest. Each "
+"contestant can submit up to 3 sound logos."
+msgstr ""
+"이 콘테스트의 최대 제출 수를 충족했습니다. 각 참가자는 최대 3 개의 사운"
+"드 로고를 제출할 수 있습니다."
+
+#: build/submissionForm.js:1 src/js/submission-form/sound-validator.js:136
+#, fuzzy
+msgid "Sound should be less than 4s."
+msgstr "소리는 4 초 미만이어야합니다."
+
+#: build/submissionForm.js:1 src/js/submission-form/sound-validator.js:147
+msgid "MP3 files should be at least 192kbps."
+msgstr "MP3파일은 최소 192kbps를 충족해야 합니다."
+
+#: build/submissionForm.js:1 src/js/submission-form/sound-validator.js:152
+msgid "OGG files should be at least 160kbps."
+msgstr "OGG파일은 최소 160kbps를 충족해야 합니다."
+
+#: build/submissionForm.js:1 src/js/submission-form/sound-validator.js:175
+msgid "Audio file is not readable."
+msgstr "오디오 파일이 인식되지 않았습니다."
+
+#~ msgid "Sound Logo Contest"
+#~ msgstr "사운드 로고 콘테스트"
+
+#~ msgid "Shiro child theme, used for Wikimedia Sound Logo content"
+#~ msgstr "위키미디어 사운드 로고 콘텐츠에 사용되는 Shiro 자식 테마"
+
+#~ msgid "Submit"
+#~ msgstr "제출"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Black"
+#~ msgstr "검은색"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "White"
+#~ msgstr "하얀"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Red"
+#~ msgstr "강한 빨강"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Pink"
+#~ msgstr "강한 핑크"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Orange"
+#~ msgstr "강한 오렌지"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Yellow"
+#~ msgstr "강한 노란색"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Purple"
+#~ msgstr "강한 보라색"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Dark Green"
+#~ msgstr "강한 짙은 녹색"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Blue"
+#~ msgstr "강한 파란색"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Bright Blue"
+#~ msgstr "강한 밝은 파란색"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Bright Yellow"
+#~ msgstr "강한 밝은 노란색"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Green"
+#~ msgstr "강한 녹색"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Bright Green"
+#~ msgstr "강한 밝은 녹색"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Red"
+#~ msgstr "라이트 레드"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Pink"
+#~ msgstr "라이트 핑크"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Orange"
+#~ msgstr "라이트 오렌지"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Yellow"
+#~ msgstr "연노랑"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Purple"
+#~ msgstr "라이트 퍼플"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Dark Green"
+#~ msgstr "라이트 다크 그린"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Blue"
+#~ msgstr "라이트 블루"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Bright Blue"
+#~ msgstr "라이트 브라이트 블루"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Bright Yellow"
+#~ msgstr "밝은 밝은 노란색"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Green"
+#~ msgstr "연한 초록색"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Bright Green"
+#~ msgstr "밝은 밝은 녹색"
+
+#~ msgctxt "Post Type General Name"
+#~ msgid "Submissions"
+#~ msgstr "제출물"
+
+#~ msgid "Submissions"
+#~ msgstr "제출물"
+
+#~ msgid "All Submissions"
+#~ msgstr "모든 제출물"
+
+#~ msgid "View Submission"
+#~ msgstr "제출물 보기"
+
+#~ msgid "Audio submission from a contest participant"
+#~ msgstr "콘테스트 참여자의 오디오 제출물 보기"
+
+#~ msgid "Submission Details"
+#~ msgstr "제출물 정보"
+
+#~ msgid "Draft"
+#~ msgstr "초안"
+
+#~ msgid "Eligible"
+#~ msgstr "적격"
+
+#~ msgid "Ineligible"
+#~ msgstr "부적격"
+
+#~ msgid "Learn More"
+#~ msgstr "자세히 알아보기"
