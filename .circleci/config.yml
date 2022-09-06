@@ -51,6 +51,12 @@ jobs:
             npm ci
             npm run build
       - run:
+          name: Build Wikipedia-Preview plugin assets
+          command: |
+            cd plugins/wikipediapreview-wordpress
+            npm ci
+            npm run build
+      - run:
           name: Build shiro theme
           command: |
             cd themes/shiro

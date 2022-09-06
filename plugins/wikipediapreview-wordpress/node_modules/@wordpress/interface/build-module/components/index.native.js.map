@@ -1,0 +1,1 @@
+{"version":3,"sources":["@wordpress/interface/src/components/index.native.js"],"names":["default","ComplementaryArea","PinnedItems"],"mappings":"AAAA,SAASA,OAAO,IAAIC,iBAApB,QAA6C,sBAA7C;AACA,SAASD,OAAO,IAAIE,WAApB,QAAuC,gBAAvC","sourcesContent":["export { default as ComplementaryArea } from './complementary-area';\nexport { default as PinnedItems } from './pinned-items';\n"]}
