@@ -1,0 +1,244 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Sound Logo Contest 0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wikimedia-"
+"contest\n"
+"POT-Creation-Date: 2022-09-05T16:19:13-04:00\n"
+"PO-Revision-Date: 2022-09-05 16:21-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Domain: wikimedia-contest\n"
+
+#. Plugin Name of the plugin
+msgid "Wikimedia Contest"
+msgstr "Kompetisi Wikimedia"
+
+#. Description of the plugin
+msgid "Manage the Wikimedia Contests"
+msgstr "Tata Kelola Kompetisi Wikimedia"
+
+#. Author of the plugin
+msgid "Human Made"
+msgstr "Dibuat oleh Manusia"
+
+#. Author URI of the plugin
+msgid "https://github.com/humanmade"
+msgstr "https://github.com/humanmade"
+
+#: inc/gravity-forms.php:225 build/submissionForm.js:1
+#: src/js/submission-form/sound-validator.js:99
+msgid "File must be one of the allowed types: MP3, OGG, or WAV."
+msgstr "Berkas harus dalam format yang didukung yaitu MP3, OGG, atau WAV."
+
+#: inc/gravity-forms.php:232 build/submissionForm.js:1
+#: src/js/submission-form/sound-validator.js:107
+msgid "File must be less than 100MB."
+msgstr "Ukuran berkas harus kurang dari 100 MB."
+
+#: inc/gravity-forms.php:239 build/submissionForm.js:1
+#: src/js/submission-form/sound-validator.js:126
+msgid "Sound must be less than 10s."
+msgstr "Suara harus kurang dari 10 detik."
+
+#: inc/gravity-forms.php:244 build/submissionForm.js:1
+#: src/js/submission-form/sound-validator.js:131
+msgid "Sound must be at least 1s."
+msgstr "Logo suara harus minimal 1 detik."
+
+#: inc/submitters.php:90
+#, fuzzy
+msgid "Invalid email address."
+msgstr "Alamat email salah."
+
+#: inc/submitters.php:95 inc/submitters.php:235
+#, fuzzy
+msgid ""
+"You have met the maximum number of submissions for this contest. Each "
+"contestant can submit up to 3 sound logos."
+msgstr ""
+"Anda telah memenuhi jumlah pengiriman maksimum untuk kontes ini. Setiap "
+"kontestan dapat mengirimkan hingga 3 logo suara."
+
+#: build/submissionForm.js:1 src/js/submission-form/sound-validator.js:136
+#, fuzzy
+msgid "Sound should be less than 4s."
+msgstr "Suara harus kurang dari 4 detik."
+
+#: build/submissionForm.js:1 src/js/submission-form/sound-validator.js:147
+msgid "MP3 files should be at least 192kbps."
+msgstr "Berkas MP3 harus minimal 192 kbps."
+
+#: build/submissionForm.js:1 src/js/submission-form/sound-validator.js:152
+msgid "OGG files should be at least 160kbps."
+msgstr "Berkas OGG harus minimal 160 kbps."
+
+#: build/submissionForm.js:1 src/js/submission-form/sound-validator.js:175
+msgid "Audio file is not readable."
+msgstr "Berkas tidak terbaca."
+
+#~ msgid "Sound Logo Contest"
+#~ msgstr "Kompetisi Logo Suara"
+
+#~ msgid "Shiro child theme, used for Wikimedia Sound Logo content"
+#~ msgstr ""
+#~ "Kami mempergunakan tema Shiro Child untuk situs Logo Suara Wikimedia"
+
+#~ msgid "Submit"
+#~ msgstr "Ajukan"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Black"
+#~ msgstr "Hitam"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "White"
+#~ msgstr "Putih"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Red"
+#~ msgstr "Merah Kuat"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Pink"
+#~ msgstr "Merah Muda Kuat"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Orange"
+#~ msgstr "Oranye Kuat"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Yellow"
+#~ msgstr "Kuning Kuat"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Purple"
+#~ msgstr "Ungu Kuat"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Dark Green"
+#~ msgstr "Hijau Tua yang Kuat"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Blue"
+#~ msgstr "Biru Kuat"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Bright Blue"
+#~ msgstr "Biru Cerah Kuat"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Bright Yellow"
+#~ msgstr "Kuning Cerah Kuat"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Green"
+#~ msgstr "Hijau Kuat"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Bright Green"
+#~ msgstr "Hijau Cerah Kuat"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Red"
+#~ msgstr "Lampu Merah"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Pink"
+#~ msgstr "Merah Muda Muda"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Orange"
+#~ msgstr "Oranye Muda"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Yellow"
+#~ msgstr "Kuning Muda"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Purple"
+#~ msgstr "Ungu Muda"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Dark Green"
+#~ msgstr "Hijau Tua Muda"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Blue"
+#~ msgstr "Biru Muda"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Bright Blue"
+#~ msgstr "Biru Muda Terang"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Bright Yellow"
+#~ msgstr "Kuning Cerah Muda"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Green"
+#~ msgstr "Hijau Muda"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Bright Green"
+#~ msgstr "Hijau Muda Cerah"
+
+#~ msgctxt "Post Type General Name"
+#~ msgid "Submissions"
+#~ msgstr "Pengajuan Karya"
+
+#~ msgid "Submissions"
+#~ msgstr "Pengajuan Karya"
+
+#~ msgid "All Submissions"
+#~ msgstr "Semua Pengajuan Karya"
+
+#~ msgid "View Submission"
+#~ msgstr "Lihat Pengajuan Karya"
+
+#~ msgid "Audio submission from a contest participant"
+#~ msgstr "Pengajuan karya dari peserta kompetisi"
+
+#~ msgid "Submission Details"
+#~ msgstr "Rincian Pengajuan Karya"
+
+#~ msgid "Draft"
+#~ msgstr "Konsep"
+
+#~ msgid "Eligible"
+#~ msgstr "Memenuhi Syarat"
+
+#~ msgid "Ineligible"
+#~ msgstr "Tidak memenuhi syarat"
+
+#~ msgid "Learn More"
+#~ msgstr "Pelajari lebih lanjut"
