@@ -370,6 +370,14 @@ $color-green-active: #00af89;
  * Now with all the js goodness.
  */
 body {
+	.gfield_label {
+		font-size: 24px;
+	}
+
+	.ginput_counter {
+		font-size: 14px;
+	}
+
 	/*
 	 * Position the label over the input so that we can animate it up.
 	 */
