@@ -142,9 +142,6 @@ const selectOption = ( { target } ) => {
 	const options = getFields( target, '.gfield_option' );
 	const { text, value } = option.dataset;
 
-	options.forEach( opt => opt.classList.remove( 'is-selected' ) );
-	option.classList.add( 'is-selected' );
-
 	hiddenInput.value = value;
 	getField( target, '.gfield_current_value' ).innerHTML = text;
 
@@ -152,6 +149,11 @@ const selectOption = ( { target } ) => {
 	const [ id, formId, fieldId ] = hiddenInput.id.match( /input_([0-9]*)_([0-9]*)/ );
 	gf_input_change( hiddenInput, formId, fieldId );
 	target.closest( '.gfield' ).classList.toggle( 'has-value', !! value );
+
+	console.log( target );
+	options.forEach( opt => opt.classList.remove( 'is-selected' ) );
+	option.classList.add( 'is-selected' );
+
 	closeListbox( target );
 };
 
