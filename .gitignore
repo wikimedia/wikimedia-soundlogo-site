@@ -12,7 +12,7 @@
 /plugins/rewrite-rules-inspector/
 /plugins/two-factor/
 /plugins/vaultpress/
-/plugins/wikpediapreview-wordpress/
+/plugins/wikipediapreview-wordpress/
 
 # Uploads directory
 /uploads/
