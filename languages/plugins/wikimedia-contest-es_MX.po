@@ -1,0 +1,247 @@
+# Copyright (C) 2022 Human Made
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Sound Logo Contest 0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wikimedia-"
+"contest\n"
+"POT-Creation-Date: 2022-09-05T16:19:13-04:00\n"
+"PO-Revision-Date: 2022-09-05 16:22-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Domain: wikimedia-contest\n"
+
+#. Plugin Name of the plugin
+msgid "Wikimedia Contest"
+msgstr "Concurso Wikimedia"
+
+#. Description of the plugin
+msgid "Manage the Wikimedia Contests"
+msgstr "Organizar los concursos Wikimedia"
+
+#. Author of the plugin
+msgid "Human Made"
+msgstr "Compuesto por músicos"
+
+#. Author URI of the plugin
+msgid "https://github.com/humanmade"
+msgstr "https://github.com/humanmade"
+
+#: inc/gravity-forms.php:225 build/submissionForm.js:1
+#: src/js/submission-form/sound-validator.js:99
+msgid "File must be one of the allowed types: MP3, OGG, or WAV."
+msgstr ""
+"El archivo debe estar en uno de los formatos admitidos: MP3, OGG o WAV."
+
+#: inc/gravity-forms.php:232 build/submissionForm.js:1
+#: src/js/submission-form/sound-validator.js:107
+msgid "File must be less than 100MB."
+msgstr "Los documentos deben tener menos de 100 MB."
+
+#: inc/gravity-forms.php:239 build/submissionForm.js:1
+#: src/js/submission-form/sound-validator.js:126
+msgid "Sound must be less than 10s."
+msgstr "El sonido deberá durar menos de 10s."
+
+#: inc/gravity-forms.php:244 build/submissionForm.js:1
+#: src/js/submission-form/sound-validator.js:131
+msgid "Sound must be at least 1s."
+msgstr "El sonido debe durar al menos 1s."
+
+#: inc/submitters.php:90
+#, fuzzy
+msgid "Invalid email address."
+msgstr "Dirección de correo electrónico no válida."
+
+#: inc/submitters.php:95 inc/submitters.php:235
+#, fuzzy
+msgid ""
+"You have met the maximum number of submissions for this contest. Each "
+"contestant can submit up to 3 sound logos."
+msgstr ""
+"Has cumplido con el número máximo de presentaciones para este concurso. Cada "
+"concursante puede enviar hasta 3 logotipos de sonido."
+
+#: build/submissionForm.js:1 src/js/submission-form/sound-validator.js:136
+#, fuzzy
+msgid "Sound should be less than 4s."
+msgstr "El sonido debe ser inferior a 4s."
+
+#: build/submissionForm.js:1 src/js/submission-form/sound-validator.js:147
+msgid "MP3 files should be at least 192kbps."
+msgstr "Los archivos MP3 deben tener al menos 192kbps."
+
+#: build/submissionForm.js:1 src/js/submission-form/sound-validator.js:152
+msgid "OGG files should be at least 160kbps."
+msgstr "Los archivos OGG deben tener al menos 160kbps."
+
+#: build/submissionForm.js:1 src/js/submission-form/sound-validator.js:175
+msgid "Audio file is not readable."
+msgstr "El archivo de audio no es legible."
+
+#~ msgid "Sound Logo Contest"
+#~ msgstr "Concurso del logo sonoro"
+
+#~ msgid "Shiro child theme, used for Wikimedia Sound Logo content"
+#~ msgstr ""
+#~ "Tema hijo Shiro, utilizado para el contenido del logo sonoro de Wikimedia"
+
+#~ msgid "Submit"
+#~ msgstr "Enviar"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Black"
+#~ msgstr "Negro"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "White"
+#~ msgstr "Blanco"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Red"
+#~ msgstr "Rojo fuerte"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Pink"
+#~ msgstr "Rosa fuerte"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Orange"
+#~ msgstr "Naranja fuerte"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Yellow"
+#~ msgstr "Amarillo fuerte"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Purple"
+#~ msgstr "Púrpura fuerte"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Dark Green"
+#~ msgstr "Verde oscuro fuerte"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Blue"
+#~ msgstr "Azul Fuerte"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Bright Blue"
+#~ msgstr "Fuerte azul brillante"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Bright Yellow"
+#~ msgstr "Fuerte amarillo brillante"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Green"
+#~ msgstr "Verde Fuerte"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Bright Green"
+#~ msgstr "Fuerte verde brillante"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Red"
+#~ msgstr "Luz roja"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Pink"
+#~ msgstr "Rosa claro"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Orange"
+#~ msgstr "Naranja claro"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Yellow"
+#~ msgstr "Amarillo claro"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Purple"
+#~ msgstr "Púrpura claro"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Dark Green"
+#~ msgstr "Verde oscuro claro"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Blue"
+#~ msgstr "Azul claro"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Bright Blue"
+#~ msgstr "Azul claro brillante"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Bright Yellow"
+#~ msgstr "Amarillo brillante claro"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Green"
+#~ msgstr "Verde claro"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Bright Green"
+#~ msgstr "Verde claro brillante"
+
+#~ msgctxt "Post Type General Name"
+#~ msgid "Submissions"
+#~ msgstr "Propuestas"
+
+#~ msgid "Submissions"
+#~ msgstr "Propuestas"
+
+#~ msgid "All Submissions"
+#~ msgstr "Todas las propuestas"
+
+#~ msgid "View Submission"
+#~ msgstr "Ver propuesta"
+
+#~ msgid "Audio submission from a contest participant"
+#~ msgstr "Envío de audio de un participante en el concurso"
+
+#~ msgid "Submission Details"
+#~ msgstr "Detalles de la propuesta"
+
+#~ msgid "Draft"
+#~ msgstr "Versión preliminar"
+
+#~ msgid "Eligible"
+#~ msgstr "Elegible"
+
+#~ msgid "Ineligible"
+#~ msgstr "No elegible"
+
+#~ msgid "Learn More"
+#~ msgstr "Más información"

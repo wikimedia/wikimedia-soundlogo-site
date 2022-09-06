@@ -9,9 +9,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-08-06T15:20:45-04:00\n"
+"POT-Creation-Date: 2022-09-05T16:19:14-04:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0\n"
+"X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: wikimedia-contest-admin\n"
 
 #. Plugin Name of the plugin
@@ -31,48 +31,293 @@ msgstr ""
 msgid "https://github.com/humanmade"
 msgstr ""
 
-#: inc/class-screening-queue-list-table.php:29
+#: inc/bulk-actions.php:36
+msgid "Assign %s"
+msgstr ""
+
+#: inc/bulk-actions.php:40
+msgid "Assign to"
+msgstr ""
+
+#: inc/bulk-actions.php:41
+msgid "Remove assignees"
+msgstr ""
+
+#: inc/bulk-actions.php:46
+#: inc/bulk-actions.php:53
+msgid "Submission status"
+msgstr ""
+
+#: inc/bulk-actions.php:46
+msgid "Change to Screening"
+msgstr ""
+
+#: inc/bulk-actions.php:54
+msgid "Change to %s"
+msgstr ""
+
+#: inc/bulk-actions.php:147
+#: inc/post-type.php:84
+msgid "Screening"
+msgstr ""
+
+#. translators: 1. number of submissions affected, 2. scoring panelist's name.
+#: inc/bulk-actions.php:217
+msgid "Assigned %d submissions to %s"
+msgstr ""
+
+#. translators: number of submissions affected.
+#: inc/bulk-actions.php:226
+msgid "Removed all assignees from %d submissions"
+msgstr ""
+
+#. translators: 1: number of submissions affected, 2: new status for the submission.
+#: inc/bulk-actions.php:244
+msgid "Changed status of %d submissions to %s"
+msgstr ""
+
+#. translators: invalid status for a submision.
+#: inc/bulk-actions.php:251
+msgid "Error: <b>%s</b> is not a valid status"
+msgstr ""
+
+#: inc/bulk-actions.php:269
+msgid "Error changing submissions status"
+msgstr ""
+
+#: inc/class-scoring-queue-list-table.php:36
+#: inc/class-screening-queue-list-table.php:31
 msgid "Sound Logo Entry"
 msgstr ""
 
-#: inc/class-screening-queue-list-table.php:30
+#: inc/class-scoring-queue-list-table.php:37
+#: inc/class-screening-queue-list-table.php:32
 msgid "Sound Logo Entries"
 msgstr ""
 
-#: inc/class-screening-queue-list-table.php:123
+#: inc/class-scoring-queue-list-table.php:119
+#: inc/class-screening-queue-list-table.php:126
 msgid "Submission ID"
 msgstr ""
 
-#: inc/class-screening-queue-list-table.php:124
+#: inc/class-scoring-queue-list-table.php:120
+#: inc/class-screening-queue-list-table.php:127
 msgid "Submission Date"
 msgstr ""
 
-#: inc/class-screening-queue-list-table.php:125
-msgid "Screening Results"
+#: inc/class-scoring-queue-list-table.php:121
+msgid "Your scoring results\t"
 msgstr ""
 
-#: inc/screening-results.php:58
+#: inc/class-scoring-queue-list-table.php:132
+msgid "Assignees"
+msgstr ""
+
+#: inc/class-screening-queue-list-table.php:128
+msgid "Flags"
+msgstr ""
+
+#: inc/network-settings.php:35
+#: inc/network-settings.php:74
+msgid "Contest Settings"
+msgstr ""
+
+#: inc/network-settings.php:36
+msgid "Contest"
+msgstr ""
+
+#: inc/network-settings.php:44
+msgid "Contest phase"
+msgstr ""
+
+#: inc/network-settings.php:53
+msgid "Select phase"
+msgstr ""
+
+#: inc/network-settings.php:68
+msgid "Contest options were saved."
+msgstr ""
+
+#: inc/network-settings.php:92
+msgid "Use the options below to select the current phase of the contest"
+msgstr ""
+
+#: inc/post-type.php:38
+msgctxt "Post Type General Name"
+msgid "Submissions"
+msgstr ""
+
+#: inc/post-type.php:39
+msgctxt "Post Type Singular Name"
+msgid "Submission"
+msgstr ""
+
+#: inc/post-type.php:40
+#: inc/post-type.php:47
+msgid "Submissions"
+msgstr ""
+
+#: inc/post-type.php:41
+msgid "All Submissions"
+msgstr ""
+
+#: inc/post-type.php:42
+#: inc/post-type.php:365
+msgid "View Submission"
+msgstr ""
+
+#: inc/post-type.php:43
+#: inc/post-type.php:151
+msgid "Submission Details"
+msgstr ""
+
+#: inc/post-type.php:48
+msgid "Audio submission from a contest participant"
+msgstr ""
+
+#: inc/post-type.php:85
+msgid "Screening <span class=\"count\">(%s)</span>"
+msgid_plural "Screening <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/reporting.php:26
+#: inc/reporting.php:27
+msgid "Reports"
+msgstr ""
+
+#: inc/reporting.php:41
+msgid "Reporting"
+msgstr ""
+
+#: inc/reporting.php:46
+msgid "Download Submission Report CSV"
+msgstr ""
+
+#: inc/scoring.php:122
+msgid "Scoring Panel"
+msgstr ""
+
+#: inc/scoring.php:138
+msgid "Scoring Panelist Lead"
+msgstr ""
+
+#: inc/scoring.php:183
+#: inc/scoring.php:184
+#: templates/scoring-interface.php:18
+msgid "Score Submission"
+msgstr ""
+
+#: inc/scoring.php:234
+msgid "Scoring Queue - Contest Phase:"
+msgstr ""
+
+#: inc/screening.php:60
 msgid "Screener"
 msgstr ""
 
-#: inc/screening-results.php:84
-#: inc/screening-results.php:85
-#: inc/screening-results.php:93
-#: inc/screening-results.php:94
-#: inc/screening-results.php:113
+#: inc/screening.php:91
+#: inc/screening.php:92
+#: inc/screening.php:118
 msgid "Screening Queue"
 msgstr ""
 
-#: inc/screening-results.php:140
+#: inc/screening.php:101
+#: inc/screening.php:102
+#: templates/screening-interface.php:19
+msgid "Screen Submission"
+msgstr ""
+
+#: inc/screening.php:207
 msgid "< 1s duration"
 msgstr ""
 
-#: inc/screening-results.php:141
+#: inc/screening.php:208
 msgid "> 4s duration"
 msgstr ""
 
-#: inc/screening-results.php:142
+#: inc/screening.php:209
 msgid "Bitrate too low"
+msgstr ""
+
+#: inc/screening.php:221
+msgid "More than four seconds"
+msgstr ""
+
+#: inc/screening.php:222
+msgid "Less than one second"
+msgstr ""
+
+#: inc/screening.php:223
+msgid "Single layer"
+msgstr ""
+
+#: inc/screening.php:224
+msgid "Includes spoken words "
+msgstr ""
+
+#: inc/screening.php:225
+msgid "Unacceptable file type (not OGG, WAV, MP3)"
+msgstr ""
+
+#: inc/screening.php:226
+msgid "Unacceptable quality"
+msgstr ""
+
+#: inc/screening.php:227
+msgid "Suspected of copyright infringement"
+msgstr ""
+
+#: inc/screening.php:228
+msgid "Suspected of license infringement"
+msgstr ""
+
+#: inc/screening.php:229
+msgid "Vandalism"
+msgstr ""
+
+#: inc/screening.php:230
+msgid "Related to violence"
+msgstr ""
+
+#: inc/screening.php:231
+msgid "Related to gambling"
+msgstr ""
+
+#: inc/screening.php:232
+msgid "Related to crime"
+msgstr ""
+
+#: inc/screening.php:233
+msgid "Related to sexual behaviour"
+msgstr ""
+
+#: inc/screening.php:234
+msgid "Threatening behavior"
+msgstr ""
+
+#: inc/screening.php:235
+msgid "Related to illicit drugs"
+msgstr ""
+
+#: inc/submitters.php:119
+msgid "Submitter email addresses"
+msgstr ""
+
+#: inc/submitters.php:120
+msgid "Submitters"
+msgstr ""
+
+#: inc/submitters.php:142
+msgid "Submitter Email Addresses"
+msgstr ""
+
+#: inc/submitters.php:178
+msgid "There are no email addresses recorded as having submitted their contest entry."
+msgstr ""
+
+#: inc/submitters.php:212
+msgid "Updated list of used email addresses saved."
 msgstr ""
 
 #: inc/workflows-triggers.php:65
@@ -83,12 +328,100 @@ msgstr ""
 msgid "Sound Logo Creator"
 msgstr ""
 
+#: templates/scoring-interface.php:31
+msgid "Scoring criteria"
+msgstr ""
+
+#: templates/scoring-interface.php:34
+msgid "Fill in each of the scoring criteria with a natural number, between 0 and 10."
+msgstr ""
+
+#: templates/scoring-interface.php:99
+msgid "Any additional thoughts about this sound logo"
+msgstr ""
+
+#: templates/scoring-interface.php:106
+msgid "Assign score to the submission"
+msgstr ""
+
+#: templates/screening-interface.php:30
+msgid "Screening flags"
+msgstr ""
+
+#: templates/screening-interface.php:32
+msgid "If any of these flags are checked, the submission is INELIGIBLE."
+msgstr ""
+
+#: templates/screening-interface.php:55
+msgid "Other reasons for your decision"
+msgstr ""
+
+#: templates/screening-interface.php:60
+msgid "Check here if the submission should be ineligible for another reason than the flags listed."
+msgstr ""
+
+#: templates/screening-interface.php:68
+msgid "Mark submission ineligible"
+msgstr ""
+
+#: templates/screening-interface.php:69
+msgid "Mark submission eligible"
+msgstr ""
+
+#: templates/sound-info.php:90
+msgid "Completely original work"
+msgstr ""
+
+#: templates/sound-info.php:91
+msgid "Used sounds are CC0 or public domain"
+msgstr ""
+
+#: templates/sound-info.php:92
+msgid "Used prerecorded sounds"
+msgstr ""
+
+#: templates/sound-info.php:93
+msgid "Worked from a sound pack or a sample library"
+msgstr ""
+
+#: templates/sound-info.php:94
+msgid "Used one or more samples"
+msgstr ""
+
+#: templates/sound-info.php:95
+msgid "Source URLs of pre-recorded sounds"
+msgstr ""
+
+#: templates/sound-info.php:120
+msgid "Automated flags"
+msgstr ""
+
+#: templates/sound-info.php:129
+msgid "Creation Process (answers from the submission form)"
+msgstr ""
+
+#: templates/sound-info.php:145
+msgid "Brief explanation of how the sound logo was created"
+msgstr ""
+
+#: templates/sound-info.php:160
+msgid "Brief explanation of what the sound logo means"
+msgstr ""
+
 #. Theme Name of the theme
 msgid "Sound Logo Contest"
 msgstr ""
 
 #. Description of the theme
 msgid "Shiro child theme, used for Wikimedia Sound Logo content"
+msgstr ""
+
+#: inc/customizer.php:50
+msgid "Reusable Block to use for footer"
+msgstr ""
+
+#: inc/customizer.php:51
+msgid "Choose a block to hold footer content."
 msgstr ""
 
 #: inc/editor/namespace.php:54
@@ -108,5 +441,125 @@ msgid "Strong Bright Green"
 msgstr ""
 
 #: inc/editor/namespace.php:78
+msgid "Light Bright Green"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Black"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "White"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Strong Red"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Strong Pink"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Strong Orange"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Strong Yellow"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Strong Purple"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Strong Dark Green"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Strong Blue"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Strong Bright Blue"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Strong Bright Yellow"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Strong Green"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Strong Bright Green"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Light Red"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Light Pink"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Light Orange"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Light Yellow"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Light Purple"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Light Dark Green"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Light Blue"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Light Bright Blue"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Light Bright Yellow"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Light Green"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
 msgid "Light Bright Green"
 msgstr ""
