@@ -1,0 +1,244 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Sound Logo Contest 0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wikimedia-"
+"contest\n"
+"POT-Creation-Date: 2022-09-05T16:19:13-04:00\n"
+"PO-Revision-Date: 2022-09-05 16:23-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Domain: wikimedia-contest\n"
+
+#. Plugin Name of the plugin
+msgid "Wikimedia Contest"
+msgstr "مسابقة ويكيميديا"
+
+#. Description of the plugin
+msgid "Manage the Wikimedia Contests"
+msgstr "إدارة مسابقات ويكيميديا"
+
+#. Author of the plugin
+msgid "Human Made"
+msgstr "صناعة بشرية"
+
+#. Author URI of the plugin
+msgid "https://github.com/humanmade"
+msgstr "‫https://github.com/humanmade"
+
+#: inc/gravity-forms.php:225 build/submissionForm.js:1
+#: src/js/submission-form/sound-validator.js:99
+msgid "File must be one of the allowed types: MP3, OGG, or WAV."
+msgstr "يجب أن يكون الملف ضمن التنسيقات المدعومة: إم بي 3 أو أوغ أو واف."
+
+#: inc/gravity-forms.php:232 build/submissionForm.js:1
+#: src/js/submission-form/sound-validator.js:107
+msgid "File must be less than 100MB."
+msgstr "يجب أن يكون حجم الملف أقل من 100 ميغابايت."
+
+#: inc/gravity-forms.php:239 build/submissionForm.js:1
+#: src/js/submission-form/sound-validator.js:126
+msgid "Sound must be less than 10s."
+msgstr "يجب أن يكون طول الصوت أقل من 10 ثوانٍ."
+
+#: inc/gravity-forms.php:244 build/submissionForm.js:1
+#: src/js/submission-form/sound-validator.js:131
+msgid "Sound must be at least 1s."
+msgstr "يجب أن يكون طول الصوت ثانية واحدة على الأقل."
+
+#: inc/submitters.php:90
+#, fuzzy
+msgid "Invalid email address."
+msgstr "عنوان البريد الإلكتروني غير صالح."
+
+#: inc/submitters.php:95 inc/submitters.php:235
+#, fuzzy
+msgid ""
+"You have met the maximum number of submissions for this contest. Each "
+"contestant can submit up to 3 sound logos."
+msgstr ""
+"لقد حققت الحد الأقصى لعدد التقديمات لهذه المسابقة. يمكن لكل متسابق إرسال ما "
+"يصل إلى 3 شعارات صوتية."
+
+#: build/submissionForm.js:1 src/js/submission-form/sound-validator.js:136
+#, fuzzy
+msgid "Sound should be less than 4s."
+msgstr "يجب أن يكون الصوت أقل من 4s."
+
+#: build/submissionForm.js:1 src/js/submission-form/sound-validator.js:147
+msgid "MP3 files should be at least 192kbps."
+msgstr "يجب أن تكون ملفات إم بي 3 على الأقل 192 كيلوبت في الثانية."
+
+#: build/submissionForm.js:1 src/js/submission-form/sound-validator.js:152
+msgid "OGG files should be at least 160kbps."
+msgstr "يجب أن تكون ملفات أوغ على الأقل 160 كيلوبت في الثانية."
+
+#: build/submissionForm.js:1 src/js/submission-form/sound-validator.js:175
+msgid "Audio file is not readable."
+msgstr "الملف الصوتي غير قابل للقراءة."
+
+#~ msgid "Sound Logo Contest"
+#~ msgstr "مسابقة الشعار الصوتي"
+
+#~ msgid "Shiro child theme, used for Wikimedia Sound Logo content"
+#~ msgstr "يُستعمل ثيم الطفل شيرو في مسابقة الشعار الصوتي لويكيميديا"
+
+#~ msgid "Submit"
+#~ msgstr "قدِّم"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Black"
+#~ msgstr "أسود"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "White"
+#~ msgstr "أبيض"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Red"
+#~ msgstr "أحمر قوي"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Pink"
+#~ msgstr "وردي قوي"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Orange"
+#~ msgstr "برتقالي قوي"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Yellow"
+#~ msgstr "أصفر قوي"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Purple"
+#~ msgstr "الأرجواني القوي"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Dark Green"
+#~ msgstr "أخضر داكن قوي"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Blue"
+#~ msgstr "أزرق قوي"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Bright Blue"
+#~ msgstr "أزرق ساطع قوي"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Bright Yellow"
+#~ msgstr "أصفر ساطع قوي"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Green"
+#~ msgstr "أخضر قوي"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Strong Bright Green"
+#~ msgstr "أخضر ساطع قوي"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Red"
+#~ msgstr "أحمر فاتح"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Pink"
+#~ msgstr "وردي فاتح"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Orange"
+#~ msgstr "برتقالي فاتح"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Yellow"
+#~ msgstr "أصفر فاتح"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Purple"
+#~ msgstr "ضوء ارجواني"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Dark Green"
+#~ msgstr "خضراء داكنة خفيفة"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Blue"
+#~ msgstr "أزرق فاتح"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Bright Blue"
+#~ msgstr "الضوء الأزرق الفاتح"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Bright Yellow"
+#~ msgstr "الضوء الأصفر الفاتح"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Green"
+#~ msgstr "اخضر فاتح"
+
+#, fuzzy
+#~ msgctxt "Color name"
+#~ msgid "Light Bright Green"
+#~ msgstr "خضراء خضراء خضراء"
+
+#~ msgctxt "Post Type General Name"
+#~ msgid "Submissions"
+#~ msgstr "التقديمات"
+
+#~ msgid "Submissions"
+#~ msgstr "التقديمات"
+
+#~ msgid "All Submissions"
+#~ msgstr "التقديمات كلها"
+
+#~ msgid "View Submission"
+#~ msgstr "طالع التقديم"
+
+#~ msgid "Audio submission from a contest participant"
+#~ msgstr "تقديم صوتي من أحد المشاركين في المسابقة"
+
+#~ msgid "Submission Details"
+#~ msgstr "تفاصيل التقديم"
+
+#~ msgid "Draft"
+#~ msgstr "مسودة"
+
+#~ msgid "Eligible"
+#~ msgstr "مؤهل"
+
+#~ msgid "Ineligible"
+#~ msgstr "غير مؤهل"
+
+#~ msgid "Learn More"
+#~ msgstr "طالع المزيد"

@@ -12,11 +12,12 @@
     "lint:js": "eslint .",
     "lint": "npm run lint:js && npm run lint:php && npm run lint:css",
     "pot:frontend:plugin": "wp i18n make-pot plugins/wikimedia-contest languages/wikimedia-contest.pot --domain='wikimedia-contest' --merge",
-    "pot:frontend:theme": "wp i18n make-pot themes/soundlogo languages/wikimedia-contest.pot --domain='wikimedia-contest' --merge",
+    "pot:frontend:theme": "wp i18n make-pot themes/soundlogo languageswikimedia-contest.pot --domain='wikimedia-contest' --merge",
     "pot:frontend": "npm run pot:frontend:plugin && npm run pot:frontend:theme",
     "pot:admin:plugin": "wp i18n make-pot plugins/wikimedia-contest languages/wikimedia-contest-admin.pot --domain='wikimedia-contest-admin' --merge",
     "pot:admin:theme": "wp i18n make-pot themes/soundlogo languages/wikimedia-contest-admin.pot --domain='wikimedia-contest-admin' --merge",
     "pot:admin": "npm run pot:admin:plugin && npm run pot:admin:theme",
+    "pot:json": "wp i18n make-json languages/plugins --no-purge",
     "pot": "npm run pot:frontend && npm run pot:admin",
     "build": "webpack --config=.webpack/config.prod.js",
     "start": "webpack-dev-server --config=.webpack/config.dev.js"
