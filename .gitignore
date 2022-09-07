@@ -13,6 +13,7 @@
 /plugins/two-factor/
 /plugins/vaultpress/
 /plugins/wikipediapreview-wordpress/
+/plugins/wordpress-seo/
 
 # Uploads directory
 /uploads/

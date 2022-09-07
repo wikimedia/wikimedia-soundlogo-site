@@ -16,6 +16,7 @@ wpcom_vip_load_plugin( 'hm-gutenberg-tools' );
 wpcom_vip_load_plugin( 'safe-svg' );
 wpcom_vip_load_plugin( 'wikimedia-contest' );
 wpcom_vip_load_plugin( 'workflows' );
+wpcom_vip_load_plugin( 'wordpress-seo/wp-seo.php' );
 
 /**
  * The above example requires the plugin to use a specific naming structure: /plugin-name/plugin-name.php
