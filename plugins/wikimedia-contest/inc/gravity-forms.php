@@ -39,7 +39,7 @@ function bootstrap() {
 	add_filter( 'gform_field_validation', __NAMESPACE__ . '\\audio_file_validation_messsages', 10, 4 );
 	add_filter( 'gform_field_input', __NAMESPACE__ . '\\render_accessible_select_field', 10, 5 );
 	add_action( 'gform_entry_created', __NAMESPACE__ . '\\handle_entry_submission', 10, 2 );
-	add_filter( 'gform_custom_merge_tags', __NAMESPACE__ . '\\custom_merge_tags', 10, 4);
+	add_filter( 'gform_custom_merge_tags', __NAMESPACE__ . '\\custom_merge_tags', 10, 4 );
 	add_filter( 'gform_replace_merge_tags', __NAMESPACE__ . '\\replace_merge_tags', 10, 7 );
 }
 
@@ -239,6 +239,11 @@ function audio_file_validation_messsages( $result, $value, $form, $field ) {
 		'sampleRate' => $sample_rate,
 		'size' => $file_size,
 	] = json_decode( RGFormsModel::get_field_value( $meta_field ), true );
+
+	// Make exceptions for .ogg files, because Safari can't process them correctly.
+	if ( empty( $file_type ) && substr( $value, -4 ) === '.ogg' ) {
+		return $result;
+	}
 
 	if ( empty( $file_type ) || ! in_array( $file_type, ALLOWED_TYPES, true ) ) {
 		return [
