@@ -47,7 +47,7 @@ const handleAnchorLinkClick = event => {
  * @param {string} hash Window location hash, with leading `#`.
  */
 const smoothScrollTo = hash => {
-	const target = document.getElementById( hash.substring( 1 ) );
+	const target = document.getElementById( decodeURIComponent( hash ).substring( 1 ) );
 	const headerHeight = document.querySelector( '.header-default' ).clientHeight;
 
 	if ( target ) {
