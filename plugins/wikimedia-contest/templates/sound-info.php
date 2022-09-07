@@ -147,7 +147,7 @@ $flag_labels = array(
 			placeholder="Translate here if non-English"
 		><?php echo esc_textarea( $translated_fields['creation'] ); ?></textarea>
 		<?php wp_nonce_field( 'save_translation' ); ?>
-		<input type="hidden" name="post_id" value="<?php echo esc_attr( get_the_ID() ); ?>" />
+		<input type="hidden" name="post_id" value="<?php echo esc_attr( $post_id ); ?>" />
 		<input type="hidden" name="action" value="save-translation" />
 		<p>
 			<input type="submit" class="button" value="<?php esc_attr_e( 'Save translation', 'wikimedia-contest-admin' ); ?>" />
@@ -170,7 +170,7 @@ $flag_labels = array(
 			placeholder="Translate here if non-English"
 		><?php echo esc_textarea( $translated_fields['inspiration'] ); ?></textarea>
 		<?php wp_nonce_field( 'save_translation' ); ?>
-		<input type="hidden" name="post_id" value="<?php echo esc_attr( get_the_ID() ); ?>" />
+		<input type="hidden" name="post_id" value="<?php echo esc_attr( $post_id ); ?>" />
 		<input type="hidden" name="action" value="save-translation" />
 		<p>
 			<input type="submit" class="button" value="<?php esc_attr_e( 'Save translation', 'wikimedia-contest-admin' ); ?>" />
