@@ -1,0 +1,1 @@
+{"version":3,"sources":["@wordpress/editor/src/utils/media-upload/index.native.js"],"names":["mediaUpload"],"mappings":";;;;;;;AAAe,SAASA,WAAT,GAAuB,CAAE","sourcesContent":["export default function mediaUpload() {}\n"]}

@@ -121,11 +121,19 @@ $color-green-active: #00af89;
 				top: 50%;
 				transform: translateY( -50% );
 			}
+
+			.rtl & {
+				text-align: right;
+
+				.icon {
+					left: $space-l;
+					right: unset;
+				}
+			}
 		}
 
 		.gfield_listbox {
 			display: none;
-
 			position: absolute;
 			top: calc( 100% - 9px );
 			width: 100%;
@@ -159,6 +167,10 @@ $color-green-active: #00af89;
 				color: inherit;
 				text-align: left;
 
+				.rtl & {
+					text-align: right;
+				}
+
 				&:hover,
 				&:focus {
 					background-color: $color-green-active;
@@ -167,7 +179,7 @@ $color-green-active: #00af89;
 			}
 
 			&.is-selected button {
-				background-color: $color-green-active;;
+				background-color: $color-green-active;
 				color: $color-white;
 			}
 
@@ -404,6 +416,16 @@ body {
 		.has-value {
 			.gfield_label {
 				transform: translateY( -115% );
+			}
+		}
+	}
+
+	&.rtl {
+		// Class applied using javascript.
+		.gfield.has-focus,
+		.gfield.no-focus-animation {
+			.gfield_label {
+				transform-origin: top right;
 			}
 		}
 	}
