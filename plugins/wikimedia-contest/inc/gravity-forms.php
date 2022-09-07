@@ -9,6 +9,7 @@ namespace Wikimedia_Contest\Gravity_Forms;
 
 use Asset_Loader;
 use Asset_Loader\Manifest;
+use GFFormsModel;
 use RGFormsModel;
 use Wikimedia_Contest\Network_Library;
 
@@ -240,8 +241,16 @@ function audio_file_validation_messsages( $result, $value, $form, $field ) {
 		'size' => $file_size,
 	] = json_decode( RGFormsModel::get_field_value( $meta_field ), true );
 
-	// Make exceptions for .ogg files, because Safari can't process them correctly.
-	if ( empty( $file_type ) && substr( $value, -4 ) === '.ogg' ) {
+	$this_field = wp_list_filter( $form['fields'], [ 'adminLabel' => $field['adminLabel'] ] );
+
+	/*
+	 * If client-side sound validation failed and the file looks like an OGG,
+	 * just let it go. Safari only has partial support for OGGs, and we don't
+	 * want to prevent Safari users from submitting entries.
+	 */
+	$input_name = "input_{$field['id']}";
+	$filename = $_FILES[ $input_name ]['name'] ?? GFFormsModel::$uploaded_files[ $form['id'] ][ $input_name ] ?? '';
+	if ( empty( $file_type ) && strtolower( substr( $filename, -4 ) ) === '.ogg' ) {
 		return $result;
 	}
 
