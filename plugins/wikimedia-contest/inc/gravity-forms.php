@@ -241,8 +241,6 @@ function audio_file_validation_messsages( $result, $value, $form, $field ) {
 		'size' => $file_size,
 	] = json_decode( RGFormsModel::get_field_value( $meta_field ), true );
 
-	$this_field = wp_list_filter( $form['fields'], [ 'adminLabel' => $field['adminLabel'] ] );
-
 	/*
 	 * If client-side sound validation failed and the file looks like an OGG,
 	 * just let it go. Safari only has partial support for OGGs, and we don't
@@ -341,6 +339,11 @@ function render_accessible_select_field( $field_input, $field, $value, $_, $form
  */
 function handle_entry_submission( $entry, $form ) {
 	$formatted_entry = process_entry_fields( $entry, $form );
+
+	// If the form doesn't have an audio_file field, it's not the submission form.
+	if ( empty( $formatted_entry['audio_file'] ) ) {
+		return;
+	}
 
 	// Sanitize the audio file meta field.
 	$audio_file_meta = sanitize_audio_file_meta_field( $formatted_entry['audio_file_meta'] ?? '' );
