@@ -46,7 +46,10 @@ const init = () => {
  * @param {Event} Blur event, bubbled from any element inside the div.
  */
 const handleLeaveInputField = ( { target } ) => {
-	if ( ! target.closest( '.gfield_custom_select:focus-within' ) ) {
+	if (
+		! target.closest( '.gfield_custom_select:focus-within' ) &&
+		getField( target, '.gfield_listbox' ).classList.include( 'is-opened' )
+	) {
 		setTimeout( () => closeListbox( target ), 200 );
 	}
 };
