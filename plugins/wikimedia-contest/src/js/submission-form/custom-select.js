@@ -48,7 +48,7 @@ const init = () => {
 const handleLeaveInputField = ( { target } ) => {
 	if (
 		! target.closest( '.gfield_custom_select:focus-within' ) &&
-		getField( target, '.gfield_listbox' ).classList.include( 'is-opened' )
+		getField( target, '.gfield_listbox' ).classList.contains( 'is-opened' )
 	) {
 		setTimeout( () => closeListbox( target ), 200 );
 	}
