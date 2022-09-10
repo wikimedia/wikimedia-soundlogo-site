@@ -1,3 +1,4 @@
+# Wikimedia Sound Logo
 # VIP Skeleton
 
 Welcome to VIP! This repo is a starting point for building your VIP site, including all the base folders to be built on.
