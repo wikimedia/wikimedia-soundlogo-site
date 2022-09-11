@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Sound Logo Contest 0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wikimedia-contest\n"
 "POT-Creation-Date: 2022-09-05T16:19:13-04:00\n"
-"PO-Revision-Date: 2022-09-05 16:21-0400\n"
+"PO-Revision-Date: 2022-09-11 17:59-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: hi\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
 "X-Domain: wikimedia-contest\n"
 
 #. Plugin Name of the plugin
@@ -30,42 +30,34 @@ msgstr "मानवकृत"
 msgid "https://github.com/humanmade"
 msgstr "https://github.com/humanmade"
 
-#: inc/gravity-forms.php:225 build/submissionForm.js:1
-#: src/js/submission-form/sound-validator.js:99
+#: inc/gravity-forms.php:225 build/submissionForm.js:1 src/js/submission-form/sound-validator.js:99
 msgid "File must be one of the allowed types: MP3, OGG, or WAV."
 msgstr "फ़ाइल निम्न समर्थित प्रारूपों में से एक होनी चाहिए: MP3, OGG, अथवा WAV."
 
-#: inc/gravity-forms.php:232 build/submissionForm.js:1
-#: src/js/submission-form/sound-validator.js:107
+#: inc/gravity-forms.php:232 build/submissionForm.js:1 src/js/submission-form/sound-validator.js:107
 msgid "File must be less than 100MB."
 msgstr "फ़ाइल 100MB से कम होनी चाहिए।"
 
-#: inc/gravity-forms.php:239 build/submissionForm.js:1
-#: src/js/submission-form/sound-validator.js:126
+#: inc/gravity-forms.php:239 build/submissionForm.js:1 src/js/submission-form/sound-validator.js:126
 msgid "Sound must be less than 10s."
 msgstr "ध्वनि 10s से कम होनी चाहिए।"
 
-#: inc/gravity-forms.php:244 build/submissionForm.js:1
-#: src/js/submission-form/sound-validator.js:131
+#: inc/gravity-forms.php:244 build/submissionForm.js:1 src/js/submission-form/sound-validator.js:131
 msgid "Sound must be at least 1s."
 msgstr "ध्वनि कम से कम 1s की होनी चाहिए।"
 
 #: inc/submitters.php:90
-#, fuzzy
 msgid "Invalid email address."
 msgstr "अमान्य ईमेल पता।"
 
 #: inc/submitters.php:95 inc/submitters.php:235
-#, fuzzy
 msgid ""
-"You have met the maximum number of submissions for this contest. Each contestant can "
-"submit up to 3 sound logos."
+"You have met the maximum number of submissions for this contest. Each contestant can submit up to 3 "
+"sound logos."
 msgstr ""
-"आप इस प्रतियोगिता के लिए अधिकतम संख्या में सबमिशन से मिले हैं। प्रत्येक प्रतियोगी 3 साउंड लोगो तक सबमिट "
-"कर सकता है।"
+"आप इस प्रतियोगिता के लिए अधिकतम संख्या में सबमिशन से मिले हैं। प्रत्येक प्रतियोगी 3 साउंड लोगो तक सबमिट कर सकता है।"
 
 #: build/submissionForm.js:1 src/js/submission-form/sound-validator.js:136
-#, fuzzy
 msgid "Sound should be less than 4s."
 msgstr "ध्वनि 4s से कम होनी चाहिए।"
 
