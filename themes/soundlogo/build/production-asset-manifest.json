@@ -1,5 +1,5 @@
 {
-  "buildTime": "2022-09-11T13:08:42.014Z",
+  "buildTime": "2022-09-11T14:26:01.708Z",
   "themeScripts.js": "themeScripts.js",
   "frontend.css": "frontend.css",
   "frontend.js": "frontend.js",
@@ -7,9 +7,9 @@
   "editor_soundlogo_styles.js": "editor_soundlogo_styles.js",
   "fonts.css": "fonts.css",
   "fonts.js": "fonts.js",
-  "montserrat-700-latin.woff2": "b66f2d18f66f15c3ac56.woff2",
+  "montserrat-800-latin.woff2": "b66f2d18f66f15c3ac56.woff2",
   "lato-400-latin.woff2": "be36596da218e1eec01c.woff2",
-  "montserrat-700-cyrillic-ext.woff2": "639b3c91831427d83cd3.woff2",
+  "montserrat-800-cyrillic-ext.woff2": "639b3c91831427d83cd3.woff2",
   "lato-700-latin.woff2": "8f28e0e1fdb195149f1c.woff2",
-  "montserrat-700-cyrillic.woff2": "f41a9bc7688bda1e8450.woff2"
+  "montserrat-800-cyrillic.woff2": "f41a9bc7688bda1e8450.woff2"
 }
