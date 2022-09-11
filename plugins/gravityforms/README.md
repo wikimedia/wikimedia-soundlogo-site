@@ -19,14 +19,14 @@ Version 2.6.4.1 of Gravity Forms
 ## Updating 
 
 1. Clone this repo `git clone git@github.com:humanmade/gravity-forms.git`
-1. `cd gravity-forms`
+1. `cd gravityforms`
 1. Create a new a branch with the name of the Gravity Forms version you want to update to.
-	 - `git checkout -b 2.6.4.1`
+	 - `git checkout -b 2.4.32.2`
 1. Update the files to the new version.
 1. Commit, tag & push.
     - `git add .`
-    - `git commit -m "2.6.4.1"`
-    - `git tag "2.6.4.1"`
+    - `git commit -m "2.4.32.2"`
+    - `git tag "2.4.32.2"`
     - `git push origin --all`
 1. Make a Pull Request with the version's name.
 

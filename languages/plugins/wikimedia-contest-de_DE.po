@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wikimedia-"
 "contest\n"
 "POT-Creation-Date: 2022-09-05T16:19:13-04:00\n"
-"PO-Revision-Date: 2022-09-05 16:23-0400\n"
+"PO-Revision-Date: 2022-09-11 12:53-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
 "X-Domain: wikimedia-contest\n"
 
 #. Plugin Name of the plugin
@@ -54,23 +54,20 @@ msgid "Sound must be at least 1s."
 msgstr "Der Klang muss mindestens 1 s dauern."
 
 #: inc/submitters.php:90
-#, fuzzy
 msgid "Invalid email address."
 msgstr "Ungültige E-Mail-Adresse."
 
 #: inc/submitters.php:95 inc/submitters.php:235
-#, fuzzy
 msgid ""
 "You have met the maximum number of submissions for this contest. Each "
 "contestant can submit up to 3 sound logos."
 msgstr ""
-"Sie haben die maximale Anzahl von Einsendungen für diesen Wettbewerb "
-"erfüllt. Jeder Kandidat kann bis zu 3 Soundlogos einreichen."
+"Du hast die maximale Anzahl von Einsendungen für diesen Wettbewerb "
+"erreicht. Pro Person können bis zu drei Soundlogos eingereicht werden."
 
 #: build/submissionForm.js:1 src/js/submission-form/sound-validator.js:136
-#, fuzzy
 msgid "Sound should be less than 4s."
-msgstr "Der Ton sollte weniger als 4s betragen."
+msgstr "Der Klang sollte kürzer als 4 s sein."
 
 #: build/submissionForm.js:1 src/js/submission-form/sound-validator.js:147
 msgid "MP3 files should be at least 192kbps."
