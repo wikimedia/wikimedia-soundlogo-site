@@ -13,7 +13,6 @@ use Asset_Loader;
 use Asset_Loader\Manifest;
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_assets' );
-add_action( 'wp_head', __NAMESPACE__ . '\\embed_fonts' );
 add_action( 'admin_init', __NAMESPACE__ . '\\add_footer_reusable_block_setting' );
 
 require_once __DIR__ . '/inc/editor/namespace.php';
@@ -32,6 +31,11 @@ function enqueue_assets() {
 		__DIR__ . '/build/production-asset-manifest.json',
 	] );
 
+	Asset_Loader\enqueue_asset(
+		$manifest,
+		'fonts.css',
+	);
+
 	if ( is_rtl() ) {
 		wp_register_style(
 			'shiro-style-rtl',
@@ -45,7 +49,7 @@ function enqueue_assets() {
 		$manifest,
 		'frontend.css',
 		[
-			'dependencies' => [ is_rtl() ? 'shiro-style-rtl' : 'shiro-style' ],
+			'dependencies' => [ is_rtl() ? 'shiro-style-rtl' : 'shiro-style', 'fonts.css' ],
 			'handle' => 'soundlogo-style',
 		]
 	);
@@ -57,17 +61,6 @@ function enqueue_assets() {
 			'handle' => 'soundlogo-script',
 		]
 	);
-}
-
-/**
- * Add link to Google Fonts in the header.
- */
-function embed_fonts() {
-	?>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-	<?php
 }
 
 /**

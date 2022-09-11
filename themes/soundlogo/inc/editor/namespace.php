@@ -7,6 +7,7 @@
 
 namespace Wikimedia_Contest\Theme\Editor;
 
+use Asset_Loader;
 use Asset_Loader\Manifest;
 
 /**
@@ -100,14 +101,15 @@ function register_block_styles() : void {
  * Add needed fonts and stylesheet to the editor
  */
 function add_editor_assets() {
-	add_editor_style( [
-		'https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700;800&display=swap',
-	] );
-
 	$manifest = Manifest\get_active_manifest( [
 		__DIR__ . '/../../build/development-asset-manifest.json',
 		__DIR__ . '/../../build/production-asset-manifest.json',
 	] );
+
+	Asset_Loader\enqueue_asset(
+		$manifest,
+		'fonts.css',
+	);
 
 	$json = file_get_contents( $manifest ); //phpcs:ignore WordPressVIPMinimum.Performance.FetchingRemoteData.FileGetContentsUnknown
 	$json_data = json_decode( $json, true );
