@@ -56,7 +56,7 @@ function add_menu_and_fields() {
 
 	add_settings_field(
 		'ogmeta_ogimageurl_field',
-		__( 'Select image for OG:Image', 'shiro-seo-admin' ),
+		__( 'Set URL of image for OG:Image', 'shiro-seo-admin' ),
 		__NAMESPACE__ . '\\ogmeta_ogimageurl_field_content',
 		'seo_settings_page',
 		'ogmeta_settings_section'
@@ -120,7 +120,7 @@ function matomo_siteid_field_content() {
  * Open Graph protocol settings section content.
  */
 function ogmeta_settings_section_content() {
-	esc_html_e( 'Use the options below to configure Open Graph protocol values for the entire network of sites.', 'shiro-seo-admin' );
+	esc_html_e( 'Use the options below to configure <a href="https://ogp.me/" target="_blank">Open Graph protocol</a> values for the entire network of sites.', 'shiro-seo-admin' );
 }
 
 /**
