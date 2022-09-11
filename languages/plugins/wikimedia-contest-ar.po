@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wikimedia-"
 "contest\n"
 "POT-Creation-Date: 2022-09-05T16:19:13-04:00\n"
-"PO-Revision-Date: 2022-09-05 16:23-0400\n"
+"PO-Revision-Date: 2022-09-11 17:59-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ar\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
 "X-Domain: wikimedia-contest\n"
 
 #. Plugin Name of the plugin
@@ -53,12 +53,10 @@ msgid "Sound must be at least 1s."
 msgstr "يجب أن يكون طول الصوت ثانية واحدة على الأقل."
 
 #: inc/submitters.php:90
-#, fuzzy
 msgid "Invalid email address."
 msgstr "عنوان البريد الإلكتروني غير صالح."
 
 #: inc/submitters.php:95 inc/submitters.php:235
-#, fuzzy
 msgid ""
 "You have met the maximum number of submissions for this contest. Each "
 "contestant can submit up to 3 sound logos."
@@ -67,7 +65,6 @@ msgstr ""
 "يصل إلى 3 شعارات صوتية."
 
 #: build/submissionForm.js:1 src/js/submission-form/sound-validator.js:136
-#, fuzzy
 msgid "Sound should be less than 4s."
 msgstr "يجب أن يكون الصوت أقل من 4s."
 
@@ -90,7 +87,7 @@ msgstr "الملف الصوتي غير قابل للقراءة."
 #~ msgstr "يُستعمل ثيم الطفل شيرو في مسابقة الشعار الصوتي لويكيميديا"
 
 #~ msgid "Submit"
-#~ msgstr "قدِّم"
+#~ msgstr "قدِّم"
 
 #, fuzzy
 #~ msgctxt "Color name"
