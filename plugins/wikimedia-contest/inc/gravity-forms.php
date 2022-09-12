@@ -39,6 +39,7 @@ function bootstrap() {
 	add_filter( 'gform_pre_render', __NAMESPACE__ . '\\identify_audio_meta_field', 10, 3 );
 	add_filter( 'gform_field_validation', __NAMESPACE__ . '\\audio_file_validation_messsages', 10, 4 );
 	add_filter( 'gform_field_input', __NAMESPACE__ . '\\render_accessible_select_field', 10, 5 );
+	add_filter( 'gform_field_container', __NAMESPACE__ . '\\render_styled_file_upload_field', 10, 6 );
 	add_action( 'gform_entry_created', __NAMESPACE__ . '\\handle_entry_submission', 10, 2 );
 	add_filter( 'gform_custom_merge_tags', __NAMESPACE__ . '\\custom_merge_tags', 10, 4 );
 	add_filter( 'gform_replace_merge_tags', __NAMESPACE__ . '\\replace_merge_tags', 10, 7 );
@@ -323,6 +324,39 @@ function render_accessible_select_field( $field_input, $field, $value, $_, $form
 	<?php
 
 	return ob_get_clean();
+}
+
+/**
+ * Replace the GF file-upload field with custom markup that can be styled.
+ *
+ * @param string $field_input The input tag to be filtered.
+ * @param Field $field The field that this input tag applies to.
+ * @param string $value Current field value (or default).
+ * @param int $_ Current entry ID (will be 0 on front end).
+ * @param int $form_id Current form ID.
+ * @return string Updated markup for this form field.
+ */
+function render_styled_file_upload_field( $field_container, $field, $form, $css_class, $style, $field_content ) {
+	if ( $field->type !== 'fileupload' || is_admin() ) {
+		return $field_container;
+	}
+
+	$display_value = current( wp_list_filter( $field->choices, [ 'value' => $value ] ) );
+	$id = sanitize_key( "input_{$form->id}_{$field->id}" );
+	$field_name = sanitize_key( "input_{$field->id}" );
+	ob_start();
+	?>
+		<label class="gfield_fileupload">
+			{FIELD_CONTENT}
+			<div class="gfield_fileupload_details"></div>
+			<button type="button" class="gfield_fileupload_button">
+				<?php wmf_show_icon( 'search' ); ?>
+				<?php esc_html_e( 'Choose files', 'wikimedia-contest' ); ?>
+			</button>
+		</label>
+	<?php
+
+	return str_replace( '{FIELD_CONTENT}', ob_get_clean(), $field_container );
 }
 
 /**

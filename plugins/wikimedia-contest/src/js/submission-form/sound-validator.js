@@ -36,6 +36,18 @@ const MAX_FILE_SIZE = 100000000;
 const fileUploadField = document.querySelector( 'input[type="file"]' );
 
 /**
+ * Display the uploaded file name on selection, or "No file chosen" if none.
+ *
+ * @param {HTMLElement} field Upload field being checked.
+ */
+const displayFileName = field => {
+	const { name } = field.files[0];
+	const detailsField = field.closest( '.gfield' ).querySelector( '.gfield_fileupload_details' );
+
+	detailsField.innerHTML = name ? name : __( 'No file chosen', 'wikimedia-contest' );
+};
+
+/**
  * Mark a validation error or message.
  *
  * @param {HTMLElement} field Upload field being checked.
@@ -51,6 +63,7 @@ const markValidation = ( field, messageObjects ) => {
 		'</ul>';
 	speak( messages.join( ', ' ) );
 
+	field.closest( '.gfield' ).classList.toggle( 'gfield_error', isError );
 	field.setCustomValidity( isError ? messages.join( ', ' ) : '' );
 	field.reportValidity();
 };
@@ -87,6 +100,8 @@ const getAudioMetaInput = () => document.getElementById( window.audioFileMetaFie
  * @param {Event} Change event on the file upload field.
  */
 const validateSoundFile = async ( { target } ) => {
+	displayFileName( target );
+
 	const file = target.files[0];
 	const validations = [];
 

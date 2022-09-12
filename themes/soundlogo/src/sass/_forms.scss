@@ -189,6 +189,60 @@ $color-green-active: #00af89;
 		}
 	}
 
+	.gfield_fileupload {
+		border: 2px dashed #8e8e8e;
+		display: block;
+		width: 100%;
+		max-width: 600px;
+		padding: 1rem;
+
+		input[type="file"] {
+			position: absolute;
+			left: -9999px;
+		}
+
+		.gfield_validation_message,
+		.gform_fileupload_rules {
+			display: block;
+			text-align: center;
+		}
+
+		.ginput_preview {
+			margin: 1em auto;
+			text-align: center;
+		}
+
+		&_button {
+			appearance: none;
+			margin: 0.5em auto;
+			border: none;
+			border-radius: 2.8px;
+			background-color: #2466be;
+			color: $color-white;
+			display: block;
+			vertical-align: middle;
+			font-weight: 700;
+			line-height: 1.6;
+			padding: 8px 20px 8px 10px;
+			pointer-events: none;
+
+			.icon {
+				fill: $color-white;
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+
+		&:hover {
+			background: #f6f6f6;
+
+			.gfield_fileupload_button {
+				background-color: darken( #2466be, 5% );
+				box-shadow: 1px 1px 1px rgba( 0, 0, 0, 0.5 );
+			}
+		}
+	}
+
 	.textarea {
 		/*
 		 * This will have javascript applied to allow it
