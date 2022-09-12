@@ -85,3 +85,5 @@ const init = () => {
 };
 
 document.addEventListener( 'DOMContentLoaded', init );
+
+window.smoothScrollTo = smoothScrollTo;
