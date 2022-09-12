@@ -75,7 +75,7 @@ const init = () => {
 	}
 
 	updateCurrentMenuItem();
-	smoothScrollTo( document.location.hash );
+	window.addEventListener( 'load', () => smoothScrollTo( document.location.hash ) );
 
 	const links = currentMenuItems.map( listItem => listItem.querySelector( 'a' ) );
 
