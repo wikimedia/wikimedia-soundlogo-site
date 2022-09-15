@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '3dbe5e4ef3785b7cfbceb7b26215f30438ee7149',
+        'reference' => '7e849b37b6ada83ad411df10b66d2bc926745f95',
         'name' => 'automattic/vip-go-skeleton',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '3dbe5e4ef3785b7cfbceb7b26215f30438ee7149',
+            'reference' => '7e849b37b6ada83ad411df10b66d2bc926745f95',
             'dev_requirement' => false,
         ),
         'automattic/vipwpcs' => array(
