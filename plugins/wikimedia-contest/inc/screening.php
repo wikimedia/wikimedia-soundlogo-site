@@ -124,9 +124,8 @@ function screening_admin_notices() {
 
 			case 'already-screened':
 				$message = sprintf(
-					__( '%s has already been screened and is now in stage "%s".', 'wikimedia-contest-admin' ),
-					$post_screened->post_title,
-					get_post_status_object( $post_screened->post_status )->label ?? ''
+					__( 'Thank you, %s has been screened. Please move on to the next submission in the queue.', 'wikimedia-contest-admin' ),
+					$post_screened->post_title
 				);
 				break;
 
@@ -170,6 +169,7 @@ function render_screening_interface() {
 
 	if ( ! $post_id ) {
 		wp_safe_redirect( admin_url( 'admin.php?page=screening-queue' ) );
+		exit;
 	}
 
 	if ( get_post_status( $post_id ) !== 'draft' ) {
@@ -182,6 +182,7 @@ function render_screening_interface() {
 				admin_url( 'admin.php?page=screening-queue' )
 			)
 		);
+		exit;
 	}
 
 	if ( current_user_already_screened( $post_id ) ) {
@@ -194,6 +195,7 @@ function render_screening_interface() {
 				admin_url( 'admin.php?page=screening-queue' )
 			)
 		);
+		exit;
 	}
 
 	if ( ! empty( $_POST['_screen_submission_nonce'] ) ) {
@@ -243,6 +245,7 @@ function handle_screening_results() {
 
 	add_screening_comment( $post_id, $results, get_current_user_id() );
 	wp_safe_redirect( admin_url( 'admin.php?page=screening-queue' ) );
+	exit;
 }
 
 /**
