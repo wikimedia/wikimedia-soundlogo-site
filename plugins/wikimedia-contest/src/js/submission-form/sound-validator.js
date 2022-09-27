@@ -167,7 +167,6 @@ const validateSoundFile = async ( { target } ) => {
 
 		if ( audioMetaField ) {
 			audioMetaField.value = JSON.stringify( {
-				name,
 				type,
 				size,
 				sampleRate,
