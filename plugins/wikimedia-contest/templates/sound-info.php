@@ -90,6 +90,7 @@ $flag_labels = array(
 
 // Identify current user
 $user = wp_get_current_user();
+?>
 
 <div class="card">
 	<h3>Entry ID: <?php echo esc_html( is_numeric( $gf_entry_id ) ? $gf_entry_id : '-' ); ?></h3>
