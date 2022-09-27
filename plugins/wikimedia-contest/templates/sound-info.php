@@ -87,7 +87,9 @@ $flag_labels = array(
 	'used_samples'            => __( 'Used one or more samples', 'wikimedia-contest-admin' ),
 	'source_urls'             => __( 'Source URLs of pre-recorded sounds', 'wikimedia-contest-admin' ),
 );
-?>
+
+// Identify current user
+$user = wp_get_current_user();
 
 <div class="card">
 	<h3>Entry ID: <?php echo esc_html( is_numeric( $gf_entry_id ) ? $gf_entry_id : '-' ); ?></h3>
@@ -100,8 +102,8 @@ $flag_labels = array(
 		<?php
 			if ( is_array( $audio_file_meta ) ) {
 				foreach ( $audio_file_meta as $key => $value ) {
-                    if ( $key == 'name' ) {
-                        echo '<li>' . sprintf( $audio_file_meta_labels[ $key ], 'test' ) . '</li>';
+                    if ( $key == 'name' && !in_array( 'screener', (array) $user->roles ) ) {
+                        echo '<li>' . sprintf( $audio_file_meta_labels[ $key ], $value ) . '</li>';
                     } elseif ( $key !== 'name' ) {
                         echo '<li>' . sprintf( $audio_file_meta_labels[ $key ], $value ) . '</li>';
                         }
