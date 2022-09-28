@@ -87,9 +87,6 @@ $flag_labels = array(
 	'used_samples'            => __( 'Used one or more samples', 'wikimedia-contest-admin' ),
 	'source_urls'             => __( 'Source URLs of pre-recorded sounds', 'wikimedia-contest-admin' ),
 );
-
-// Identify current user
-$user = wp_get_current_user();
 ?>
 
 <div class="card">
