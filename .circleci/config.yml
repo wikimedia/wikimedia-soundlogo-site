@@ -56,15 +56,6 @@ jobs:
             cd plugins/wikipediapreview-wordpress
             npm ci
             npm run build
-      - run:
-          name: Build shiro theme
-          command: |
-            cd themes/shiro
-            source /home/circleci/.nvm/nvm.sh
-            nvm use
-            npm i -g npm@6
-            npm ci
-            npm run build
       - run: echo "Building..."
       - run:
           name: Create build directory
