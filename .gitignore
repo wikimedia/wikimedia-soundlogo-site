@@ -62,4 +62,3 @@ phpcs.xml
 
 # VBox Logs
 *VBox*.log*
-plugins/multilingualpress/.DS_Store
