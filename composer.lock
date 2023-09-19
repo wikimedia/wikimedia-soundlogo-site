@@ -4,43 +4,41 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e471cb45076c723855c232a9ecd6fb73",
+    "content-hash": "bc88a8da29342bcf05794e88e3f20318",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.12.0",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "d20a64ed3c94748397ff5973488761b22f6d3f19"
+                "reference": "c29dc4b93137acb82734f672c37e029dfbd95b35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/d20a64ed3c94748397ff5973488761b22f6d3f19",
-                "reference": "d20a64ed3c94748397ff5973488761b22f6d3f19",
+                "url": "https://api.github.com/repos/composer/installers/zipball/c29dc4b93137acb82734f672c37e029dfbd95b35",
+                "reference": "c29dc4b93137acb82734f672c37e029dfbd95b35",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "^1.0 || ^2.0"
-            },
-            "replace": {
-                "roundcube/plugin-installer": "*",
-                "shama/baton": "*"
+                "composer-plugin-api": "^1.0 || ^2.0",
+                "php": "^7.2 || ^8.0"
             },
             "require-dev": {
                 "composer/composer": "1.6.* || ^2.0",
                 "composer/semver": "^1 || ^3",
                 "phpstan/phpstan": "^0.12.55",
                 "phpstan/phpstan-phpunit": "^0.12.16",
-                "symfony/phpunit-bridge": "^4.2 || ^5",
-                "symfony/process": "^2.3"
+                "symfony/phpunit-bridge": "^5.3",
+                "symfony/process": "^5"
             },
             "type": "composer-plugin",
             "extra": {
                 "class": "Composer\\Installers\\Plugin",
                 "branch-alias": {
-                    "dev-main": "1.x-dev"
-                }
+                    "dev-main": "2.x-dev"
+                },
+                "plugin-modifies-install-path": true
             },
             "autoload": {
                 "psr-4": {
@@ -61,7 +59,6 @@
             "description": "A multi-framework Composer library installer",
             "homepage": "https://composer.github.io/installers/",
             "keywords": [
-                "Craft",
                 "Dolibarr",
                 "Eliasis",
                 "Hurad",
@@ -82,7 +79,6 @@
                 "Whmcs",
                 "WolfCMS",
                 "agl",
-                "aimeos",
                 "annotatecms",
                 "attogram",
                 "bitrix",
@@ -101,7 +97,6 @@
                 "grav",
                 "installer",
                 "itop",
-                "joomla",
                 "known",
                 "kohana",
                 "laravel",
@@ -110,6 +105,7 @@
                 "magento",
                 "majima",
                 "mako",
+                "matomo",
                 "mediawiki",
                 "miaoxing",
                 "modulework",
@@ -129,9 +125,7 @@
                 "silverstripe",
                 "sydes",
                 "sylius",
-                "symfony",
                 "tastyigniter",
-                "typo3",
                 "wordpress",
                 "yawik",
                 "zend",
@@ -139,7 +133,7 @@
             ],
             "support": {
                 "issues": "https://github.com/composer/installers/issues",
-                "source": "https://github.com/composer/installers/tree/v1.12.0"
+                "source": "https://github.com/composer/installers/tree/v2.2.0"
             },
             "funding": [
                 {
@@ -155,24 +149,24 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-09-13T08:19:44+00:00"
+            "time": "2022-08-20T06:45:11+00:00"
         },
         {
             "name": "humanmade/asset-loader",
-            "version": "v0.6.2",
+            "version": "v0.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/asset-loader.git",
-                "reference": "0292258fa1391278d04e2802ba87628cade0ce52"
+                "reference": "fc0c62edcf7f54f783eaf9855aed3633a8811966"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/asset-loader/zipball/0292258fa1391278d04e2802ba87628cade0ce52",
-                "reference": "0292258fa1391278d04e2802ba87628cade0ce52",
+                "url": "https://api.github.com/repos/humanmade/asset-loader/zipball/fc0c62edcf7f54f783eaf9855aed3633a8811966",
+                "reference": "fc0c62edcf7f54f783eaf9855aed3633a8811966",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "~1.0"
+                "composer/installers": "^1.0 || ^2.0"
             },
             "require-dev": {
                 "10up/wp_mock": "^0.4.2",
@@ -187,9 +181,9 @@
             "description": "Utilities to seamlessly consume Webpack-bundled assets in WordPress themes & plugins.",
             "support": {
                 "issues": "https://github.com/humanmade/asset-loader/issues",
-                "source": "https://github.com/humanmade/asset-loader/tree/v0.6.2"
+                "source": "https://github.com/humanmade/asset-loader/tree/v0.6.3"
             },
-            "time": "2022-07-26T16:43:22+00:00"
+            "time": "2022-11-28T17:15:12+00:00"
         },
         {
             "name": "humanmade/hm-gutenberg-tools",
@@ -222,16 +216,16 @@
         },
         {
             "name": "humanmade/workflows",
-            "version": "0.4.6",
+            "version": "0.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/Workflows.git",
-                "reference": "63416f5ba9282e15c8fa5c7cef0f4bb8f50cddbb"
+                "reference": "5579aa99c928274593c6d37eed45bed53219bf3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/Workflows/zipball/63416f5ba9282e15c8fa5c7cef0f4bb8f50cddbb",
-                "reference": "63416f5ba9282e15c8fa5c7cef0f4bb8f50cddbb",
+                "url": "https://api.github.com/repos/humanmade/Workflows/zipball/5579aa99c928274593c6d37eed45bed53219bf3d",
+                "reference": "5579aa99c928274593c6d37eed45bed53219bf3d",
                 "shasum": ""
             },
             "require": {
@@ -254,64 +248,60 @@
             "description": "Workflow management for WordPress, an extensible event and notification system.",
             "support": {
                 "issues": "https://github.com/humanmade/Workflows/issues",
-                "source": "https://github.com/humanmade/Workflows/tree/0.4.6"
+                "source": "https://github.com/humanmade/Workflows/tree/0.4.8"
             },
-            "time": "2022-08-17T15:47:38+00:00"
+            "time": "2023-01-06T16:06:10+00:00"
         },
         {
-            "name": "wikimedia/wikipediapreview-wordpress",
-            "version": "v1.6.0",
+            "name": "wikimedia/shiro-wordpress-theme",
+            "version": "dev-release",
             "source": {
                 "type": "git",
-                "url": "https://github.com/wikimedia/wikipediapreview-wordpress.git",
-                "reference": "a5522b00ab96864bc62faa18d084d4febdc7a2a8"
+                "url": "https://github.com/wikimedia/shiro-wordpress-theme.git",
+                "reference": "f5250190180463c09ddb30931dbe9161f8132c33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wikimedia/wikipediapreview-wordpress/zipball/a5522b00ab96864bc62faa18d084d4febdc7a2a8",
-                "reference": "a5522b00ab96864bc62faa18d084d4febdc7a2a8",
+                "url": "https://api.github.com/repos/wikimedia/shiro-wordpress-theme/zipball/f5250190180463c09ddb30931dbe9161f8132c33",
+                "reference": "f5250190180463c09ddb30931dbe9161f8132c33",
                 "shasum": ""
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
-                "phpcompatibility/phpcompatibility-wp": "^2.1",
-                "squizlabs/php_codesniffer": "^3.6",
-                "wp-coding-standards/wpcs": "^2.3"
+                "automattic/vipwpcs": "^2.0",
+                "cweagans/composer-patches": "^1.7",
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+                "phpcompatibility/phpcompatibility-wp": "^1.0",
+                "squizlabs/php_codesniffer": "^3.3",
+                "staabm/annotate-pull-request-from-checkstyle": "^1.8",
+                "wp-coding-standards/wpcs": "^2.0"
             },
-            "type": "wordpress-plugin",
+            "type": "wordpress-theme",
+            "extra": {
+                "patches": {
+                    "wp-coding-standards/wpcs": {
+                        "Fix php 8 error with vsprint snif": "https://github.com/WordPress/WordPress-Coding-Standards/commit/7cd46bed1e6a7a2af3fe24c7f4a044da3076d8f4.patch"
+                    }
+                }
+            },
             "scripts": {
-                "lint": [
-                    "phpcs --ignore=build"
+                "phpcs": [
+                    "phpcs ."
                 ],
-                "lint:fix": [
-                    "phpcbf --ignore=build"
+                "phpcs:changed": [
+                    "phpcs $(git diff --name-only --diff-filter=ACMRTUXB $(git merge-base head main) | grep '\\.php')"
+                ],
+                "phpcbf:changed": [
+                    "phpcbf $(git diff --name-only --diff-filter=ACMRTUXB $(git merge-base head main) | grep '\\.php')"
                 ]
             },
             "license": [
-                "MIT"
+                "GPL-2.0-or-later"
             ],
-            "authors": [
-                {
-                    "name": "Wikimedia Foundation",
-                    "homepage": "http://wikimediafoundation.org",
-                    "role": "Developer"
-                }
-            ],
-            "description": "WordPress plugin for Wikipedia Preview",
-            "homepage": "https://github.com/wikimedia/wikipediapreview-wordpress#readme",
-            "keywords": [
-                "card",
-                "facts",
-                "popup",
-                "wiki",
-                "wikipedia",
-                "wordpress"
-            ],
+            "description": "Wikimedia Foundation website theme.",
             "support": {
-                "issues": "https://phabricator.wikimedia.org/project/profile/4393/",
-                "source": "https://github.com/wikimedia/wikipediapreview-wordpress"
+                "source": "https://github.com/wikimedia/shiro-wordpress-theme/tree/release"
             },
-            "time": "2022-07-28T14:35:13+00:00"
+            "time": "2023-02-13T20:02:11+00:00"
         },
         {
             "name": "wpackagist-plugin/gf-hcaptcha",
@@ -350,16 +340,34 @@
             "homepage": "https://wordpress.org/plugins/safe-svg/"
         },
         {
-            "name": "wpackagist-plugin/wordpress-seo",
-            "version": "19.6.1",
+            "name": "wpackagist-plugin/wikipedia-preview",
+            "version": "1.8.0",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/19.6.1"
+                "url": "https://plugins.svn.wordpress.org/wikipedia-preview/",
+                "reference": "tags/1.8.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.19.6.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/wikipedia-preview.1.8.0.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wikipedia-preview/"
+        },
+        {
+            "name": "wpackagist-plugin/wordpress-seo",
+            "version": "19.14",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
+                "reference": "tags/19.14"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.19.14.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -547,16 +555,16 @@
         },
         {
             "name": "humanmade/coding-standards",
-            "version": "v1.1.3",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/coding-standards.git",
-                "reference": "6efe4b8fd33c22f06febc658c805acdc1e4d94f5"
+                "reference": "4b5aca25cb350f248f1797beed100edda9f32a0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/coding-standards/zipball/6efe4b8fd33c22f06febc658c805acdc1e4d94f5",
-                "reference": "6efe4b8fd33c22f06febc658c805acdc1e4d94f5",
+                "url": "https://api.github.com/repos/humanmade/coding-standards/zipball/4b5aca25cb350f248f1797beed100edda9f32a0d",
+                "reference": "4b5aca25cb350f248f1797beed100edda9f32a0d",
                 "shasum": ""
             },
             "require": {
@@ -565,11 +573,11 @@
                 "fig-r/psr2r-sniffer": "^0.5.0",
                 "php": ">=7.1",
                 "phpcompatibility/phpcompatibility-wp": "^2.0.0",
-                "squizlabs/php_codesniffer": "~3.5.0",
-                "wp-coding-standards/wpcs": "2.2.1"
+                "squizlabs/php_codesniffer": "~3.5",
+                "wp-coding-standards/wpcs": "2.3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^5.7"
+                "phpunit/phpunit": "^7"
             },
             "type": "phpcodesniffer-standard",
             "notification-url": "https://packagist.org/downloads/",
@@ -579,9 +587,9 @@
             "description": "Human Made Coding Standards",
             "support": {
                 "issues": "https://github.com/humanmade/coding-standards/issues",
-                "source": "https://github.com/humanmade/coding-standards/tree/v1.1.3"
+                "source": "https://github.com/humanmade/coding-standards/tree/v1.2.1"
             },
-            "time": "2021-02-03T22:20:56+00:00"
+            "time": "2022-09-14T09:35:02+00:00"
         },
         {
             "name": "phpcompatibility/php-compatibility",
@@ -647,16 +655,16 @@
         },
         {
             "name": "phpcompatibility/phpcompatibility-paragonie",
-            "version": "1.3.1",
+            "version": "1.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCompatibility/PHPCompatibilityParagonie.git",
-                "reference": "ddabec839cc003651f2ce695c938686d1086cf43"
+                "reference": "bba5a9dfec7fcfbd679cfaf611d86b4d3759da26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibilityParagonie/zipball/ddabec839cc003651f2ce695c938686d1086cf43",
-                "reference": "ddabec839cc003651f2ce695c938686d1086cf43",
+                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibilityParagonie/zipball/bba5a9dfec7fcfbd679cfaf611d86b4d3759da26",
+                "reference": "bba5a9dfec7fcfbd679cfaf611d86b4d3759da26",
                 "shasum": ""
             },
             "require": {
@@ -693,26 +701,27 @@
                 "paragonie",
                 "phpcs",
                 "polyfill",
-                "standards"
+                "standards",
+                "static analysis"
             ],
             "support": {
                 "issues": "https://github.com/PHPCompatibility/PHPCompatibilityParagonie/issues",
                 "source": "https://github.com/PHPCompatibility/PHPCompatibilityParagonie"
             },
-            "time": "2021-02-15T10:24:51+00:00"
+            "time": "2022-10-25T01:46:02+00:00"
         },
         {
             "name": "phpcompatibility/phpcompatibility-wp",
-            "version": "2.1.3",
+            "version": "2.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCompatibility/PHPCompatibilityWP.git",
-                "reference": "d55de55f88697b9cdb94bccf04f14eb3b11cf308"
+                "reference": "b6c1e3ee1c35de6c41a511d5eb9bd03e447480a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibilityWP/zipball/d55de55f88697b9cdb94bccf04f14eb3b11cf308",
-                "reference": "d55de55f88697b9cdb94bccf04f14eb3b11cf308",
+                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibilityWP/zipball/b6c1e3ee1c35de6c41a511d5eb9bd03e447480a5",
+                "reference": "b6c1e3ee1c35de6c41a511d5eb9bd03e447480a5",
                 "shasum": ""
             },
             "require": {
@@ -747,26 +756,27 @@
                 "compatibility",
                 "phpcs",
                 "standards",
+                "static analysis",
                 "wordpress"
             ],
             "support": {
                 "issues": "https://github.com/PHPCompatibility/PHPCompatibilityWP/issues",
                 "source": "https://github.com/PHPCompatibility/PHPCompatibilityWP"
             },
-            "time": "2021-12-30T16:37:40+00:00"
+            "time": "2022-10-24T09:00:36+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.5.8",
+            "version": "3.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "9d583721a7157ee997f235f327de038e7ea6dac4"
+                "reference": "1359e176e9307e906dc3d890bcc9603ff6d90619"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/9d583721a7157ee997f235f327de038e7ea6dac4",
-                "reference": "9d583721a7157ee997f235f327de038e7ea6dac4",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/1359e176e9307e906dc3d890bcc9603ff6d90619",
+                "reference": "1359e176e9307e906dc3d890bcc9603ff6d90619",
                 "shasum": ""
             },
             "require": {
@@ -809,20 +819,20 @@
                 "source": "https://github.com/squizlabs/PHP_CodeSniffer",
                 "wiki": "https://github.com/squizlabs/PHP_CodeSniffer/wiki"
             },
-            "time": "2020-10-23T02:01:07+00:00"
+            "time": "2022-06-18T07:21:10+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
-            "version": "2.2.1",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress-Coding-Standards.git",
-                "reference": "b5a453203114cc2284b1a614c4953456fbe4f546"
+                "reference": "7da1894633f168fe244afc6de00d141f27517b62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/b5a453203114cc2284b1a614c4953456fbe4f546",
-                "reference": "b5a453203114cc2284b1a614c4953456fbe4f546",
+                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/7da1894633f168fe244afc6de00d141f27517b62",
+                "reference": "7da1894633f168fe244afc6de00d141f27517b62",
                 "shasum": ""
             },
             "require": {
@@ -832,6 +842,7 @@
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.5 || ^0.6",
                 "phpcompatibility/php-compatibility": "^9.0",
+                "phpcsstandards/phpcsdevtools": "^1.0",
                 "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0"
             },
             "suggest": {
@@ -859,12 +870,14 @@
                 "source": "https://github.com/WordPress/WordPress-Coding-Standards",
                 "wiki": "https://github.com/WordPress/WordPress-Coding-Standards/wiki"
             },
-            "time": "2020-02-04T02:52:06+00:00"
+            "time": "2020-05-13T23:57:56+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "wikimedia/shiro-wordpress-theme": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
